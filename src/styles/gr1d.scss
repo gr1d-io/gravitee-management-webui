@@ -1,0 +1,25 @@
+$font-family-1: 'Barlow', sans-serif;
+
+$color-purple: #5a25f0;
+$color-purple-hover: rgba(120, 74, 247, 0.48);
+$color-purple-light: #f4eeff;
+$color-purple-light-hover: rgba(244, 238, 255, 0.48);
+$color-anil: #00e5ff;
+$color-anil-light-hover: rgba(241, 253, 255, 0.48);
+
+$color-black: #000000;
+
+$color-violet-blue: #3d0dc7;
+$color-white-90: rgba(255, 255, 255, 0.9);
+$color-white-68: rgba(255, 255, 255, 0.68);
+$color-white-62: rgba(255, 255, 255, 0.62);
+$color-purpleish-blue: #784af7;
+
+
+body {
+    font-family: $font-family-1;
+}
+
+.gravitee-splash-screen {
+    background: $color-violet-blue;
+}
