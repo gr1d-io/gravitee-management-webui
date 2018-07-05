@@ -13,15 +13,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-.api-box {
-    border-radius: 1.25rem;
-}
-
-md-card md-card-title + md-card-content {
-    background-color: #517284;
-    color: white;
-    font-weight: bold;
-    border-bottom-left-radius: 1.25rem;
-    border-bottom-right-radius: 1.25rem;
-}
   

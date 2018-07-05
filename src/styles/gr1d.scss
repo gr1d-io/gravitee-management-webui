@@ -8,6 +8,7 @@ $color-anil: #00e5ff;
 $color-anil-light-hover: rgba(241, 253, 255, 0.48);
 
 $color-black: #000000;
+$color-white: #fff;
 
 $color-violet-blue: #3d0dc7;
 $color-white-90: rgba(255, 255, 255, 0.9);
@@ -16,10 +17,59 @@ $color-white-62: rgba(255, 255, 255, 0.62);
 $color-purpleish-blue: #784af7;
 
 
-body {
+body, h1, span, h1 span, p, button, input, .layout-align-center-center > *, md-content, .main-content, b, md-input-container .md-input, md-autocomplete input:not(.md-input) {
     font-family: $font-family-1;
 }
 
 .gravitee-splash-screen {
     background: $color-violet-blue;
+}
+
+.gravitee-no-sidenav-container, md-sidenav.md-sidenav-theme, .api-nav {
+    background: $color-black;
+}
+
+.menu-active {
+    background: $color-anil;
+    color: $color-black;
+}
+
+.md-button, .login-page .md-button {
+    font-family: $font-family-1;
+    text-transform: uppercase;
+    font-weight: 700;
+    &.md-primary {
+        background: $color-purple;
+    }
+}
+
+.md-button.md-default-theme.md-fab, .md-button.md-fab {
+    background: $color-purple;
+}
+
+.apis-sidenav ul li.active span {
+    color: $color-purple;
+}
+
+.apis-sidenav ul li.active, .api-nav ul li.active a, .api-nav ul li.header-button button.oui-button.thin-button {
+    border-color: $color-purple;
+}
+
+ng-md-icon {
+    fill: $color-white !important;
+}
+
+.gravitee-api-card {
+    .md-headline {
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 32px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+md-card md-card-title md-card-title-text {
+    width: 80%;
 }

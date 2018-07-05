@@ -1,7 +1,7 @@
 {
     "portal": {
       "navbar": {
-        "background-color": "#2d323e",
+        "background-color": "#000",
         "color": "#fff",
         "help": {
           "fill": "#fff"
@@ -24,7 +24,7 @@
       },
       "footer": {
         "content": {
-          "background-color": "#2d323e",
+          "background-color": "#000",
           "color": "#e1e2e1"
         },
         "links": {
@@ -33,17 +33,17 @@
       },
       "home": {
         "header": {
-          "background-color": "#2d323e",
+          "background-color": "#000",
           "color": "#fff"
         },
         "homepage": {
           "background-color": "#f7f7f7"
         },
         "content": {
-          "background-color": "#34a0d4"
+          "background-color": "#5a25f0"
         },
         "topapis": {
-          "background-color": "#34a0d4"
+          "background-color": "#5a25f0"
         }
       },
       "apisList": {
@@ -51,10 +51,10 @@
       },
       "api": {
         "header": {
-          "background-color": "#eff4f9"
+          "background-color": "#ffffff"
         },
         "plans": {
-          "background-color": "#34a0d4"
+          "background-color": "#5a25f0"
         }
       }
     }
