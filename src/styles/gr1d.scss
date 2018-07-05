@@ -10,14 +10,21 @@ $color-anil-light-hover: rgba(241, 253, 255, 0.48);
 $color-black: #000000;
 $color-white: #fff;
 
+$color-pale-grey-two: #f5f5f8;
+
 $color-violet-blue: #3d0dc7;
 $color-white-90: rgba(255, 255, 255, 0.9);
 $color-white-68: rgba(255, 255, 255, 0.68);
 $color-white-62: rgba(255, 255, 255, 0.62);
 $color-purpleish-blue: #784af7;
 
+$color-purpleish-blue: #784af7; //POST
+$color-water-blue: #12a3de; // GET
+$color-golden: #e4b301; // PUT
+$color-tomato: #e14e1a; // DELETE
 
-body, h1, span, h1 span, p, button, input, .layout-align-center-center > *, md-content, .main-content, b, md-input-container .md-input, md-autocomplete input:not(.md-input) {
+
+body, h1, h2, div, span, h1 span, p, button, input, .layout-align-center-center > *, md-content, .main-content, b, md-input-container .md-input, md-autocomplete input:not(.md-input) {
     font-family: $font-family-1;
 }
 
@@ -47,11 +54,11 @@ body, h1, span, h1 span, p, button, input, .layout-align-center-center > *, md-c
     background: $color-purple;
 }
 
-.apis-sidenav ul li.active span {
+.apis-sidenav ul li.active span, .doc-sidenav ul li.active span {
     color: $color-purple;
 }
 
-.apis-sidenav ul li.active, .api-nav ul li.active a, .api-nav ul li.header-button button.oui-button.thin-button {
+.apis-sidenav ul li.active, .api-nav ul li.active a, .api-nav ul li.header-button button.oui-button.thin-button, .doc-sidenav ul li.active {
     border-color: $color-purple;
 }
 
@@ -72,4 +79,84 @@ ng-md-icon {
 
 md-card md-card-title md-card-title-text {
     width: 80%;
+}
+
+
+// Custom Page API
+.api-description {
+    span:nth-child(3)  {
+        display: none;
+    }
+}
+
+.apis-sidenav {
+    margin-left: 30px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+// Custom Admin - Profile: User
+gv-submenu {
+    md-list-item[aria-label="Members"],
+    md-list-item[aria-label="Notifications"] {
+        display: none;
+    }
+}
+
+
+// Swagger
+
+#swagger-container .swagger-ui{
+    .info {
+        .title, p, a {
+            font-family: $font-family-1;
+        }
+    }
+    .opblock-description-wrapper p, .opblock .opblock-summary-method, .parameter__name, table thead tr th {
+        font-family: $font-family-1;
+    }
+}
+
+#swagger-container .swagger-ui .opblock.opblock-get {
+    border-color: $color-water-blue;
+    .opblock-summary {
+        border-color: $color-water-blue;
+    }
+    .opblock-summary-method {
+        background: $color-water-blue;
+    }
+}
+
+#swagger-container .swagger-ui .opblock.opblock-post {
+    border-color: $color-purpleish-blue;
+    .opblock-summary {
+        border-color: $color-purpleish-blue;
+    }
+    .opblock-summary-method {
+        background: $color-purpleish-blue;
+    }
+}
+
+#swagger-container .swagger-ui .opblock.opblock-put {
+    border-color: $color-golden;
+    .opblock-summary {
+        border-color: $color-golden;
+    }
+    .opblock-summary-method {
+        background: $color-golden;
+    }
+}
+
+#swagger-container .swagger-ui .opblock.opblock-delete {
+    border-color: $color-tomato;
+    .opblock-summary {
+        border-color: $color-tomato;
+    }
+    .opblock-summary-method {
+        background: $color-tomato;
+    }
 }

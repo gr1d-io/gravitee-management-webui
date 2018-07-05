@@ -28,7 +28,7 @@
   <span>{{$ctrl.$state.current.name}}</span>
   <md-button class="gv-navbar-button" ng-click="$ctrl.openContextualDocumentation();" aria-label="Display contextual documentation"
              ng-if="$ctrl.displayContextualDocumentationButton">
-    <ng-md-icon icon="live_help" gv-theme-element="portal.navbar.help"></ng-md-icon>
+    <ng-md-icon icon="info" gv-theme-element="portal.navbar.help"></ng-md-icon>
   </md-button>
   <portal-notifications user="$ctrl.graviteeUser" ng-if="$ctrl.graviteeUser.username"></portal-notifications>
   <md-button ng-if="!$ctrl.graviteeUser.username && !$ctrl.isOnlyOAuth" ui-sref-active="menu-active" ui-sref="login">{{'menu.login' | translate}}</md-button>

@@ -1,5 +1,6 @@
 {
   "baseURL": "http://localhost:8005/management/",
+  "baseSandboxURL": "http://localhost:8005/management/",
   "theme": {
     "name": "gr1d",
     "logo": "themes/assets/gr1d_logo_900x900.png",
