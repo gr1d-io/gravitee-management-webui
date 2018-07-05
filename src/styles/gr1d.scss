@@ -106,8 +106,6 @@ gv-submenu {
         display: none;
     }
 }
-
-
 // Swagger
 
 #swagger-container .swagger-ui{
@@ -116,7 +114,16 @@ gv-submenu {
             font-family: $font-family-1;
         }
     }
-    .opblock-description-wrapper p, .opblock .opblock-summary-method, .parameter__name, table thead tr th {
+    select,
+    .tab li, 
+    .opblock .opblock-section-header h4, 
+    .opblock-description-wrapper p, 
+    .opblock .opblock-summary-method, 
+    .parameter__name, 
+    table thead tr th,
+    table thead tr td,
+    .response-col_status,
+    .model-title {
         font-family: $font-family-1;
     }
 }
