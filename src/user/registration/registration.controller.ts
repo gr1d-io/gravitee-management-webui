@@ -14,8 +14,12 @@
  * limitations under the License.
  */
 class RegistrationController {
-  constructor(UserService, $scope, NotificationService) {
+  logoTheme: string;
+
+  constructor(UserService, $scope, NotificationService, Constants) {
     'ngInject';
+
+    this.logoTheme = Constants.theme.logoSmall
 
     $scope.register = function () {
       UserService.register($scope.user).then(function () {
