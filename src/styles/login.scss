@@ -1,0 +1,92 @@
+.login-page--gr1d-logo { 
+
+  margin: 8% auto 30px auto;
+  text-align: center;
+
+  img {
+    max-width: 194px;
+  }
+}
+
+.login-page--footer {
+
+  &, a {
+      color: white;
+  }
+
+  .login-page--terms-link {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 20px;
+  }
+
+  .login-page--copyright {
+    font-size: 22px;
+    margin-top: 30px;
+  }
+}
+
+.login-page--forgot-pass-link {
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 40px;
+}
+
+.login-page {
+
+  .form {
+      padding: 45px 80px;
+  }
+
+  a {
+      text-decoration: underline;
+  }
+
+  h3 {
+      font-size: 22px;
+  }
+
+  input {
+      background-color: #f3f7f8;
+      height: 60px;
+      padding: 0 15px;
+      font-size: 20px;
+  }
+
+  md-input-container {
+      margin: 0 0 10px 0;
+
+      &:not(.md-input-invalid):not(.md-input-has-value) {
+          label {
+              color: $color-grey-dark;
+          }
+      }
+  }
+
+  md-input-container label:not(.md-no-float):not(.md-container-ignore), md-input-container .md-placeholder {
+      transform: translate3d(20px, 48px, 0) scale(1);
+      font-weight: 400;
+      font-size: 20px;
+  }
+
+  md-input-container .md-input {
+      border-width: 0 0 2px 0;
+  }
+
+  md-input-container.md-input-focused label:not(.md-no-float), md-input-container.md-input-has-placeholder label:not(.md-no-float), md-input-container.md-input-has-value label:not(.md-no-float) {
+      transform: translate3d(0, 12px, 0) scale(0.75); 
+  }
+
+  .md-primary {
+      display: flex;
+      justify-content: center;
+      padding: 2px 50px 2px 40px;
+      margin: 0 auto;
+
+      span {
+          font-size: 18px;
+          margin-left: 10px;
+      }
+  }
+}

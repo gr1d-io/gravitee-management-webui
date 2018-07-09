@@ -17,7 +17,7 @@
 -->
 
 <md-content class="gravitee-no-sidenav-container" flex>
-    <div class="gr1d-logo">
+    <div class="login-page--gr1d-logo">
         <img ng-src="{{$ctrl.logoTheme}}" alt="logo"/>
     </div>
     <div class="login-page">
@@ -48,10 +48,10 @@
                      <span>Log in</span>
           </md-button>
 
+          <h4 class="text-center login-page--forgot-pass-link"><a href="#">Forgot your password?</a></h4>
 
-          <br>
           <p class="text-muted" ng-if="$ctrl.userCreationEnabled" >
-            <h4 class="text-center">Don't have an account yet? <a ui-sref="registration">SIGN UP</a></h4>
+            <h3 class="text-center">Don't have an account yet? <a ui-sref="registration">SIGN UP</a></h3>
           </p>
 
           <div ng-if="$ctrl.providers.length > 0">
@@ -67,5 +67,11 @@
         </button>
       </div>
     </div>
+
+    <div class="login-page--footer text-center">
+        <p class="login-page--terms-link"><a href="#">Terms of Service</a> • <a href="#">Privacy</a></p>
+        <p class="login-page--copyright">© GR1D, Inc 2018. All rights reserved.</p>
+    </div>
+
 </md-content>
 
