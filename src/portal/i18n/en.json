@@ -36,8 +36,8 @@
   },
   "menu": {
     "login": "Login",
-    "gallery": "API gallery",
-    "documentation": "Documentation",
+    "gallery": "APIs",
+    "documentation": "Tutorial",
     "profile": "My account",
     "management": "Administration",
     "applications": "Applications",
