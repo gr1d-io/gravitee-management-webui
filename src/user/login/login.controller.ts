@@ -44,7 +44,11 @@ class LoginController {
     this.$state = $state;
     this.$rootScope = $rootScope;
     this.providers = AuthenticationService.getProviders();
+<<<<<<< HEAD
     this.logoTheme = ConstantsGr1d.theme.logoSmall
+=======
+    this.logoTheme = Constants.theme.logoSmall;
+>>>>>>> sigup icon
   }
 
   authenticate(provider: string) {
