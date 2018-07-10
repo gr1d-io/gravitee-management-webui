@@ -20,12 +20,8 @@ class RegistrationController {
   ) {
     'ngInject';
 
-<<<<<<< HEAD
     $scope.logoTheme = ConstantsGr1d.theme.logoSmall;
-=======
-    $scope.logoTheme = Constants.theme.logoSmall;
-    $scope.icons = Constants.theme.icons
->>>>>>> sigup icon
+    $scope.icons = ConstantsGr1d.theme.icons
 
     $scope.register = function () {
       UserService.register($scope.user).then(function () {
