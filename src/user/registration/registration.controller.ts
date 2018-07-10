@@ -16,10 +16,11 @@
 
 class RegistrationController {
 
-  constructor(UserService, $scope, NotificationService, Constants) {
+  constructor(UserService, $scope, NotificationService, ConstantsGr1d,
+  ) {
     'ngInject';
 
-    $scope.logoTheme = Constants.theme.logoSmall;
+    $scope.logoTheme = ConstantsGr1d.theme.logoSmall;
 
     $scope.register = function () {
       UserService.register($scope.user).then(function () {

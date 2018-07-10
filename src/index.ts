@@ -23,6 +23,8 @@ import _ = require('lodash');
 
 let configNoCache = {headers: {'Cache-Control': 'no-cache', 'Pragma': 'no-cache'}};
 let ConstantsJSON: any;
+let ConstantsGr1dJSON: any;
+
 
 fetchData()
   .then((constants:any) => initLoader(constants))
@@ -36,10 +38,12 @@ function fetchData() {
 
   return $q.all(
     [$http.get('constants.json', configNoCache),
-      $http.get('build.json', configNoCache)])
+      $http.get('build.json', configNoCache),
+      $http.get('constants.gr1d.json', configNoCache)])
     .then((responses: any) => {
       ConstantsJSON = responses[0].data;
       let build = responses[1].data;
+      ConstantsGr1dJSON = responses[2].data;
       angular.module('gravitee-management').constant('Build', build);
       angular.module('gravitee-portal').constant('Build', build);
       return $http.get(`${ConstantsJSON.baseURL}portal`);
@@ -48,6 +52,11 @@ function fetchData() {
       let constants = _.merge(response.data, ConstantsJSON);
       angular.module('gravitee-management').constant('Constants', constants);
       angular.module('gravitee-portal').constant('Constants', constants);
+
+
+      angular.module('gravitee-management').constant('ConstantsGr1d', ConstantsGr1dJSON);
+      angular.module('gravitee-portal').constant('ConstantsGr1d', ConstantsGr1dJSON);
+
 
       if (constants.theme.css) {
         const link = document.createElement("link");

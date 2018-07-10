@@ -25,6 +25,7 @@ export class HomeController {
                 private $state,
                 private resolvedHomepage,
                 private Constants,
+                private ConstantsGr1d,
                 private ApiService: ApiService) {
     'ngInject';
     this.apis = resolvedApis;
@@ -52,7 +53,7 @@ export class HomeController {
   }
 
   getLogo() {
-    return this.Constants.theme.logo;
+    return this.ConstantsGr1d.theme.logoSmall;
   }
 
   goToApi(api) {

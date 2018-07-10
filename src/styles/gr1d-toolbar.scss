@@ -1,0 +1,11 @@
+md-toolbar.topnavbar {
+    background: $color-white !important;
+    height: 80px;
+    max-height: 80px;
+    box-shadow: 0 2px 4px 0 rgba(189, 189, 189, 0.56);
+}
+
+.topnavbar-brand a {
+    color: $color-black;
+    font-size: 18px;   
+}

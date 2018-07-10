@@ -126,6 +126,9 @@ module.exports = {
       {
         from: './constants.json',
         to: ''
+      },{
+        from: './constants.gr1d.json',
+        to: ''
       }, {
         from: './build.json',
         to: ''

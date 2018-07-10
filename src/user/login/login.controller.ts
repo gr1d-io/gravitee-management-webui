@@ -34,6 +34,7 @@ class LoginController {
     private UserService: UserService,
     private $state: ng.ui.IStateService,
     Constants,
+    ConstantsGr1d,
     private $rootScope: IScope,
     private AuthenticationService: AuthenticationService
   ) {
@@ -43,7 +44,7 @@ class LoginController {
     this.$state = $state;
     this.$rootScope = $rootScope;
     this.providers = AuthenticationService.getProviders();
-    this.logoTheme = Constants.theme.logoSmall
+    this.logoTheme = ConstantsGr1d.theme.logoSmall
   }
 
   authenticate(provider: string) {
