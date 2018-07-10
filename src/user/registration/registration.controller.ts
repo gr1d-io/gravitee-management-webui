@@ -13,9 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 class RegistrationController {
-  constructor(UserService, $scope, NotificationService) {
+
+  constructor(UserService, $scope, NotificationService, Constants) {
     'ngInject';
+
+    $scope.logoTheme = Constants.theme.logoSmall;
 
     $scope.register = function () {
       UserService.register($scope.user).then(function () {

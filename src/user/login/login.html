@@ -15,39 +15,43 @@
     limitations under the License.
 
 -->
+
 <md-content class="gravitee-no-sidenav-container" flex>
+    <div class="login-page--gr1d-logo">
+        <img ng-src="{{$ctrl.logoTheme}}" alt="logo"/>
+    </div>
     <div class="login-page">
       <div class="form">
 
         <div class="gravitee-no-sidenav-header" layout="column">
-          <label>Log In</label>
+          <h1>Log in to your account</h1>
         </div>
 
         <form name="formUser" ng-submit="$ctrl.login()" layout="column" ng-if="!$ctrl.localLoginDisabled">
 
           <div layout="row">
-            <ng-md-icon icon="person" style="fill: #555"></ng-md-icon>
             <md-input-container class="md-icon-float md-block" flex>
-              <label>Username</label>
+              <label>Email address</label>
               <input ng-model="$ctrl.user.username" type="text" required autofocus>
             </md-input-container>
           </div>
 
           <div layout="row">
-            <ng-md-icon icon="vpn_key" style="fill: #555"></ng-md-icon>
             <md-input-container class="md-icon-float md-block" flex>
               <label>Password</label>
               <input ng-model="$ctrl.user.password" type="password" required>
             </md-input-container>
           </div>
 
-          <md-button type="submit" class="md-raised md-primary"
-                     ng-disabled="formUser.$invalid || formUser.$pristine">Log in</md-button>
+          <md-button type="submit" class="md-raised md-primary" ng-disabled="formUser.$invalid || formUser.$pristine">
+                     <i class="material-icons">person_outline</i>
+                     <span>Log in</span>
+          </md-button>
 
+          <h4 class="text-center login-page--forgot-pass-link"><a href="#">Forgot your password?</a></h4>
 
-          <br>
-          <p class="text-center text-muted" ng-if="$ctrl.userCreationEnabled" >
-            <small>Don't have an account yet? <a ui-sref="registration">Sign up</a></small>
+          <p class="text-muted" ng-if="$ctrl.userCreationEnabled" >
+            <h3 class="text-center">Don't have an account yet? <a ui-sref="registration">SIGN UP</a></h3>
           </p>
 
           <div ng-if="$ctrl.providers.length > 0">
@@ -63,5 +67,11 @@
         </button>
       </div>
     </div>
+
+    <div class="login-page--footer text-center">
+        <p class="login-page--terms-link"><a href="#">Terms of Service</a> • <a href="#">Privacy</a></p>
+        <p class="login-page--copyright">© GR1D, Inc 2018. All rights reserved.</p>
+    </div>
+
 </md-content>
 

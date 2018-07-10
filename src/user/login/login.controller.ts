@@ -22,6 +22,7 @@ class LoginController {
   user: any = {};
   userCreationEnabled: boolean;
   localLoginDisabled: boolean;
+  logoTheme: string;
 
   private providers: {
     id: string;
@@ -42,6 +43,7 @@ class LoginController {
     this.$state = $state;
     this.$rootScope = $rootScope;
     this.providers = AuthenticationService.getProviders();
+    this.logoTheme = Constants.theme.logoSmall
   }
 
   authenticate(provider: string) {
@@ -66,6 +68,7 @@ class LoginController {
       this.user.password = '';
     });
   }
+
 }
 
 export default LoginController;
