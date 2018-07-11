@@ -33,6 +33,8 @@ $global-gutter: 16px;
 $global-gutter-min: 8px;
 $topbar-height: 80px;
 
+$global-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+
 
 
 body, h1, h2, div, span, h1 span, p, button, input, .layout-align-center-center > *, md-content, .main-content, b, md-input-container .md-input, md-autocomplete input:not(.md-input) {
@@ -51,6 +53,24 @@ md-autocomplete input:not(.md-input) {
     font-size: 18px;
 }
 
+md-autocomplete-parent-scope ng-md-icon {
+    fill: $color-grey-dark !important;
+}
+
+input.form-control {
+    border-radius: 0px;
+}
+
+.gravitee-api-card {
+    box-shadow: $global-shadow;
+}
+
+// Footer 
+
+#footer, #footer div.footer-brand {
+    min-height: 40px;
+}
+
 // Home
 .home-title {
     position: relative;
@@ -67,6 +87,12 @@ md-autocomplete input:not(.md-input) {
 
 .tall {
     background: $color-grey !important;
+    h2.section-title {
+        color: $color-black;
+        font-family: $font-family-1;
+        text-align: left;
+        font-weight: bold;
+    }
 }
 
 .home--gr1d-logo {
@@ -76,6 +102,14 @@ md-autocomplete input:not(.md-input) {
         max-width: 267px;
     }
 }
+
+
+// Page Api
+
+#header, #main-content {
+    padding-top: $topbar-height !important;
+}
+
 
 // Login / Signup
 @import 'login';
@@ -114,10 +148,6 @@ md-autocomplete input:not(.md-input) {
 
 .apis-sidenav ul li.active, .api-nav ul li.active a, .api-nav ul li.header-button button.oui-button.thin-button, .doc-sidenav ul li.active {
     border-color: $color-purple;
-}
-
-ng-md-icon {
-    fill: $color-white !important;
 }
 
 .gravitee-api-card {

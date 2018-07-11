@@ -2,11 +2,21 @@
     background: $color-purple;
     color: $color-white;
     padding: $global-gutter / 2 $global-gutter-min*3;
+    &.md-button.md-raised {
+        background: $color-purple;
+        color: $color-white;
+    }
 }
 
 .md-button {
     font-size: 18px;
     img {
         margin-right: $global-gutter / 2;
+    }
+}
+
+.md-primary {
+    ng-md-icon {
+        fill: $color-white !important;
     }
 }
