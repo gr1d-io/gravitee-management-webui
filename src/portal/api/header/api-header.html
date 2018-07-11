@@ -19,20 +19,31 @@
 
   <div layout="column" flex="65">
     <div layout="row" layout-align="start center">
-      <img height="60" ng-src="{{$ctrl.api.picture_url}}" alt="api-logo" />
-      <div layout="column">
-        <span class="api-title" ui-sref="portal.api.detail({apiId: $ctrl.api.id})">{{::$ctrl.api.name}}</span>
-
-        <a permission permission-only="'api-rating-r'" ui-sref="portal.api.rating({apiId: $ctrl.api.id})">
-          <gv-star-rating ng-if="$ctrl.ratingEnabled" class="api-rating" summary="$ctrl.apiRatingSummary"
-                          message="'api.rating.rate' | translate:{numberOfRatings: $ctrl.apiRatingSummary.numberOfRatings}"
-                          display-none-message="true"></gv-star-rating>
-        </a>
-        <gv-star-rating permission permission-except="'api-rating-r'"
-                        ng-if="$ctrl.ratingEnabled" class="api-rating" summary="$ctrl.apiRatingSummary"
-                        message="'api.rating.rate' | translate:{numberOfRatings: $ctrl.apiRatingSummary.numberOfRatings}"
-                        display-none-message="true"></gv-star-rating>
+      <div layout="row" flex="50">
+        <img height="60" ng-src="{{$ctrl.api.picture_url}}" alt="api-logo" />
+        <div layout="column">
+          <span class="api-title" ui-sref="portal.api.detail({apiId: $ctrl.api.id})">{{::$ctrl.api.name}}</span>
+          <span class="api-version">{{'api.version' | translate}}: {{::$ctrl.api.version}}</span>
+          <a permission permission-only="'api-rating-r'" ui-sref="portal.api.rating({apiId: $ctrl.api.id})">
+            <gv-star-rating ng-if="$ctrl.ratingEnabled" class="api-rating" summary="$ctrl.apiRatingSummary" message="'api.rating.rate' | translate:{numberOfRatings: $ctrl.apiRatingSummary.numberOfRatings}"
+              display-none-message="true"></gv-star-rating>
+          </a>
+          <gv-star-rating permission permission-except="'api-rating-r'" ng-if="$ctrl.ratingEnabled" class="api-rating" summary="$ctrl.apiRatingSummary"
+            message="'api.rating.rate' | translate:{numberOfRatings: $ctrl.apiRatingSummary.numberOfRatings}" display-none-message="true"></gv-star-rating>
+        </div>
+        
       </div>
+      <div layout="row" flex="50">
+          <ul class="api-buttons">
+              <li>
+                  <button class="md-button button-primary" ui-sref="portal.api.detail({apiId: $ctrl.api.id, '#': 'plans'})">{{'api.plan.activateApi' | translate}}</button>
+              </li>
+              <li>
+                  <a class="md-button button-primary button-outline" ref="#">{{'api.plan.sandboxTest' | translate}}</a>
+              </li>
+          </ul>
+      </div>
+
     </div>
 
     <div layout="row" style="margin-top: 18px;" ng-if="$ctrl.completeHeader()">
@@ -40,8 +51,7 @@
         <span class="api-description">{{::$ctrl.api.description}}</span>
       </div>
 
-      <div class="api-description" layout="column" layout-align="start start" flex="30">
-        <span>{{'api.version' | translate}}: {{::$ctrl.api.version}}</span>
+      <div class="api-description api-details" layout="column" layout-align="start start" flex="30">
         <span ng-if="$ctrl.api.context_path">{{'api.endpoint' | translate}}: {{::$ctrl.getEndpoint()}}</span>
         <span>{{'api.owner' | translate}}: {{$ctrl.api.owner.displayName}}</span>
         <span ng-if="$ctrl.api.deployed_at">{{'api.publishedAt' | translate}}: {{::$ctrl.api.deployed_at | humanDateFilter}}</span>
@@ -53,8 +63,9 @@
 </section>
 
 <div class="api-nav">
-  <div class="container">
-    <ul>
+  <div layout="row" layout-align="center center">
+  <div layout="row" flex="65">
+    <ul class="api-pages">
       <li ui-sref-active="active">
         <a ui-sref="portal.api.detail({apiId: $ctrl.api.id})">Overview</a>
       </li>
@@ -64,9 +75,7 @@
       <li ui-sref-active="active" ng-if="$ctrl.supportEnabled">
         <a ui-sref="portal.api.support({apiId: $ctrl.api.id})">{{'menu.support' | translate}}</a>
       </li>
-      <li class="header-button">
-        <button class="oui-button inverted progressive thin-button" ui-sref="portal.api.detail({apiId: $ctrl.api.id, '#': 'plans'})">{{'api.plan.subscribe' | translate}}</button>
-      </li>
     </ul>
   </div>
+</div>
 </div>

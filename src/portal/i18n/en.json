@@ -99,6 +99,8 @@
     "plan": {
       "title": "Plans",
       "subscribe": "Subscribe",
+      "activateApi": "Activate API",
+      "sandboxTest" : "Sandbox Test",
       "manual": "Subscription subject to validation",
       "empty": {
         "title": "No plan for this API",

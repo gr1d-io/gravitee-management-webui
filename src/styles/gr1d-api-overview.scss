@@ -1,0 +1,86 @@
+// Page Api Overview
+
+
+#header {
+    .api-title {
+        font-size: 42px;
+        padding-left: 24px;
+    }
+    .api-version {
+        font-size: 22px;
+        padding-left: 24px;
+        color: $color-brownish-grey;
+    }
+    .api-description {
+        font-size: 22px;
+        color: $color-brownish-grey;
+        &.api-details {
+            font-size: 16px;
+        }
+    }
+}
+
+.api-nav {
+    background: $color-white;
+    ul li {
+        &.active {
+            a {
+                color: $color-purple;
+            }
+        }
+        a {
+            color: $color-black;
+            font-size: 18px;
+        }
+    } 
+}
+
+#description {
+    background: $color-grey;
+}
+
+api-pages {
+    md-content {
+        background: $color-grey;
+        &.layout-margin {
+            margin: 0px;
+        }
+    }
+    .doc-sidenav ul {
+        display: none;
+    }
+}
+
+.api-buttons {
+    padding: 0;
+    li {
+        display: inline;
+    }
+}
+
+.api-pages {
+    padding: 0;
+    margin: 0;
+}
+
+#plans {
+    background: $color-greyish-brown !important;
+    .section-title {
+        color: $color-white;
+        margin: 0;
+    }
+    .pricing-list {
+        margin: 0px;
+        .gravitee-card {
+            h2 {
+                font-family: $font-family-1;
+                font-size: 22px;
+                font-weight: bold;
+            }
+            .pricing-description {
+                color: $color-brownish-grey;
+                font-size: 16px;
+            }
+        }
+    }
+}

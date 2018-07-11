@@ -10,6 +10,11 @@
         background: $color-purple;
         color: $color-white;
     }
+    &.button-outline {
+        background: $color-white;
+        color: $color-purple;
+        border: 2px solid $color-purple;
+    }
 }
 
 .md-button {
