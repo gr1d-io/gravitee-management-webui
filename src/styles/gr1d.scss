@@ -72,6 +72,11 @@ input.form-control {
 
 .gravitee-api-card {
     box-shadow: $global-shadow;
+    .api-infos {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        height: 50px;
+    }
 }
 
 // Footer 

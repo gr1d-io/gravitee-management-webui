@@ -15,7 +15,7 @@
     limitations under the License.
 
 -->
-<div ng-if="$ctrl.plans && !$ctrl.plans.length" style="padding-top: 100px;">
+<div class="api-no-plans" ng-if="$ctrl.plans && !$ctrl.plans.length" style="padding-top: 100px;">
   <gravitee-empty-state icon="insert_drive_file"
       message="{{'api.plan.empty.title' | translate}}" sub-message="{{'api.plan.empty.message' | translate}}">
   </gravitee-empty-state>

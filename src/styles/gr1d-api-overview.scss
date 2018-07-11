@@ -5,6 +5,10 @@
     .api-title {
         font-size: 42px;
         padding-left: 24px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 480px;
     }
     .api-version {
         font-size: 22px;
@@ -20,6 +24,11 @@
     }
 }
 
+.api-no-plans {
+    background: $color-grey;
+    padding-bottom: 100px;
+}
+
 .api-nav {
     background: $color-white;
     ul li {
@@ -31,6 +40,7 @@
         a {
             color: $color-black;
             font-size: 18px;
+            font-weight: bold;
         }
     } 
 }
@@ -76,10 +86,32 @@ api-pages {
                 font-family: $font-family-1;
                 font-size: 22px;
                 font-weight: bold;
+                padding-bottom: 0px;
             }
             .pricing-description {
                 color: $color-brownish-grey;
                 font-size: 16px;
+            }
+        }
+        .pricing-header {
+            padding: 0px;
+        }
+    }
+}
+
+.api-overview-detail {
+    .selling-point {
+        margin-right: $global-gutter;
+        img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: $global-gutter;
+        }
+        p {
+            font-size: 22px;
+            color: $color-brownish-grey;
+            strong {
+                color:  $color-black;
             }
         }
     }
