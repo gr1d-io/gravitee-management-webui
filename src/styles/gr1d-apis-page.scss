@@ -1,0 +1,78 @@
+.apis-sidenav {
+  background-color: $color-pale-grey-two;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12);
+  margin-left: 0;
+
+  ul {
+      padding-left: 70px;
+      margin-top: 25px;
+  }
+
+  .sidenav_item {
+      width: 210px;
+      background-color: white;
+
+      span {
+        font-size: 22px !important;
+        font-weight: 500 !important;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;;
+      }
+  }
+}
+
+
+.apis-content {
+  margin-top: 30px;
+
+  .apis-filter {
+    margin: 4px 15px 6px 0;
+    padding: 25px 15px;
+    border: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12);
+    font-size: 18px;
+  }
+
+  .api-gallery {
+
+    md-table-container {
+      margin-top: 25px;
+
+      table {
+        border: 0;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+
+        td.md-cell {
+          border-top: 2px $color-grey solid;
+        }
+
+        tr:first-child > td.md-cell {
+          border-top: 0;
+        }
+
+        tr:hover td {
+          background: $color-grey;
+        }
+      }
+
+      table tr.even, table tr.alt, table tr:nth-of-type(even) {
+        background: transparent;
+      }
+
+
+
+      td {
+        font-size: 16px;
+    
+        &.api-name {
+          font-size: 18px;
+          font-weight: 700;
+        }
+      }
+    }
+
+  }
+  
+
+}
