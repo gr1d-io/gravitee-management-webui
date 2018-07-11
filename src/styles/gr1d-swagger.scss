@@ -1,0 +1,69 @@
+
+// Swagger
+
+#swagger-container .swagger-ui{
+    .info {
+        .title, p, a {
+            font-family: $font-family-1;
+        }
+    }
+    select,
+    .tab li, 
+    .opblock .opblock-section-header h4, 
+    .opblock-description-wrapper p, 
+    .opblock .opblock-summary-method, 
+    .parameter__name, 
+    table thead tr th,
+    table thead tr td,
+    .response-col_status,
+    .model-title {
+        font-family: $font-family-1;
+    }
+}
+
+#swagger-container .swagger-ui .opblock.opblock-get {
+    border-color: $color-water-blue;
+    background: $color-duck-egg-blue;
+    .opblock-summary {
+        border-color: $color-water-blue;
+    }
+    .opblock-summary-method {
+        background: $color-water-blue;
+    }
+}
+
+#swagger-container .swagger-ui .opblock.opblock-post {
+    border-color: $color-purpleish-blue;
+    background: $color-pale-lavender;
+
+    .opblock-summary {
+        border-color: $color-purpleish-blue;
+    }
+    .opblock-summary-method {
+        background: $color-purpleish-blue;
+    }
+}
+
+#swagger-container .swagger-ui .opblock.opblock-put {
+    border-color: $color-golden;
+    background: $color-off-white;
+
+    .opblock-summary {
+        border-color: $color-golden;
+    }
+    .opblock-summary-method {
+        background: $color-golden;
+    }
+}
+
+#swagger-container .swagger-ui .opblock.opblock-delete {
+    border-color: $color-tomato;
+    background: $color-very-light-pink;
+
+    .opblock-summary {
+        border-color: $color-tomato;
+    }
+    .opblock-summary-method {
+        background: $color-tomato;
+    }
+}

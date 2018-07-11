@@ -27,9 +27,16 @@ $color-white-62: rgba(255, 255, 255, 0.62);
 $color-purpleish-blue: #784af7;
 
 $color-purpleish-blue: #784af7; //POST
+$color-pale-lavender: #f1ecfe;
+
 $color-water-blue: #12a3de; // GET
+$color-duck-egg-blue: #e7f5fb;
+
 $color-golden: #e4b301; // PUT
+$color-off-white: #fcf7e5;
+
 $color-tomato: #e14e1a; // DELETE
+$color-very-light-pink: #fcede8;
 
 $global-gutter: 16px;
 $global-gutter-min: 8px;
@@ -232,67 +239,6 @@ gv-submenu {
     }
 }
 
-// Swagger
-
-#swagger-container .swagger-ui{
-    .info {
-        .title, p, a {
-            font-family: $font-family-1;
-        }
-    }
-    select,
-    .tab li, 
-    .opblock .opblock-section-header h4, 
-    .opblock-description-wrapper p, 
-    .opblock .opblock-summary-method, 
-    .parameter__name, 
-    table thead tr th,
-    table thead tr td,
-    .response-col_status,
-    .model-title {
-        font-family: $font-family-1;
-    }
-}
-
-#swagger-container .swagger-ui .opblock.opblock-get {
-    border-color: $color-water-blue;
-    .opblock-summary {
-        border-color: $color-water-blue;
-    }
-    .opblock-summary-method {
-        background: $color-water-blue;
-    }
-}
-
-#swagger-container .swagger-ui .opblock.opblock-post {
-    border-color: $color-purpleish-blue;
-    .opblock-summary {
-        border-color: $color-purpleish-blue;
-    }
-    .opblock-summary-method {
-        background: $color-purpleish-blue;
-    }
-}
-
-#swagger-container .swagger-ui .opblock.opblock-put {
-    border-color: $color-golden;
-    .opblock-summary {
-        border-color: $color-golden;
-    }
-    .opblock-summary-method {
-        background: $color-golden;
-    }
-}
-
-#swagger-container .swagger-ui .opblock.opblock-delete {
-    border-color: $color-tomato;
-    .opblock-summary {
-        border-color: $color-tomato;
-    }
-    .opblock-summary-method {
-        background: $color-tomato;
-    }
-}
 
 .custom-icon {
     margin-right: 10px;
