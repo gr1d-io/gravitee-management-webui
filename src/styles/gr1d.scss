@@ -78,6 +78,7 @@ input.form-control {
     }
     .autocomplete {
         position: relative;
+        margin-top: 40px !important;
         .autocomplete-icon {
             position: absolute;
             z-index: 1;
@@ -103,6 +104,7 @@ input.form-control {
 
 .tall {
     background: $color-grey !important;
+    padding: 60px 0px;
     h2.section-title {
         color: $color-black;
         font-family: $font-family-1;
