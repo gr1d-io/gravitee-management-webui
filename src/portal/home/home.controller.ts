@@ -20,6 +20,7 @@ export class HomeController {
   private apis: any[];
   private homepage: any;
   private ratingEnabled: boolean;
+  public icons: any;
 
   constructor ( private resolvedApis,
                 private $state,
@@ -32,6 +33,7 @@ export class HomeController {
     this.homepage = resolvedHomepage;
     this.$state = $state;
     this.ratingEnabled = ApiService.isRatingEnabled();
+    this.icons = ConstantsGr1d.theme.icons;
   }
 
   querySearch(query) {

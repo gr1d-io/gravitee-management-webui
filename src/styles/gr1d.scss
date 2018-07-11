@@ -72,15 +72,31 @@ input.form-control {
 }
 
 // Home
+.home {
+    #header {
+        padding: $global-gutter * 4 0;
+    }
+    .autocomplete {
+        position: relative;
+        .autocomplete-icon {
+            position: absolute;
+            z-index: 1;
+            left: 26%;
+        }
+        md-autocomplete input {
+            margin-left: 38px;
+        }
+    }
+}
 .home-title {
     position: relative;
     &::after {
-        width: 140%;
+        width: 267px;
         height: 8px;
         background: $color-purple;
         position: absolute;
         content:"";
-        left: -20%;
+        left: -38px;
         top: 25px;
     }
 }
@@ -96,20 +112,35 @@ input.form-control {
 }
 
 .home--gr1d-logo {
-    margin: 8% auto 30px auto;
+    margin: 0px auto;
     text-align: center;
     img {
         max-width: 267px;
     }
 }
 
+.gravitee-api-card {
+    md-card-title-text .md-headline{
+        font-weight: bold;
+    }
+    
+    .api-infos {
+        font-size: 16px;
+        small {
+            font-size: 16px;
+        }
+    }
+}
 
 // Page Api
 
-#header, #main-content {
+#main-content {
     padding-top: $topbar-height !important;
 }
 
+#header {
+    padding-top: 30px;
+}
 
 // Login / Signup
 @import 'login';

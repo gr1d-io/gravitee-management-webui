@@ -23,7 +23,7 @@
     }
   },
   "home": {
-    "subtitle": "Developers portal",
+    "subtitle": "Developers Portal",
     "version": "Version: {{version}}",
     "pages": {
       "title": "Documentation"
