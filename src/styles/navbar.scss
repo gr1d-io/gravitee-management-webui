@@ -1,11 +1,25 @@
 md-toolbar.topnavbar {
-  max-height: 68px;
-  height: 68px;
-  min-height: 68px;
-}
+  max-height: auto;
+  height: auto;
+  min-height: auto;
+  padding: 0 60px;
 
-.navigation-header .md-button {
-  text-transform: none;
+  .topnavbar-brand {
+
+    .logo {
+      margin-right: 30px;
+
+      img {
+        max-width: 110px;
+      }
+    }
+  }
+
+  .md-button  {
+    margin: 0 8px;
+    text-transform: none;
+    padding: 10px 10px;
+  }
 }
 
 .gravitee-sidenav {
