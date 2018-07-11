@@ -28,7 +28,8 @@
         </li>
       </ul>
     </div>
-    <div flex="85" layout="column">
+  
+    <div flex="85" layout="column" class="apis-content">
       <div layout="row" layout-align="center center">
         <h5 class="gravitee-view-description" ng-if="apisCtrl.view && apisCtrl.view.description && !apisCtrl.hideApis">
           {{apisCtrl.view.description}}
@@ -85,7 +86,7 @@
               <tr style="height: 80px;" md-row ng-click="apisCtrl.goToApi(api)"
                   ng-repeat="api in apisCtrl.apis | orderBy:'name' | filter:apisCtrl.apiFilter track by api.id">
                 <td md-cell><img height="40" ng-src="{{::api.picture_url}}"/></td>
-                <td md-cell>{{api.name}}</td>
+                <td md-cell class="api-name">{{api.name}}</td>
                 <td md-cell>{{api.version}}</td>
                 <td md-cell>{{api.description}}</td>
                 <td class="api-table-rating" md-cell ng-if="apisCtrl.ratingEnabled" width="20%">

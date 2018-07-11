@@ -3,6 +3,7 @@ md-toolbar.topnavbar {
   height: auto;
   min-height: auto;
   padding: 0 60px;
+  box-shadow: 0 2px 4px 0 rgba(189, 189, 189, 0.56);
 
   .topnavbar-brand {
 
@@ -20,10 +21,17 @@ md-toolbar.topnavbar {
     margin: 0 8px;
     text-transform: none;
     padding: 20px 10px;
+    border-bottom: 4px solid transparent;
 
     &:not([disabled]):hover {
       color: $color-black;
     }
+  }
+
+  .md-button.md-default-theme:not([disabled]).md-focused, .md-button:not([disabled]).md-focused, .md-button.md-default-theme:not([disabled]):hover, .md-button:not([disabled]):hover {
+    background-color: transparent;
+    border-bottom: 4px solid $color-purple;
+    border-radius: 0;
   }
 }
 
