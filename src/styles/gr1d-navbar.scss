@@ -1,13 +1,14 @@
 md-toolbar.topnavbar {
-  max-height: auto;
+  max-height: none;
   height: auto;
   min-height: auto;
   padding: 0 60px;
 
   .topnavbar-brand {
 
-    .logo {
-      margin-right: 30px;
+    .topnavbar-logo {
+      margin-left: $global-gutter;
+      margin-right: $global-gutter;
 
       img {
         max-width: 110px;
@@ -18,10 +19,18 @@ md-toolbar.topnavbar {
   .md-button  {
     margin: 0 8px;
     text-transform: none;
-    padding: 10px 10px;
+    padding: 20px 10px;
+
+    &:not([disabled]):hover {
+      color: $color-black;
+    }
   }
 }
 
 .gravitee-sidenav {
   padding-top: 66px;
+}
+
+portal-notifications {
+  display: none;
 }
