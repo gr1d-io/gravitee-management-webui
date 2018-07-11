@@ -7,6 +7,9 @@ md-toolbar.topnavbar {
         margin-left: $global-gutter;
         margin-right: $global-gutter;
     }
+    .md-button:not([disabled]):hover {
+        color: $color-black;
+    }
 }
 
 .topnavbar-brand a {

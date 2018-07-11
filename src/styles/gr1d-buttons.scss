@@ -6,6 +6,10 @@
         background: $color-purple;
         color: $color-white;
     }
+    &.md-button:not([disabled]):hover, &:hover {
+        background: $color-purple;
+        color: $color-white;
+    }
 }
 
 .md-button {

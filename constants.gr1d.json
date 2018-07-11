@@ -5,7 +5,9 @@
       "logoBlack": "themes/assets/gr1d_logo_black.svg",
       "icons": {
         "login": "themes/assets/icon-login.svg",
-        "signUp": "themes/assets/icon-sign-up.svg"
+        "signUp": "themes/assets/icon-sign-up.svg",
+        "api": "themes/assets/icon-api.svg",
+        "tutorial": "themes/assets/icon-tutorial.svg"
       }
     }
   }

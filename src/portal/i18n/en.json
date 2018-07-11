@@ -44,7 +44,8 @@
     "apis": "APIs",
     "tasks": "Tasks",
     "logout": "Sign out",
-    "support": "Support"
+    "support": "Support",
+    "tutorial": "Tutorial"
   },
   "apis": {
     "filter": "Filter APIs..."

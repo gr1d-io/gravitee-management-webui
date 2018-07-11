@@ -20,8 +20,8 @@
     <a ui-sref="portal.home">
       <img class="topnavbar-logo" ng-src="{{$ctrl.getLogo()}}" alt="logo"/>
     </a>
-    <md-button class="gv-navbar-link" ui-sref-active="menu-active" ui-sref="portal.apis">{{'menu.gallery' | translate}}</md-button>
-    <md-button class="gv-navbar-link" ui-sref-active="menu-active" ui-sref="portal.pages">{{'menu.documentation' | translate}}</md-button>
+    <md-button class="gv-navbar-link" ui-sref-active="menu-active" ui-sref="portal.apis"><img ng-src="{{$ctrl.icons.api}}"> {{'menu.apis' | translate}}</md-button>
+    <md-button class="gv-navbar-link" ui-sref-active="menu-active" ui-sref="portal.pages"><img ng-src="{{$ctrl.icons.tutorial}}"> {{'menu.tutorial' | translate}}</md-button>
     <md-button ng-if="$ctrl.supportEnabled" class="gv-navbar-link" ui-sref-active="menu-active" ui-sref="support">{{'menu.support' | translate}}</md-button>
   </div>
   <span flex></span>
