@@ -27,6 +27,7 @@ export const NavbarComponent: ng.IComponentOptions = {
     UserNotificationService: UserNotificationService,
     $scope: IScope,
     Constants,
+    ConstantsGr1d,
     $rootScope: IScope,
     $state: ng.ui.IStateService,
     $transitions,
@@ -42,6 +43,7 @@ export const NavbarComponent: ng.IComponentOptions = {
     vm.visible = true;
     vm.providers = AuthenticationService.getProviders();
     vm.localLoginDisabled = (!Constants.authentication.localLogin.enabled) || false;
+    vm.icons = ConstantsGr1d.theme.icons;
 
     $scope.$on('graviteeUserRefresh', function () {
       UserService.current().then(function (user) {
@@ -90,7 +92,7 @@ export const NavbarComponent: ng.IComponentOptions = {
     };
 
     vm.getLogo = function() {
-      return Constants.theme.logo;
+      return ConstantsGr1d.theme.logoBlack;
     };
 
     vm.getUserPicture = function() {

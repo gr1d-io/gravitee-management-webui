@@ -1,7 +1,12 @@
 {
     "baseSandboxURL": "http://localhost:8005/management/",
     "theme": {
-      "logoSmall": "themes/assets/gr1d_logo_white_small.png"
+      "logoSmall": "themes/assets/gr1d_logo_white_small.png",
+      "logoBlack": "themes/assets/gr1d_logo_black.svg",
+      "icons": {
+        "login": "themes/assets/icon-login.svg",
+        "signUp": "themes/assets/icon-sign-up.svg"
+      }
     }
   }
   

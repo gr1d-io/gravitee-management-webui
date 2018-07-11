@@ -1,0 +1,12 @@
+.button-primary {
+    background: $color-purple;
+    color: $color-white;
+    padding: $global-gutter / 2 $global-gutter-min*3;
+}
+
+.md-button {
+    font-size: 18px;
+    img {
+        margin-right: $global-gutter / 2;
+    }
+}

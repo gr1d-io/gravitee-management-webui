@@ -1,0 +1,22 @@
+md-toolbar.topnavbar {
+    background: $color-white !important;
+    height: $topbar-height;
+    max-height: $topbar-height;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.24);
+    .topnavbar-logo {
+        margin-left: $global-gutter;
+        margin-right: $global-gutter;
+    }
+}
+
+.topnavbar-brand a {
+    color: $color-black;
+    font-size: 18px;
+    img {
+        max-width: 115px;
+    }   
+}
+
+portal-notifications {
+    display: none;
+}

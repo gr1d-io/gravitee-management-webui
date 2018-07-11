@@ -11,9 +11,11 @@ $color-anil: #00e5ff;
 $color-anil-light-hover: rgba(241, 253, 255, 0.48);
 
 $color-black: #212121;
+$color-dark-grey: #393b3b;
 $color-white: #fff;
 
 $color-pale-grey-two: #f5f5f8;
+$color-grey: #eee;
 
 $color-violet-blue: #3d0dc7;
 $color-white-90: rgba(255, 255, 255, 0.9);
@@ -27,6 +29,10 @@ $color-water-blue: #12a3de; // GET
 $color-golden: #e4b301; // PUT
 $color-tomato: #e14e1a; // DELETE
 
+$global-gutter: 16px;
+$global-gutter-min: 8px;
+$topbar-height: 80px;
+
 
 
 body, h1, h2, div, span, h1 span, p, button, input, .layout-align-center-center > *, md-content, .main-content, b, md-input-container .md-input, md-autocomplete input:not(.md-input) {
@@ -35,6 +41,40 @@ body, h1, h2, div, span, h1 span, p, button, input, .layout-align-center-center 
 
 a {
     color: $color-purple;
+}
+
+md-autocomplete {
+    border-radius: 0px;
+}
+
+md-autocomplete input:not(.md-input) {
+    font-size: 18px;
+}
+
+// Home
+.home-title {
+    position: relative;
+    &::after {
+        width: 140%;
+        height: 8px;
+        background: $color-purple;
+        position: absolute;
+        content:"";
+        left: -20%;
+        top: 25px;
+    }
+}
+
+.tall {
+    background: $color-grey !important;
+}
+
+.home--gr1d-logo {
+    margin: 8% auto 30px auto;
+    text-align: center;
+    img {
+        max-width: 267px;
+    }
 }
 
 // Login / Signup
@@ -120,6 +160,17 @@ gv-submenu {
         display: none;
     }
 }
+
+.gravitee-sidenav, .gv-main-container {
+    padding-top: $topbar-height;
+}
+
+.sidenav-footer {
+    .sidenav-toggle {
+        display: none;
+    }
+}
+
 // Swagger
 
 #swagger-container .swagger-ui{
