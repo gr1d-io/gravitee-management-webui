@@ -95,6 +95,10 @@ export const NavbarComponent: ng.IComponentOptions = {
       return ConstantsGr1d.theme.logoBlack;
     };
 
+    vm.getIcons = function() {
+      return ConstantsGr1d.theme.icons;
+    }
+
     vm.getUserPicture = function() {
       return UserService.currentUserPicture();
     };

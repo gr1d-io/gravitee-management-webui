@@ -146,10 +146,6 @@ input.form-control {
     padding-top: 30px;
 }
 
-// Login / Signup
-@import 'login';
-
-
 .gravitee-splash-screen {
     background: $color-violet-blue;
 }
@@ -296,4 +292,8 @@ gv-submenu {
     .opblock-summary-method {
         background: $color-tomato;
     }
+}
+
+.custom-icon {
+    margin-right: 10px;
 }
