@@ -70,6 +70,11 @@
         "clientIdRequired": "A clientId is required to subscribe to this plan. Please check your application's configuration.",
         "action": "Subscribe"
       },
+      "step2CreateApplication" : {
+        "title" : "Create an application",
+        "subtitle": "The application is the link between you, the consumer and the activation of an API plan. Create your first app then refresh this screen.",
+        "action": "Manage Apps"
+      },
       "step3": {
         "apikey": {
           "key": "You can access the API using the following API Key:",
@@ -91,7 +96,10 @@
         "accepted": {
           "title": "Let's start to use \"{{apiName}}\" with \"{{applicationName}}\"!"
         },
-        "successful": "Subscription request has been submitted."
+        "successful": "Subscription request has been submitted.",
+        "registerCreditCard": {
+          "title": "Validate your payment method"
+        }
       },
 
       "planInformation": "with a quota of {{quotaLimit}} requests per {{quotaPeriodTime}} {{quotaPeriodTimeUnit}}"

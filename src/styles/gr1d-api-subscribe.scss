@@ -1,8 +1,59 @@
-.subscription-step {
-       
+
+.sw-theme-circles {
+    padding: 0;
 }
 
-.sw-theme-circles > ul.step-anchor > li > a {
-    border-radius: 0px;
-    background: $color-purple;
+.subscription-step {
+    border: none;
+    box-shadow: $global-shadow;
+    padding: 0;
+    h1 {
+        font-size: 22px;
+        color: $color-black;
+        font-weight: bold;
+        margin: 0 0.67em 0 0;
+    }
+    .sw-theme-circles > ul.step-anchor {
+        width: 100%;
+        height: 100%;
+        top: 0%;
+        transform: translate(0, 0%);
+    
+        li {
+            width: 100%;
+            height: 100%;
+            background: $color-white-2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &.done {
+                background: $color-purple;
+                a {
+                    background: $color-purple;
+                    color: $color-white;
+                }
+            }
+            a {
+                width: initial;
+                height: initial;
+                border-radius: 0px;
+                background: $color-white-2;
+                border: 0px;
+                box-shadow: none !important;
+                font-size: 56px;
+                color: $color-black;
+            }
+        }
+    }
+}
+
+.api-subscribe-instructions {
+    padding: $global-gutter;
+    &.layout-column.flex {
+       padding: $global-gutter; 
+    }
+}
+
+.button-manage-api {
+    width: 215px;
 }

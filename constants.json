@@ -8,5 +8,15 @@
     "icons": {
       "signUp": "themes/assets/icon-sign-up.svg"
     }
+  },
+  "authentication": {
+    "oauth2": {
+      "clientId": "gravitee",
+      "name": "Keycloak",
+      "color": "#0076b4",
+      "authorizationEndpoint": "http://localhost:9090/auth/realms/master/protocol/openid-connect/auth",
+      "userLogoutEndpoint": "http://localhost:9090/auth/realms/master/protocol/openid-connect/logout",
+      "scope": ["profile", "openid"]
+    }
   }
 }

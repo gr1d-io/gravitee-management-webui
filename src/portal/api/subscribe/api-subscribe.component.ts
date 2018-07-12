@@ -16,6 +16,8 @@
 import ApplicationService from "../../../services/applications.service";
 import ApiService from "../../../services/api.service";
 import NotificationService from "../../../services/notification.service";
+import {RegisterCreditCard} from "../../../entities/registerCreditCard";
+
 import * as _ from "lodash";
 
 const ApiSubscribeComponent: ng.IComponentOptions = {
@@ -38,6 +40,8 @@ const ApiSubscribeComponent: ng.IComponentOptions = {
     private apiKey: any;
     private subscription: any;
     private requestMessage: string;
+    private registerCreditCard: RegisterCreditCard
+    public icons: any;
 
     constructor(
       private $stateParams: ng.ui.IStateParamsService,
@@ -45,8 +49,13 @@ const ApiSubscribeComponent: ng.IComponentOptions = {
       private ApplicationService: ApplicationService,
       private ApiService: ApiService,
       private Constants,
+      private ConstantsGr1d,
       private $scope: ng.IScope) {
       'ngInject';
+
+      this.icons = ConstantsGr1d.theme.icons;
+
+
     }
 
     $onInit() {
@@ -129,6 +138,10 @@ const ApiSubscribeComponent: ng.IComponentOptions = {
     getOAuth2CurlSample() {
       return 'curl -X GET "' + this.Constants.portal.entrypoint + this.api.context_path +
         '" -H "Authorization: Bearer xxxx-xxxx-xxxx-xxxx"';
+    }
+
+    isCreditCardEnabled() {
+      return false;
     }
   }
 };
