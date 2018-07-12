@@ -28,10 +28,11 @@ md-toolbar.topnavbar {
     }
   }
 
+  .md-button.menu-active,
   .md-button.md-default-theme:not([disabled]).md-focused, .md-button:not([disabled]).md-focused, .md-button.md-default-theme:not([disabled]):hover, .md-button:not([disabled]):hover {
-    background-color: transparent;
-    border-bottom: 4px solid $color-purple;
-    border-radius: 0;
+    background-color: transparent !important;
+    border-bottom: 4px solid $color-purple !important;
+    border-radius: 0 !important;
   }
 }
 

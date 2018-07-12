@@ -28,16 +28,22 @@
 
   .apis-filter {
     margin: 4px 15px 6px 0;
-    padding: 25px 15px;
+    padding: 25px 15px 25px 55px;
     border: 0;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12);
     font-size: 18px;
+    margin-left: 14px;
+
+    background-image: url('/themes/assets/icon-search.svg');
+    background-repeat: no-repeat;
+    background-position: 19px 15px;
   }
 
   .api-gallery {
 
     md-table-container {
       margin-top: 25px;
+      padding: 0 8px 0 15px;
 
       table {
         border: 0;
