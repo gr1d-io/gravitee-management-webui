@@ -8,7 +8,8 @@
         "login": "themes/assets/icon-login.svg",
         "search": "themes/assets/icon-search.svg",
         "signUp": "themes/assets/icon-sign-up.svg",
-        "tutorial": "themes/assets/icon-tutorial.svg"
+        "tutorial": "themes/assets/icon-tutorial.svg",
+        "userLogged": "themes/assets/icon-user-logged.svg"
       }
     }
   }
