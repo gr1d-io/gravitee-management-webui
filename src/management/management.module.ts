@@ -399,6 +399,10 @@ import DeleteTopApiDialogController from '../management/configuration/top-apis/d
 import ApiProxyController from "./api/proxy/apiProxy.controller";
 import PortalSettingsComponent from "./configuration/portal/portal.component";
 
+// GR1D
+import Gr1dCreditCardsService from '../services/gr1d.creditCards.service';
+
+
 angular.module('gravitee-management', [uiRouter, permission, uiPermission, 'ngMaterial', 'ramlConsoleApp', 'ng-showdown',
   'ngMdIcons', 'ui.codemirror', 'md.data.table', 'ngCookies', 'dragularModule', 'readMore',
   'ngMessages', 'vAccordion', 'schemaForm', 'ngclipboard', 'ui.validate', 'angular-timeline',
@@ -543,6 +547,7 @@ angular.module('gravitee-management', [uiRouter, permission, uiPermission, 'ngMa
   .service('AuditService', AuditService)
   .service('ChartService', ChartService)
   .service('TopApiService', TopApiService)
+  .service('Gr1dCreditCardsService', Gr1dCreditCardsService)
   .directive('filecontent', () => DocumentationDirective)
   .directive('noDirtyCheck', () => new FormDirective())
   .directive('autofocus', () => new AutofocusDirective())

@@ -98,7 +98,14 @@
         },
         "successful": "Subscription request has been submitted.",
         "registerCreditCard": {
-          "title": "Validate your payment method"
+          "title": "Validate your payment method",
+          "form" : {
+            "cpfCnpj" : "CPF or CNPJ",
+            "cardName" : "Card name",
+            "cardNumber" : "Card number",
+            "cardExpirationDate" : "Expiration date",
+            "cardCvv" : "Cvv"
+          }
         }
       },
 

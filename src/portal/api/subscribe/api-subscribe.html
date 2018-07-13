@@ -119,7 +119,7 @@
     </section>
 
     <!-- Form credit card -->
-    <section layout="row" layout-padding class="subscription-step" flex ng-if="$ctrl.subscription && $ctrl.subscription.status === 'accepted' && !$ctrl.isCreditCardEnabled()">
+    <section layout="row" layout-padding class="subscription-step" flex ng-if="$ctrl.subscription && $ctrl.subscription.status === 'accepted' && !$ctrl.hasCreditCardsEnabled">
         <div class="sw-main sw-theme-circles" layout="row" layout-align="center start" flex="10">
           <ul class="nav nav-tabs step-anchor">
             <li class="danger">
@@ -127,17 +127,40 @@
             </li>
           </ul>
         </div>
-  
-        <div class="api-subscribe-instructions" layout="column" flex style="color: #424E5A;">
+
+        <div class="api-subscribe-instructions gr1d-form api-register-card" layout="column" flex style="color: #424E5A;">
           <h1 translate="api.subscription.step3.registerCreditCard.title"></h1>
           <md-input-container class="md-block">
-              <label>Optional message to the API Owner</label>
-              <input ng-model="$ctrl.requestMessage" md-maxlength="150" rows="2"></input>
+              <label>{{'api.subscription.step3.registerCreditCard.form.cpfCnpj' | translate}}</label>
+              <input ng-model="$ctrl.registerCreditCard.document" md-maxlength="150" required></input>
+              <div ng-messages="$ctrl.requestMessage.$error">
+                <div ng-message="required">This is required!</div>
+              </div>
           </md-input-container>
+          <md-input-container class="md-block">
+              <label>{{'api.subscription.step3.registerCreditCard.form.cardName' | translate}}</label>
+              <input ng-model="$ctrl.registerCreditCard.card_holder_name" md-maxlength="150" required></input>
+          </md-input-container>
+          <md-input-container class="md-block">
+            <label>{{'api.subscription.step3.registerCreditCard.form.cardNumber' | translate}}</label>
+            <input ng-model="$ctrl.registerCreditCard.card_number" md-maxlength="150" required></input>
+          </md-input-container>
+          <div layout="row">
+            <md-input-container class="md-block">
+              <label>{{'api.subscription.step3.registerCreditCard.form.cardExpirationDate' | translate}}</label>
+              <input type="date" ng-model="$ctrl.registerCreditCard.card_expiration_date" md-maxlength="7" required></input>
+            </md-input-container>
+            <md-input-container class="md-block">
+              <label>{{'api.subscription.step3.registerCreditCard.form.cardCvv' | translate}}</label>
+              <input type="number" ng-model="$ctrl.registerCreditCard.card_cvv" md-maxlength="3" required></input>
+            </md-input-container>
+            <button class="md-button button-primary" type="submit" ng-click="sendCreditCard($ctrl.registerCreditCard)">Send</button>
+          </div>
+
         </div>
       </section>
 
-    <section layout="row" layout-padding class="subscription-step" flex ng-if="$ctrl.subscription && $ctrl.subscription.status === 'accepted' && $ctrl.selectedPlan.security === 'api_key'  && $ctrl.isCreditCardEnabled()">
+    <section layout="row" layout-padding class="subscription-step" flex ng-if="$ctrl.subscription && $ctrl.subscription.status === 'accepted' && $ctrl.selectedPlan.security === 'api_key'  && $ctrl.hasCreditCardsEnabled">
       <div class="sw-main sw-theme-circles" layout="row" layout-align="center start" flex="10">
         <ul class="nav nav-tabs step-anchor">
           <li class="done">
@@ -177,7 +200,7 @@
       </div>
     </section>
 
-    <section layout="row" layout-padding class="subscription-step" flex ng-if="$ctrl.subscription && $ctrl.subscription.status === 'accepted' && $ctrl.selectedPlan.security === 'oauth2' && $ctrl.isCreditCardEnabled()">
+    <section layout="row" layout-padding class="subscription-step" flex ng-if="$ctrl.subscription && $ctrl.subscription.status === 'accepted' && $ctrl.selectedPlan.security === 'oauth2' && $ctrl.hasCreditCardsEnabled">
       <div class="sw-main sw-theme-circles" layout="row" layout-align="center start" flex="10">
         <ul class="nav nav-tabs step-anchor">
           <li class="done">
@@ -210,7 +233,7 @@
       </div>
     </section>
 
-    <section layout="row" layout-padding class="subscription-step" flex ng-if="$ctrl.subscription && $ctrl.subscription.status === 'accepted' && $ctrl.selectedPlan.security === 'jwt' && $ctrl.isCreditCardEnabled()">
+    <section layout="row" layout-padding class="subscription-step" flex ng-if="$ctrl.subscription && $ctrl.subscription.status === 'accepted' && $ctrl.selectedPlan.security === 'jwt' && $ctrl.hasCreditCardsEnabled">
       <div class="sw-main sw-theme-circles" layout="row" layout-align="center start" flex="10">
         <ul class="nav nav-tabs step-anchor">
           <li class="done">

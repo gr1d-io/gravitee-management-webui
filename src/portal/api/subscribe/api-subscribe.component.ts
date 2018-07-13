@@ -19,6 +19,7 @@ import NotificationService from "../../../services/notification.service";
 import {RegisterCreditCard} from "../../../entities/registerCreditCard";
 
 import * as _ from "lodash";
+import Gr1dCreditCardsService from "../../../services/gr1d.creditCards.service";
 
 const ApiSubscribeComponent: ng.IComponentOptions = {
   bindings: {
@@ -40,8 +41,9 @@ const ApiSubscribeComponent: ng.IComponentOptions = {
     private apiKey: any;
     private subscription: any;
     private requestMessage: string;
-    private registerCreditCard: RegisterCreditCard
+    private registerCreditCard: RegisterCreditCard;
     public icons: any;
+    public hasCreditCardsEnabled: boolean = false;
 
     constructor(
       private $stateParams: ng.ui.IStateParamsService,
@@ -50,11 +52,13 @@ const ApiSubscribeComponent: ng.IComponentOptions = {
       private ApiService: ApiService,
       private Constants,
       private ConstantsGr1d,
+      private Gr1dCreditCardsService: Gr1dCreditCardsService,
       private $scope: ng.IScope) {
       'ngInject';
 
       this.icons = ConstantsGr1d.theme.icons;
 
+      // this.getCreditCards();
 
     }
 
@@ -140,8 +144,20 @@ const ApiSubscribeComponent: ng.IComponentOptions = {
         '" -H "Authorization: Bearer xxxx-xxxx-xxxx-xxxx"';
     }
 
-    isCreditCardEnabled() {
-      return false;
+    getCreditCards() {
+      this.Gr1dCreditCardsService.get('123').then(response => {
+        if (response.data) {
+          this.hasCreditCardsEnabled = true;
+        }
+      });
+    }
+
+    sendCreditCard(registerCreditCard: RegisterCreditCard) {
+      console.log(registerCreditCard);
+    }
+
+    validateForm() {
+
     }
   }
 };

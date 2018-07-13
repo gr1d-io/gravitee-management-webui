@@ -1,0 +1,46 @@
+.gr1d-form {
+  input {
+    background-color: #f3f7f8;
+    height: 60px;
+    padding: 0 15px;
+    font-size: 20px;
+  }
+  md-input-container {
+    margin: 0 0 10px 0;
+    &:not(.md-input-invalid):not(.md-input-has-value) {
+      label {
+        color: $color-grey-dark;
+      }
+    }
+  }
+  md-input-container label:not(.md-no-float):not(.md-container-ignore),
+  md-input-container .md-placeholder {
+    transform: translate3d(20px, 48px, 0) scale(1);
+    font-weight: 400;
+    font-size: 20px;
+  }
+  md-input-container .md-input {
+    border-width: 0 0 2px 0;
+  }
+  md-input-container.md-input-focused label:not(.md-no-float),
+  md-input-container.md-input-has-placeholder label:not(.md-no-float),
+  md-input-container.md-input-has-value label:not(.md-no-float) {
+    transform: translate3d(0, 12px, 0) scale(0.75);
+  }
+  md-input-container.md-input-focused label:not(.md-no-float) {
+    color: $color-purple;
+  }
+  md-input-container:not(.md-input-invalid).md-input-focused .md-input {
+    border-color: $color-purple;
+  }
+  .md-primary {
+    display: flex;
+    justify-content: center;
+    padding: 2px 50px 2px 40px;
+    margin: 0 auto;
+    span {
+      font-size: 18px;
+      margin-left: 10px;
+    }
+  }
+}

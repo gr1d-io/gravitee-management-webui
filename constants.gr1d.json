@@ -1,5 +1,6 @@
 {
     "baseSandboxURL": "http://localhost:8005/management/",
+    "basePortalBackendURL": "http://localhost:9090/",
     "theme": {
       "logoSmall": "themes/assets/gr1d_logo_white_small.png",
       "logoBlack": "themes/assets/gr1d_logo_black.svg",

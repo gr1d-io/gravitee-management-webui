@@ -18,7 +18,7 @@
         height: 100%;
         top: 0%;
         transform: translate(0, 0%);
-    
+
         li {
             width: 100%;
             height: 100%;
@@ -50,10 +50,16 @@
 .api-subscribe-instructions {
     padding: $global-gutter;
     &.layout-column.flex {
-       padding: $global-gutter; 
+       padding: $global-gutter;
     }
 }
 
 .button-manage-api {
     width: 215px;
+}
+
+.api-register-card {
+  h1 {
+    margin-bottom: $global-gutter*2;
+  }
 }
