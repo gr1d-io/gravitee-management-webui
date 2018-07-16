@@ -7,6 +7,7 @@
   }
   md-input-container {
     margin: 0 0 10px 0;
+    width: 100%;
     &:not(.md-input-invalid):not(.md-input-has-value) {
       label {
         color: $color-grey-dark;

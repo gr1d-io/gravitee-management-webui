@@ -32,6 +32,18 @@
                     background: $color-purple;
                     color: $color-white;
                 }
+                &.done-final {
+                    background: $color-greenish;
+                    a {
+                        background: $color-greenish;
+                        color: $color-white;
+                    }
+                    svg:not(:root) {
+                        width: 60px;
+                        height: 60px;
+                        fill: $color-white;
+                    }
+                }
             }
             a {
                 width: initial;
@@ -52,6 +64,29 @@
     &.layout-column.flex {
        padding: $global-gutter;
     }
+    code, blockquote {
+        padding: $global-gutter/2;
+        background: $color-white-2;
+        font-size: 16px;
+    }
+    blockquote {
+        margin: 0px;
+    }
+    code {
+        color: $color-purple;
+    }
+    .clipboard {
+        background: $color-purple;
+        padding: $global-gutter/2;
+        display: flex;
+        align-items: center;
+        ng-md-icon {
+            top: 0px;
+        }
+        svg:not(:root) {
+            fill: $color-white;
+        }
+    }
 }
 
 .button-manage-api {
@@ -59,7 +94,41 @@
 }
 
 .api-register-card {
+    position: relative;
   h1 {
     margin-bottom: $global-gutter*2;
   }
+}
+
+.api-credit-card {
+    padding: $global-gutter;
+    border: 1px solid $color-grey;
+    border-radius: 5px;
+    .api-credit-card__last-digits {
+        font-size: 24px;
+        font-weight: bold;
+    }
+}
+
+.api-credit-card__message-error {
+    border: 1px solid $color-tomato;
+    color: $color-tomato;
+    background: $color-very-light-pink;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    ng-md-icon {
+        top: 0px;
+    }
+    svg:not(:root) {
+        width: 16px;
+        fill: $color-tomato;
+    }
+}
+    
+.api-register-card__close {
+    position: absolute;
+    right: 32px;
+    cursor: pointer;
 }

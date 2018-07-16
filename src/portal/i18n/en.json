@@ -99,7 +99,12 @@
         "successful": "Subscription request has been submitted.",
         "registerCreditCard": {
           "title": "Validate your payment method",
+          "titleRegister": "Register your credit card",
           "form" : {
+            "fullName": "Full name",
+            "dateOfBirth": "Date of birth",
+            "email": "E-mail",
+            "phone": "Phone",
             "cpfCnpj" : "CPF or CNPJ",
             "cardName" : "Card name",
             "cardNumber" : "Card number",
