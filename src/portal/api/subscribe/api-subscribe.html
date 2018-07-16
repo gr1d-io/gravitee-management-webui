@@ -120,45 +120,47 @@
 
     <!-- Form credit card -->
     <section layout="row" layout-padding class="subscription-step" flex ng-if="$ctrl.subscription && $ctrl.subscription.status === 'accepted' && !$ctrl.hasCreditCardsEnabled">
-        <div class="sw-main sw-theme-circles" layout="row" layout-align="center start" flex="10">
-          <ul class="nav nav-tabs step-anchor">
-            <li class="danger">
-              <a href="#step-1">3</a>
-            </li>
-          </ul>
-        </div>
+      <div class="sw-main sw-theme-circles" layout="row" layout-align="center start" flex="10">
+        <ul class="nav nav-tabs step-anchor">
+          <li class="danger">
+            <a href="#step-1">3</a>
+          </li>
+        </ul>
+      </div>
 
-        <div class="api-subscribe-instructions gr1d-form api-register-card" layout="column" flex style="color: #424E5A;">
-          <h1 translate="api.subscription.step3.registerCreditCard.title"></h1>
+      <div class="api-subscribe-instructions gr1d-form api-register-card" layout="column" flex style="color: #424E5A;">
+        <h1 translate="api.subscription.step3.registerCreditCard.title"></h1>
+        <form name="$ctrl.registerCreditCard" ng-submit="$ctrl.registerCreditCard.$valid && $ctrl.sendCreditCard($ctrl.registerCreditCard)">
           <md-input-container class="md-block">
-              <label>{{'api.subscription.step3.registerCreditCard.form.cpfCnpj' | translate}}</label>
-              <input ng-model="$ctrl.registerCreditCard.document" md-maxlength="150" required></input>
-              <div ng-messages="$ctrl.requestMessage.$error">
-                <div ng-message="required">This is required!</div>
-              </div>
+            <label>{{'api.subscription.step3.registerCreditCard.form.cpfCnpj' | translate}}</label>
+            <input type="text" ng-model="$ctrl.registerCreditCard.document" ui-br-cpfcnpj-mask required></input>
+            <div ng-messages="$ctrl.registerCreditCard.$error">
+              <div ng-message="cpf">Please, insert a valid CPF</div>
+              <div ng-message="cnpj">Please, insert a valid CNPJ</div>
+            </div>
           </md-input-container>
           <md-input-container class="md-block">
-              <label>{{'api.subscription.step3.registerCreditCard.form.cardName' | translate}}</label>
-              <input ng-model="$ctrl.registerCreditCard.card_holder_name" md-maxlength="150" required></input>
+            <label>{{'api.subscription.step3.registerCreditCard.form.cardName' | translate}}</label>
+            <input type="text" ng-model="$ctrl.registerCreditCard.card_holder_name" md-maxlength="150" required></input>
           </md-input-container>
           <md-input-container class="md-block">
             <label>{{'api.subscription.step3.registerCreditCard.form.cardNumber' | translate}}</label>
-            <input ng-model="$ctrl.registerCreditCard.card_number" md-maxlength="150" required></input>
+            <input type="text" ng-model="$ctrl.registerCreditCard.card_number" required mask='9999.9999.9999.9999'></input>
           </md-input-container>
           <div layout="row">
             <md-input-container class="md-block">
               <label>{{'api.subscription.step3.registerCreditCard.form.cardExpirationDate' | translate}}</label>
-              <input type="date" ng-model="$ctrl.registerCreditCard.card_expiration_date" md-maxlength="7" required></input>
+              <input type="text" ng-model="$ctrl.registerCreditCard.card_expiration_date" ui-date-mask="MM/YYYY" required></input>
             </md-input-container>
             <md-input-container class="md-block">
               <label>{{'api.subscription.step3.registerCreditCard.form.cardCvv' | translate}}</label>
-              <input type="number" ng-model="$ctrl.registerCreditCard.card_cvv" md-maxlength="3" required></input>
+              <input type="number" ng-model="$ctrl.registerCreditCard.card_cvv" mask="999" required></input>
             </md-input-container>
-            <button class="md-button button-primary" type="submit" ng-click="sendCreditCard($ctrl.registerCreditCard)">Send</button>
+            <button class="md-button button-primary" type="submit">Send</button>
           </div>
-
-        </div>
-      </section>
+        </form>
+      </div>
+    </section>
 
     <section layout="row" layout-padding class="subscription-step" flex ng-if="$ctrl.subscription && $ctrl.subscription.status === 'accepted' && $ctrl.selectedPlan.security === 'api_key'  && $ctrl.hasCreditCardsEnabled">
       <div class="sw-main sw-theme-circles" layout="row" layout-align="center start" flex="10">

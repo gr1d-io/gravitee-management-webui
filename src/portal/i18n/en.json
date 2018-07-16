@@ -104,7 +104,7 @@
             "cardName" : "Card name",
             "cardNumber" : "Card number",
             "cardExpirationDate" : "Expiration date",
-            "cardCvv" : "Cvv"
+            "cardCvv" : "CVV"
           }
         }
       },

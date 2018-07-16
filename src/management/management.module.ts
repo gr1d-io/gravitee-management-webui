@@ -106,6 +106,10 @@ require('diff/dist/diff.min.js');
 require('angular-loading-bar');
 require('angular-loading-bar/build/loading-bar.css');
 
+
+require('../libraries/angular-input-masks/angular-input-masks-standalone.js');
+require('../libraries/ng-mask/ngMask.js');
+
 // Highcharts
 
 const Highcharts = require('highcharts');
@@ -407,7 +411,7 @@ angular.module('gravitee-management', [uiRouter, permission, uiPermission, 'ngMa
   'ngMdIcons', 'ui.codemirror', 'md.data.table', 'ngCookies', 'dragularModule', 'readMore',
   'ngMessages', 'vAccordion', 'schemaForm', 'ngclipboard', 'ui.validate', 'angular-timeline',
   'utf8-base64', 'ngFileUpload', 'md-steppers', 'ui.tree', 'angular-jwt', 'gridster', 'angular-loading-bar',
-  'ngAnimate', 'LocalStorageModule', 'satellizer', ngInfiniteScroll])
+  'ngAnimate', 'LocalStorageModule', 'satellizer', ngInfiniteScroll, 'ui.utils.masks', 'ngMask'])
   .config(['cfpLoadingBarProvider', function (cfpLoadingBarProvider) {
     cfpLoadingBarProvider.includeSpinner = false;
   }])

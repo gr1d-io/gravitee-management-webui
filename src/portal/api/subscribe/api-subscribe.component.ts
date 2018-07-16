@@ -20,6 +20,8 @@ import {RegisterCreditCard} from "../../../entities/registerCreditCard";
 
 import * as _ from "lodash";
 import Gr1dCreditCardsService from "../../../services/gr1d.creditCards.service";
+import UserService from "../../../services/user.service";
+import { User } from "../../../entities/user";
 
 const ApiSubscribeComponent: ng.IComponentOptions = {
   bindings: {
@@ -42,6 +44,7 @@ const ApiSubscribeComponent: ng.IComponentOptions = {
     private subscription: any;
     private requestMessage: string;
     private registerCreditCard: RegisterCreditCard;
+    private user: User;
     public icons: any;
     public hasCreditCardsEnabled: boolean = false;
 
@@ -52,13 +55,15 @@ const ApiSubscribeComponent: ng.IComponentOptions = {
       private ApiService: ApiService,
       private Constants,
       private ConstantsGr1d,
+      private UserService: UserService,
       private Gr1dCreditCardsService: Gr1dCreditCardsService,
       private $scope: ng.IScope) {
       'ngInject';
 
       this.icons = ConstantsGr1d.theme.icons;
+      console.log(Constants.authentication);
 
-      // this.getCreditCards();
+      this.getUserCurrent();
 
     }
 
@@ -144,11 +149,21 @@ const ApiSubscribeComponent: ng.IComponentOptions = {
         '" -H "Authorization: Bearer xxxx-xxxx-xxxx-xxxx"';
     }
 
-    getCreditCards() {
-      this.Gr1dCreditCardsService.get('123').then(response => {
+    getUserCurrent() {
+      this.UserService.current().then(user => {
+        this.user = user;
+        console.log(user);
+        this.getCreditCards(user.id);
+      });
+    }
+
+    getCreditCards(id: string) {
+      this.Gr1dCreditCardsService.get(id).then(response => {
         if (response.data) {
           this.hasCreditCardsEnabled = true;
         }
+      }).catch(reason => {
+        console.log(reason);
       });
     }
 
