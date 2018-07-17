@@ -406,6 +406,9 @@ import PortalSettingsComponent from "./configuration/portal/portal.component";
 // GR1D
 import Gr1dCreditCardsService from '../services/gr1d.creditCards.service';
 
+import Gr1dBillingController from '../management/gr1d-billing/gr1d-billing.controller';
+
+
 
 angular.module('gravitee-management', [uiRouter, permission, uiPermission, 'ngMaterial', 'ramlConsoleApp', 'ng-showdown',
   'ngMdIcons', 'ui.codemirror', 'md.data.table', 'ngCookies', 'dragularModule', 'readMore',
@@ -523,6 +526,7 @@ angular.module('gravitee-management', [uiRouter, permission, uiPermission, 'ngMa
   .controller('SupportTicketController', SupportTicketController)
   .controller('AuditController', AuditController)
   .controller('ApiAuditController', ApiAuditController)
+  .controller('Gr1dBillingController',Gr1dBillingController)
   .controller('TopApisController', TopApisController)
   .controller('AddTopApiDialogController', AddTopApiDialogController)
   .controller('DeleteTopApiDialogController', DeleteTopApiDialogController)

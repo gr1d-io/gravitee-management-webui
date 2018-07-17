@@ -1,0 +1,53 @@
+.gr1d-admin {
+    button {
+        margin: 0;
+    }
+    p {
+        font-size: 14px;
+        margin: 0;
+        padding: 0;
+    }
+    h1 {
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: $global-gutter * 2;
+    }
+    .gr1d-credit-card__holder-name {
+        font-size: 16px;
+        margin-bottom: $global-gutter;
+    }
+    .gr1d-card {
+        background: $color-white;
+        box-shadow: $global-shadow;
+        padding: $global-gutter;
+        margin-bottom: $global-gutter * 3;
+    }
+    .gr1d-header__title {
+        font-weight: bold;
+        margin-bottom: $global-gutter;
+    }
+
+    .gr1d-credit-card {
+        padding: $global-gutter;
+        border-radius: 5px;
+        border: 2px solid $color-purple;
+        background: $color-pale-lavender;
+        max-width: 300px;
+        margin-bottom: $global-gutter;
+    }
+
+    .gr1d-credit-card__title-number, .gr1d-credit-card__title-validate {
+        font-weight: bold;
+        font-size: 10px;
+    }
+    .gr1d-credit-card__flag {
+        width: 48px;
+        height: 36px;
+        background: $color-grey-dark;
+    }
+}
+
+.gr1d-admin-main-content {
+    background: $color-white-3;
+    padding: $global-gutter * 2;
+}
