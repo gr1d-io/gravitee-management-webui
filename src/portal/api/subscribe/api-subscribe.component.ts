@@ -44,7 +44,20 @@ const ApiSubscribeComponent: ng.IComponentOptions = {
     private apiKey: any;
     private subscription: any;
     private requestMessage: string;
-    private registerCreditCard: RegisterCreditCard;
+    private registerCreditCard: RegisterCreditCard = {
+      user_id: '',
+      full_name: '',
+      email: '',
+      document: '',
+      document_type: 1,
+      phone: '',
+      date_of_birth: '',
+      card_number: '',
+      card_expiration_date: '',
+      card_cvv: '',
+      card_holder_name: ''
+    };
+
     private user: User;
     public icons: any;
 
@@ -163,12 +176,25 @@ const ApiSubscribeComponent: ng.IComponentOptions = {
     getCreditCards(id: string) {
       this.Gr1dCreditCardsService.get(id).then(response => {
         console.log('responseCreditCards', response);
-        this.creditCard = response.data;
+        this.creditCard = response.data as CreditCard;
         if (this.creditCard) {
+          console.log('this.creditCard', this.creditCard);
+
           this.hasCreditCardsEnabled = this.creditCard.valid;
+
+
+          // TODO - Don`t work update form with valid data
+          this.registerCreditCard.full_name = this.creditCard.personal_info.full_name;
+          this.registerCreditCard.date_of_birth = this.creditCard.personal_info.date_of_birth;
+          this.registerCreditCard.email = this.creditCard.personal_info.email;
+          this.registerCreditCard.phone = this.creditCard.personal_info.phone;
+          this.registerCreditCard.document = this.creditCard.personal_info.document;
+
+          console.log('this.registerCreditCard', this.registerCreditCard);
+
         }
       }).catch(reason => {
-        console.log(reason);
+        console.log('reason', reason);        
       });
     }
 
@@ -203,10 +229,28 @@ const ApiSubscribeComponent: ng.IComponentOptions = {
           this.hasCreditCardsEnabled = true;
         }
       }).catch(reason => {
-        console.log(reason);
+        console.log('reason', reason);
+        if (reason.data) {
+          const error = reason.data.error;
+          console.log('errors', error);
+          this.NotificationService.showError('', this.mountMessageError(error));
+        }
       });
+    }
 
+    mountMessageError(error: any): string {
+      let messageError = [];
+      if (error.details && error.details.length > 0) {
+        error.details.map(error => {
+          messageError.push(error.message);
+        });
 
+        return messageError.join(', ');
+      }
+
+      if (!error.details) {
+        return error.message;
+      }
     }
 
     getExpirationDate(date: any) {
@@ -232,6 +276,10 @@ const ApiSubscribeComponent: ng.IComponentOptions = {
 
     showFormCreditCard() {
       return !this.hasCreditCards() || this.changeCreditCard;
+    }
+
+    showCloseFormCreditCard() {
+      return true;
     }
   }
 };

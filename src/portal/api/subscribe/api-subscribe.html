@@ -146,7 +146,7 @@
       </div>
 
       <div class="api-subscribe-instructions gr1d-form api-register-card" layout="column" flex style="color: #424E5A;" ng-if="$ctrl.showFormCreditCard()">
-        <div class="api-register-card__close" ng-click="$ctrl.closeFormCreditCard()">
+        <div class="api-register-card__close" ng-click="$ctrl.closeFormCreditCard()" ng-if="$ctrl.showCloseFormCreditCard()" >
           <ng-md-icon icon="close"></ng-md-icon>
         </div>
         <h1 translate="api.subscription.step3.registerCreditCard.titleRegister"></h1>
@@ -155,7 +155,7 @@
             <div layout="row" flex="50" layout-padding>
               <md-input-container class="md-block">
                 <label>{{'api.subscription.step3.registerCreditCard.form.fullName' | translate}}</label>
-                <input type="text" ng-model="$ctrl.registerCreditCard.full_name" required></input>
+                <input type="text" ng-model="$ctrl.registerCreditCard.full_name" value="$ctrl.creditCard.personal_info.full_name" required></input>
               </md-input-container>
             </div>
             <div layout="row" flex="50" layout-padding>
