@@ -1,22 +1,25 @@
 <div class="gr1d-admin gr1d-admin-main-content">
     <h1>Credit card</h1>
-    <div class="gr1d-card">
-        <div class="gr1d-credit-card">
-            <p class="gr1d-credit-card__holder-name">JOAO A BC SILVA</p>
-            <p class="gr1d-credit-card__title-number">NUMERO DO CARTAO</p>
-            <p class="gr1d-credit-card__number">**** **** **** 4242</p>
-            <div layout="row" layout-align="space-between">
-                <div layout="column">
-                    <p class="gr1d-credit-card__title-validate">VALIDADE</p>
-                    <p class="gr1d-credit-card__validate">12/18</p>
-                </div>
-                <div layout="column">
-                    <div class="gr1d-credit-card__flag"></div>
+    <div class="gr1d-card" layout="row">
+        <div layout="row" layout-padding>
+            <div class="gr1d-credit-card">
+                <p class="gr1d-credit-card__holder-name">JOAO A BC SILVA</p>
+                <p class="gr1d-credit-card__title-number">NUMERO DO CARTAO</p>
+                <p class="gr1d-credit-card__number">**** **** **** 4242</p>
+                <div layout="row" layout-align="space-between">
+                    <div layout="column">
+                        <p class="gr1d-credit-card__title-validate">VALIDADE</p>
+                        <p class="gr1d-credit-card__validate">12/18</p>
+                    </div>
+                    <div layout="column">
+                        <div class="gr1d-credit-card__flag"></div>
+                    </div>
                 </div>
             </div>
-
         </div>
-        <button class="md-button button-primary button-outline">CHANGE CREDIT CARD</button>
+        <div layout="row" layout-padding>
+            <button class="md-button button-primary button-outline">CHANGE CREDIT CARD</button>
+        </div>
     </div>
     <h1>Fatura</h1>
     <div class="gr1d-card">
@@ -40,6 +43,70 @@
                 </div>
             </div>
         </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>API</th>
+                    <th>Plan</th>
+                    <th>Amount</th>
+                    <th>Hits</th>
+                    <th>Total amount</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Jill</td>
+                    <td>Smith</td>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>50</td>
+                </tr>
+                <tr>
+                    <td>Jill</td>
+                    <td>Smith</td>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>50</td>
+                </tr>
+                <tr>
+                    <td>Jill</td>
+                    <td>Smith</td>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>50</td>
+                </tr>
+                <tr>
+                    <td>Jill</td>
+                    <td>Smith</td>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>50</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
     <h1>Historico</h1>
+    <div class="gr1d-card">
+        <div class="gr1d-header">
+            <div layout="row">
+                <div layout="column" layout-padding>
+                    <p class="gr1d-header__title">Periodo</p>
+                    <p class="gr1d-header__subtitle">Jul-01 to Jul-31</p>
+                </div>
+                <div layout="column" layout-padding>
+                    <p class="gr1d-header__title">Vencimento</p>
+                    <p class="gr1d-header__subtitle">Fatura aberta</p>
+                </div>
+                <div layout="column" layout-padding>
+                    <p class="gr1d-header__title">Saldo Parcial</p>
+                    <p class="gr1d-header__subtitle">R$ 12,00</p>
+                </div>
+                <div layout="column" layout-padding>
+                    <p class="gr1d-header__title">Status</p>
+                    <p class="gr1d-header__subtitle">Houve um erro no pagamento. Em breve entraremos em contato</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
