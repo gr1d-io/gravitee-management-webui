@@ -88,6 +88,9 @@ input.form-control {
 
 #footer, #footer div.footer-brand {
     min-height: 40px;
+    p {
+        padding-top: $global-gutter/2;
+    }
 }
 
 // Home
