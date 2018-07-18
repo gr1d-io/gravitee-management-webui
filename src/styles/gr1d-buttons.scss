@@ -2,6 +2,7 @@
     background: $color-purple;
     color: $color-white;
     padding: $global-gutter / 2 $global-gutter-min*3;
+    max-height: 52px;
     &.md-button.md-raised {
         background: $color-purple;
         color: $color-white;

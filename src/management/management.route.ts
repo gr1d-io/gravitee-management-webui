@@ -166,6 +166,20 @@ function managementRouterConfig($stateProvider: ng.ui.IStateProvider) {
         return graviteeUser.tasks;
       }
     }
+  })
+  .state('management.billing', {
+    url: '/billing',
+    template: require('./gr1d-billing/gr1d-billing.html'),
+    controller: 'Gr1dBillingController',
+    controllerAs: 'gr1dBillingCtrl',
+    data: {
+      menu: {
+        label: 'Billing',
+        icon: 'payment',
+        firstLevel: true,
+        order: 60
+      }
+    }
   });
 }
 

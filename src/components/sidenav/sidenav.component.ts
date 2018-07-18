@@ -36,6 +36,8 @@ export const SidenavComponent: ng.IComponentOptions = {
       if (this.$window.localStorage.getItem(reduceModeKey) !== null) {
         this.reducedMode = JSON.parse(this.$window.localStorage.getItem(reduceModeKey));
       }
+
+      console.log('this.menuItems', this.menuItems);
     };
 
     this.toggleReducedMode = () => {

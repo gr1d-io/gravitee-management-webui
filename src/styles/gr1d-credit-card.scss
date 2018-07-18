@@ -1,0 +1,24 @@
+
+
+.gr1d-credit-card {
+    padding: $global-gutter;
+    border-radius: 5px;
+    border: 2px solid $color-purple;
+    background: $color-pale-lavender;
+    width: 300px;
+    .gr1d-credit-card__title-number, .gr1d-credit-card__title-validate {
+        font-weight: bold;
+        font-size: 10px;
+    }
+
+    .gr1d-credit-card__holder-name {
+        font-size: 16px;
+        margin-bottom: $global-gutter;
+    }
+}
+
+.gr1d-credit-card__flag {
+    width: 48px;
+    height: 36px;
+    background: $color-grey-dark;
+}

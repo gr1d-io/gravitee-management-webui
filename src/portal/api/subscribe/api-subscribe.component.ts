@@ -17,8 +17,12 @@ import ApplicationService from "../../../services/applications.service";
 import ApiService from "../../../services/api.service";
 import NotificationService from "../../../services/notification.service";
 import {RegisterCreditCard} from "../../../entities/registerCreditCard";
+import {CreditCard} from "../../../entities/creditCard";
 
 import * as _ from "lodash";
+import Gr1dCreditCardsService from "../../../services/gr1d.creditCards.service";
+import UserService from "../../../services/user.service";
+import { User } from "../../../entities/user";
 
 const ApiSubscribeComponent: ng.IComponentOptions = {
   bindings: {
@@ -40,8 +44,26 @@ const ApiSubscribeComponent: ng.IComponentOptions = {
     private apiKey: any;
     private subscription: any;
     private requestMessage: string;
-    private registerCreditCard: RegisterCreditCard
+    private registerCreditCard: RegisterCreditCard = {
+      user_id: '',
+      full_name: '',
+      email: '',
+      document: '',
+      document_type: 1,
+      phone: '',
+      date_of_birth: '',
+      card_number: '',
+      card_expiration_date: '',
+      card_cvv: '',
+      card_holder_name: ''
+    };
+
+    private user: User;
     public icons: any;
+
+    public hasCreditCardsEnabled: boolean = false;
+    public changeCreditCard: boolean = false;
+    public creditCard: CreditCard;
 
     constructor(
       private $stateParams: ng.ui.IStateParamsService,
@@ -50,11 +72,15 @@ const ApiSubscribeComponent: ng.IComponentOptions = {
       private ApiService: ApiService,
       private Constants,
       private ConstantsGr1d,
+      private UserService: UserService,
+      private Gr1dCreditCardsService: Gr1dCreditCardsService,
       private $scope: ng.IScope) {
       'ngInject';
 
       this.icons = ConstantsGr1d.theme.icons;
+      console.log(Constants.authentication);
 
+      this.getUserCurrent();
 
     }
 
@@ -140,8 +166,120 @@ const ApiSubscribeComponent: ng.IComponentOptions = {
         '" -H "Authorization: Bearer xxxx-xxxx-xxxx-xxxx"';
     }
 
-    isCreditCardEnabled() {
-      return false;
+    getUserCurrent() {
+      this.UserService.current().then(user => {
+        this.user = user;
+        this.getCreditCards(user.id);
+      });
+    }
+
+    getCreditCards(id: string) {
+      this.Gr1dCreditCardsService.get(id).then(response => {
+        console.log('responseCreditCards', response);
+        this.creditCard = response.data as CreditCard;
+        if (this.creditCard) {
+          console.log('this.creditCard', this.creditCard);
+
+          this.hasCreditCardsEnabled = this.creditCard.valid;
+
+
+          // TODO - Don`t work update form with valid data
+          this.registerCreditCard.full_name = this.creditCard.personal_info.full_name;
+          this.registerCreditCard.date_of_birth = this.creditCard.personal_info.date_of_birth;
+          this.registerCreditCard.email = this.creditCard.personal_info.email;
+          this.registerCreditCard.phone = this.creditCard.personal_info.phone;
+          this.registerCreditCard.document = this.creditCard.personal_info.document;
+
+          console.log('this.registerCreditCard', this.registerCreditCard);
+
+        }
+      }).catch(reason => {
+        console.log('reason', reason);        
+      });
+    }
+
+    sendCreditCard(registerCreditCard: RegisterCreditCard) {
+      console.log('registerCreditCard', registerCreditCard);
+      const document = registerCreditCard.document.replace(/\D/g,'');
+
+      console.log('user', this.user);
+
+      const request = {
+        user_id: this.user.id,
+        full_name: registerCreditCard.full_name,
+        date_of_birth: registerCreditCard.date_of_birth,
+        email: registerCreditCard.email,
+        phone: '+' + registerCreditCard.phone,
+        document_type: document.length <= 11 ? 1 : 2, 
+        document: document,
+        card_holder_name: registerCreditCard.card_holder_name,
+        card_number: registerCreditCard.card_number.replace(/\D/g,''),
+        card_expiration_date: this.getExpirationDate(registerCreditCard.card_expiration_date),
+        card_cvv: registerCreditCard.card_cvv.replace(/\D/g,'')
+      };
+
+      console.log('request', request);
+
+      this.UserService.search('email').then(response => {
+        console.log('response', response);
+      });
+
+      this.Gr1dCreditCardsService.create(request).then(response => {
+        if (response.data) {
+          this.hasCreditCardsEnabled = true;
+        }
+      }).catch(reason => {
+        console.log('reason', reason);
+        if (reason.data) {
+          const error = reason.data.error;
+          console.log('errors', error);
+          this.NotificationService.showError('', this.mountMessageError(error));
+        }
+      });
+    }
+
+    mountMessageError(error: any): string {
+      let messageError = [];
+      if (error.details && error.details.length > 0) {
+        error.details.map(error => {
+          messageError.push(error.message);
+        });
+
+        return messageError.join(', ');
+      }
+
+      if (!error.details) {
+        return error.message;
+      }
+    }
+
+    getExpirationDate(date: any) {
+      if (date) {
+        const month = date.getMonth() + 1;
+        return (month < 10 ? '0' + month : month) + (date.getFullYear() + '').slice(-2);
+      }
+      return ''
+    }
+
+    hasCreditCards() {
+      return this.creditCard;
+    }
+
+    changeCard() {
+      console.log('changeCard');
+      this.changeCreditCard = true;
+    }
+
+    closeFormCreditCard() {
+      this.changeCreditCard = false;
+    }
+
+    showFormCreditCard() {
+      return !this.hasCreditCards() || this.changeCreditCard;
+    }
+
+    showCloseFormCreditCard() {
+      return true;
     }
   }
 };

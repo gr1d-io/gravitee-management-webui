@@ -98,12 +98,12 @@
         <h1 translate="api.subscription.step2CreateApplication.title"></h1>
         <h5 translate="api.subscription.step2CreateApplication.subtitle"></h5>
         <a class="md-button button-primary button-outline button-manage-api" ui-sref="management.applications.list">
-          <img ng-src="{{$ctrl.icons.tutorial}}" class="log-in"> {{'api.subscription.step2CreateApplication.action' | translate}}
+          <img ng-src="{{$ctrl.icons.externalLink}}" class="log-in"> {{'api.subscription.step2CreateApplication.action' | translate}}
         </a>
       </div>
     </section>
 
-    <section layout="row" layout-padding class="subscription-step" flex ng-if="$ctrl.subscription && $ctrl.subscription.status === 'pending' && $ctrl.isCreditCardEnabled()">
+    <section layout="row" layout-padding class="subscription-step" flex ng-if="$ctrl.subscription && $ctrl.subscription.status === 'pending' && $ctrl.hasCreditCards()">
       <div class="sw-main sw-theme-circles" layout="row" layout-align="center start" flex="10">
         <ul class="nav nav-tabs step-anchor">
           <li class="danger">
@@ -119,30 +119,118 @@
     </section>
 
     <!-- Form credit card -->
-    <section layout="row" layout-padding class="subscription-step" flex ng-if="$ctrl.subscription && $ctrl.subscription.status === 'accepted' && !$ctrl.isCreditCardEnabled()">
-        <div class="sw-main sw-theme-circles" layout="row" layout-align="center start" flex="10">
-          <ul class="nav nav-tabs step-anchor">
-            <li class="danger">
-              <a href="#step-1">3</a>
-            </li>
-          </ul>
-        </div>
-  
-        <div class="api-subscribe-instructions" layout="column" flex style="color: #424E5A;">
-          <h1 translate="api.subscription.step3.registerCreditCard.title"></h1>
-          <md-input-container class="md-block">
-              <label>Optional message to the API Owner</label>
-              <input ng-model="$ctrl.requestMessage" md-maxlength="150" rows="2"></input>
-          </md-input-container>
-        </div>
-      </section>
-
-    <section layout="row" layout-padding class="subscription-step" flex ng-if="$ctrl.subscription && $ctrl.subscription.status === 'accepted' && $ctrl.selectedPlan.security === 'api_key'  && $ctrl.isCreditCardEnabled()">
+    <section layout="row" layout-padding class="subscription-step" flex ng-if="$ctrl.subscription && $ctrl.subscription.status === 'accepted'">
       <div class="sw-main sw-theme-circles" layout="row" layout-align="center start" flex="10">
         <ul class="nav nav-tabs step-anchor">
-          <li class="done">
-            <a href="#step-1">3
-              <br>
+          <li class="danger" ng-class="{done: !$ctrl.showFormCreditCard()}">
+            <a href="#step-1">3</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="api-subscribe-instructions gr1d-form api-register-card" layout="column" flex style="color: #424E5A;" ng-if="!$ctrl.showFormCreditCard()">
+        <h1 translate="api.subscription.step3.registerCreditCard.title"></h1>
+        <div class="api-credit-card" layout="row">
+          <div layout="column" flex="50" layout-padding>
+            <p>{{ $ctrl.creditCard.personal_info.full_name}}</p>
+            <p class="api-credit-card__last-digits">**** ***** **** {{ $ctrl.creditCard.card_last_digits}}</p>
+            <p class="api-credit-card__message-error">
+              <ng-md-icon icon="warning"></ng-md-icon>
+              Your credit card is invalid, please change your card
+            </p>
+          </div>
+          <div layout="row" flex="50" layout-padding>
+            <button class="md-button button-primary" ng-click="$ctrl.changeCard()">CHANGE</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="api-subscribe-instructions gr1d-form api-register-card" layout="column" flex style="color: #424E5A;" ng-if="$ctrl.showFormCreditCard()">
+        <div class="api-register-card__close" ng-click="$ctrl.closeFormCreditCard()" ng-if="$ctrl.showCloseFormCreditCard()" >
+          <ng-md-icon icon="close"></ng-md-icon>
+        </div>
+        <h1 translate="api.subscription.step3.registerCreditCard.titleRegister"></h1>
+        <form name="$ctrl.registerCreditCard" ng-submit="$ctrl.registerCreditCard.$valid && $ctrl.sendCreditCard($ctrl.registerCreditCard)">
+          <div layout="row">
+            <div layout="row" flex="50" layout-padding>
+              <md-input-container class="md-block">
+                <label>{{'api.subscription.step3.registerCreditCard.form.fullName' | translate}}</label>
+                <input type="text" ng-model="$ctrl.registerCreditCard.full_name" value="$ctrl.creditCard.personal_info.full_name" required></input>
+              </md-input-container>
+            </div>
+            <div layout="row" flex="50" layout-padding>
+              <md-input-container class="md-block">
+                <label>{{'api.subscription.step3.registerCreditCard.form.dateOfBirth' | translate}}</label>
+                <input type="text" ng-model="$ctrl.registerCreditCard.date_of_birth" mask="9999-99-99" required></input>
+              </md-input-container>
+            </div>
+          </div>
+          <div layout="row">
+            <div layout="row" flex="50" layout-padding>
+              <md-input-container class="md-block">
+                <label>{{'api.subscription.step3.registerCreditCard.form.email' | translate}}</label>
+                <input type="email" ng-model="$ctrl.registerCreditCard.email" required></input>
+              </md-input-container>
+            </div>
+            <div layout="row" flex="50" layout-padding>
+              <md-input-container class="md-block">
+                <label>{{'api.subscription.step3.registerCreditCard.form.phone' | translate}}</label>
+                <input type="phone" ng-model="$ctrl.registerCreditCard.phone" ui-br-phone-number-mask="countryCode" required></input>
+              </md-input-container>
+            </div>
+          </div>
+          <div layout="row" layout-padding>
+            <md-input-container class="md-block">
+              <label>{{'api.subscription.step3.registerCreditCard.form.cpfCnpj' | translate}}</label>
+              <input type="text" ng-model="$ctrl.registerCreditCard.document" ui-br-cpfcnpj-mask required></input>
+              <div ng-messages="$ctrl.registerCreditCard.$error">
+                <div ng-message="cpf">Please, insert a valid CPF</div>
+                <div ng-message="cnpj">Please, insert a valid CNPJ</div>
+              </div>
+            </md-input-container>
+          </div>
+          <div layout="row">
+            <div layout="row" flex="50" layout-padding>
+              <md-input-container class="md-block">
+                <label>{{'api.subscription.step3.registerCreditCard.form.cardName' | translate}}</label>
+                <input type="text" ng-model="$ctrl.registerCreditCard.card_holder_name" md-maxlength="150" required></input>
+              </md-input-container>
+            </div>
+            <div layout="row" flex="50" layout-padding>
+              <md-input-container class="md-block">
+                <label>{{'api.subscription.step3.registerCreditCard.form.cardNumber' | translate}}</label>
+                <input type="text" ng-model="$ctrl.registerCreditCard.card_number" required mask='9999.9999.9999.9999'></input>
+              </md-input-container>
+            </div>
+          </div>
+          <div layout="row">
+            <div layout="row" flex="30" layout-padding>
+              <md-input-container class="md-block">
+                <label>{{'api.subscription.step3.registerCreditCard.form.cardExpirationDate' | translate}}</label>
+                <input type="text" ng-model="$ctrl.registerCreditCard.card_expiration_date" ui-date-mask="MM/YYYY" required></input>
+              </md-input-container>
+            </div>
+            <div layout="row" flex="30" layout-padding>
+              <md-input-container class="md-block">
+                <label>{{'api.subscription.step3.registerCreditCard.form.cardCvv' | translate}}</label>
+                <input type="number" ng-model="$ctrl.registerCreditCard.card_cvv" mask="999" required></input>
+              </md-input-container>
+            </div>
+            <div layout="row" flex="30" layout-padding>
+              <button class="md-button button-primary" type="submit">Send</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <!-- Form credit card -->
+
+    <section layout="row" layout-padding class="subscription-step" flex ng-if="$ctrl.subscription && $ctrl.subscription.status === 'accepted' && $ctrl.selectedPlan.security === 'api_key'  && $ctrl.hasCreditCards()">
+      <div class="sw-main sw-theme-circles" layout="row" layout-align="center start" flex="10">
+        <ul class="nav nav-tabs step-anchor">
+          <li class="done done-final">
+            <a href="#step-1">
+              <ng-md-icon icon="check"></ng-md-icon>
             </a>
           </li>
         </ul>
@@ -150,15 +238,16 @@
 
       <div class="api-subscribe-instructions" layout="column" flex style="color: #424E5A;">
         <h1 translate="api.subscription.step3.accepted.title" translate-values="{apiName: $ctrl.api.name, applicationName: $ctrl.selectedApp.name}"></h1>
-        <div layout="row">
-          <h5>{{'api.subscription.step3.apikey.key' | translate}}:
+        <div layout="column">
+          <h5>{{'api.subscription.step3.apikey.key' | translate}}</h5>
+          <div layout="row">
             <code>{{$ctrl.apiKey}}</code>
-          </h5>
-          <span>
-            <md-tooltip md-direction="right">{{'common.copyToClipboard' | translate}}</md-tooltip>
-            <ng-md-icon size="20" style="fill: #424E5A;" icon="content_copy" ngclipboard data-clipboard-text="{{$ctrl.apiKey}}" ngclipboard-success="$ctrl.onClipboardSuccess(e);"
-              role="button"></ng-md-icon>
-          </span>
+            <span class="clipboard">
+              <md-tooltip md-direction="right">{{'common.copyToClipboard' | translate}}</md-tooltip>
+              <ng-md-icon size="20" style="fill: #424E5A;" icon="content_copy" ngclipboard data-clipboard-text="{{$ctrl.apiKey}}" ngclipboard-success="$ctrl.onClipboardSuccess(e);"
+                role="button"></ng-md-icon>
+            </span>
+          </div>
         </div>
 
         <div layout="column">
@@ -167,7 +256,7 @@
             <blockquote flex="80">
               <p id="example-curl-apikey">{{$ctrl.getApiKeyCurlSample()}}</p>
             </blockquote>
-            <span>
+            <span class="clipboard">
               <md-tooltip md-direction="right">{{'common.copyToClipboard' | translate}}</md-tooltip>
               <ng-md-icon size="20" icon="content_copy" style="fill: #424E5A;" ngclipboard data-clipboard-target="#example-curl-apikey"
                 role="button"></ng-md-icon>
@@ -177,12 +266,12 @@
       </div>
     </section>
 
-    <section layout="row" layout-padding class="subscription-step" flex ng-if="$ctrl.subscription && $ctrl.subscription.status === 'accepted' && $ctrl.selectedPlan.security === 'oauth2' && $ctrl.isCreditCardEnabled()">
+    <section layout="row" layout-padding class="subscription-step" flex ng-if="$ctrl.subscription && $ctrl.subscription.status === 'accepted' && $ctrl.selectedPlan.security === 'oauth2' && $ctrl.hasCreditCards()">
       <div class="sw-main sw-theme-circles" layout="row" layout-align="center start" flex="10">
         <ul class="nav nav-tabs step-anchor">
-          <li class="done">
-            <a href="#step-1">3
-              <br>
+          <li class="done done-final">
+            <a href="#step-1">
+              <ng-md-icon icon="check"></ng-md-icon>
             </a>
           </li>
         </ul>
@@ -200,7 +289,7 @@
             <blockquote flex="80">
               <p id="example-curl-oauth2">{{$ctrl.getOAuth2CurlSample()}}</p>
             </blockquote>
-            <span>
+            <span class="clipboard">
               <md-tooltip md-direction="right">{{'common.copyToClipboard' | translate}}</md-tooltip>
               <ng-md-icon size="20" icon="content_copy" style="fill: #424E5A;" ngclipboard data-clipboard-target="#example-curl-oauth2"
                 role="button"></ng-md-icon>
@@ -210,12 +299,12 @@
       </div>
     </section>
 
-    <section layout="row" layout-padding class="subscription-step" flex ng-if="$ctrl.subscription && $ctrl.subscription.status === 'accepted' && $ctrl.selectedPlan.security === 'jwt' && $ctrl.isCreditCardEnabled()">
+    <section layout="row" layout-padding class="subscription-step" flex ng-if="$ctrl.subscription && $ctrl.subscription.status === 'accepted' && $ctrl.selectedPlan.security === 'jwt' && $ctrl.hasCreditCards()">
       <div class="sw-main sw-theme-circles" layout="row" layout-align="center start" flex="10">
         <ul class="nav nav-tabs step-anchor">
-          <li class="done">
-            <a href="#step-1">3
-              <br>
+          <li class="done done-final">
+            <a href="#step-1">
+              <ng-md-icon icon="check"></ng-md-icon>
             </a>
           </li>
         </ul>
@@ -233,7 +322,7 @@
             <blockquote flex="80">
               <p id="example-curl-jwt">{{$ctrl.getOAuth2CurlSample()}}</p>
             </blockquote>
-            <span>
+            <span class="clipboard">
               <md-tooltip md-direction="right">{{'common.copyToClipboard' | translate}}</md-tooltip>
               <ng-md-icon size="20" icon="content_copy" style="fill: #424E5A;" ngclipboard data-clipboard-target="#example-curl-jwt" role="button"></ng-md-icon>
             </span>

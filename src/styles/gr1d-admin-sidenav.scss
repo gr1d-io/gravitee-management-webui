@@ -1,0 +1,20 @@
+.gr1d-admin-sidenav {
+    background: $color-white-2;
+    &.md-sidenav-theme {
+        background: $color-white-2;
+    }
+    .sidenav-list {
+        a {
+            color: $color-black;
+            &:hover {
+                background: $color-pale-grey-two;
+            }
+            &.sidenav-active {
+                background-color: #dadada;
+            }
+        }
+        ng-md-icon {
+            fill: $color-black;
+        }
+    }
+}

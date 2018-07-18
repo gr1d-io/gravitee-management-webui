@@ -16,10 +16,10 @@
 
 -->
 <md-sidenav
-  class="md-sidenav-left md-whiteframe-z2 md-sidenav-theme"
+  class="md-sidenav-left md-whiteframe-z2 md-sidenav-theme gr1d-admin-sidenav"
   md-component-id="left"
   md-is-locked-open="true"
-  ng-class="{'md-sidenav-min': $ctrl.reducedMode}"
+  ng-class="{'md-sidenav-min-1': $ctrl.reducedMode}"
   style="overflow: inherit;">
 
   <md-list class="sidenav-list">
@@ -28,7 +28,8 @@
       <a ui-sref="{{ :: menuItem.name}}" title="{{ :: menuItem.data.menu.label}}"
          ng-class="{'sidenav-active': $ctrl.isActive(menuItem)}">
         <ng-md-icon icon="{{ :: menuItem.data.menu.icon }}"></ng-md-icon>
-        <span ng-if="!$ctrl.reducedMode">{{ :: menuItem.data.menu.label }}</span>
+        <span>{{ :: menuItem.data.menu.label }}</span>
+        <!-- <span ng-if="!$ctrl.reducedMode">{{ :: menuItem.data.menu.label }}</span> -->
       </a>
     </md-list-item>
 

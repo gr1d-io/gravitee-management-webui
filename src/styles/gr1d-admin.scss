@@ -1,0 +1,55 @@
+.gr1d-admin {
+    button {
+        margin: 0;
+    }
+    p {
+        font-size: 14px;
+        margin: 0;
+        padding: 0;
+    }
+    h1 {
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: $global-gutter * 2;
+    }
+    table {
+        width: 100%;
+        margin-bottom: 0px;
+        thead tr th, tbody tr td {
+            padding: $global-gutter;
+        }
+    }
+
+    .gr1d-card {
+        background: $color-white;
+        box-shadow: $global-shadow;
+        padding: $global-gutter;
+        margin-bottom: $global-gutter * 3;
+    }
+    
+    .gr1d-header {
+        margin-bottom: $global-gutter;
+    }
+
+    .gr1d-header__title {
+        font-weight: bold;
+        margin-bottom: $global-gutter;
+    }
+
+    
+}
+
+.gr1d-admin-container{
+    background: $color-white-3;
+    width: 100%;
+    padding-top: $global-gutter;
+    position: relative;
+    display: inline-block;
+}
+
+.gr1d-admin-main-content {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding-right: $global-gutter;
+    padding-left: $global-gutter;
+}
