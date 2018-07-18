@@ -134,7 +134,7 @@
           <div layout="column" flex="50" layout-padding>
             <p>{{ $ctrl.creditCard.personal_info.full_name}}</p>
             <p class="api-credit-card__last-digits">**** ***** **** {{ $ctrl.creditCard.card_last_digits}}</p>
-            <p class="api-credit-card__message-error">
+            <p class="api-credit-card__message-error" ng-if="!$ctrl.creditCard.valid">
               <ng-md-icon icon="warning"></ng-md-icon>
               Your credit card is invalid, please change your card
             </p>

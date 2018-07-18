@@ -226,10 +226,31 @@ const ApiSubscribeComponent: ng.IComponentOptions = {
       //   console.log('response', response);
       // });
 
+      // this.creditCard = {
+      //   card_first_digits: '',
+      //   card_last_digits: request.card_number.slice(-4),
+      //   card_holder_name: request.card_holder_name,
+      //   valid: true,
+      //   personal_info: {
+      //     full_name: request.full_name,
+      //     email: request.email
+      //   }
+      // };
+
       this.Gr1dCreditCardsService.create(request).then(response => {
         console.log('response', response);
-        if (response.data) {
-          this.hasCreditCardsEnabled = true;
+        const responseBody = response as any;
+        if (responseBody.status == "ok") {
+          this.creditCard = {
+            card_first_digits: '',
+            card_last_digits: request.card_number.slice(-4),
+            card_holder_name: request.card_holder_name,
+            valid: true,
+            personal_info: {
+              full_name: request.full_name,
+              email: request.email
+            }
+          };
         }
       }).catch(reason => {
         console.log('reason', reason);
