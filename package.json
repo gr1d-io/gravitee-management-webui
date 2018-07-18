@@ -177,6 +177,8 @@
     ]
   },
   "scripts": {
+    "build": "gulp build",
+    "deploy": "gulp build && firebase deploy",
     "test": "gulp test",
     "serve": "gulp serve",
     "serve:demo": "gulp serve:demo",
