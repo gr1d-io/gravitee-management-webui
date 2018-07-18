@@ -25,7 +25,9 @@ function portalI18nConfig($translateProvider, $windowProvider) {
   });
 
   const $window = $windowProvider.$get();
-  const lang = $window.navigator.language || $window.navigator.userLanguage;
+
+  // TODO Force always in english
+  const lang = 'en' || $window.navigator.language || $window.navigator.userLanguage;
 
   $translateProvider.preferredLanguage(lang);
   $translateProvider.fallbackLanguage(_.startsWith(lang, 'fr')?'fr':'en');
