@@ -148,6 +148,12 @@ function routerConfig($stateProvider: ng.ui.IStateProvider, $urlRouterProvider: 
       template: require('./support/ticket.html'),
       controller: 'SupportTicketController',
       controllerAs: 'supportTicketCtrl'
+    })
+    .state('auth', {
+      controller: ($window: ng.IWindowService, Constants: any) => {
+        var redirectUri = encodeURIComponent(window.location.origin + (window.location.pathname == '/' ? '' : window.location.pathname));
+        $window.location.href = `${Constants.authentication.oauth2.authorizationEndpoint}?response_type=code&client_id=gravitee&redirect_uri=${redirectUri}`;
+      }
     });
 
   $urlRouterProvider.otherwise('/');
