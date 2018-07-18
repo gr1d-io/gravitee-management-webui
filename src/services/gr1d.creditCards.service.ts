@@ -12,6 +12,7 @@ class Gr1dCreditCardsService {
   }
 
   create(registerCreditCard): ng.IHttpPromise<any> {
+    this.creditCardsURL = 'http://35.198.33.182/billing/';
     return this.$http.post(`${this.creditCardsURL}authorizeCard`, registerCreditCard);
   }
 

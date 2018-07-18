@@ -115,16 +115,81 @@
                 </div>
             </div>
         </div>
-        <v-accordion class="vAccordion--default" multiple>
+        <v-accordion class="vAccordion--default gr1d-card gr1d-accordion">
 
             <!-- add expanded attribute to open the section -->
             <v-pane expanded>
                 <v-pane-header>
-                    Pane header #1
+                    <div class="gr1d-header">
+                        <div layout="row" layout-align="space-between">
+                            <div layout="column" layout-padding>
+                                <p class="gr1d-header__title">Period</p>
+                                <p class="gr1d-header__subtitle">Jul-01 to Jul-31</p>
+                            </div>
+                            <div layout="column" layout-padding>
+                                <p class="gr1d-header__title">Expiring date</p>
+                                <p class="gr1d-header__subtitle">Fatura aberta</p>
+                            </div>
+                            <div layout="column" layout-padding>
+                                <p class="gr1d-header__title">Amount</p>
+                                <p class="gr1d-header__subtitle">R$ 12,00</p>
+                            </div>
+                            <div layout="column" layout-padding>
+                                <p class="gr1d-header__title">Status</p>
+                                <p class="gr1d-header__subtitle">Houve um erro no pagamento. Em breve entraremos em contato</p>
+                            </div>
+                            <div layout="column" layout-padding>
+                                <button class="md-button">
+                                    <ng-md-icon icon="keyboard_arrow_down"></ng-md-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </v-pane-header>
 
                 <v-pane-content>
-                    Pane content #1
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>API</th>
+                                <th>Plan</th>
+                                <th>Amount</th>
+                                <th>Hits</th>
+                                <th>Total amount</th>
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Jill</td>
+                                <td>Smith</td>
+                                <td>50</td>
+                                <td>50</td>
+                                <td>50</td>
+                            </tr>
+                            <tr>
+                                <td>Jill</td>
+                                <td>Smith</td>
+                                <td>50</td>
+                                <td>50</td>
+                                <td>50</td>
+                            </tr>
+                            <tr>
+                                <td>Jill</td>
+                                <td>Smith</td>
+                                <td>50</td>
+                                <td>50</td>
+                                <td>50</td>
+                            </tr>
+                            <tr>
+                                <td>Jill</td>
+                                <td>Smith</td>
+                                <td>50</td>
+                                <td>50</td>
+                                <td>50</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </v-pane-content>
             </v-pane>
         </v-accordion>

@@ -174,6 +174,7 @@ const ApiSubscribeComponent: ng.IComponentOptions = {
     }
 
     getCreditCards(id: string) {
+      id = '123213';
       this.Gr1dCreditCardsService.get(id).then(response => {
         console.log('responseCreditCards', response);
         this.creditCard = response.data as CreditCard;
@@ -220,11 +221,13 @@ const ApiSubscribeComponent: ng.IComponentOptions = {
 
       console.log('request', request);
 
-      this.UserService.search('email').then(response => {
-        console.log('response', response);
-      });
+      // TODO Get Email from keycloak
+      // this.UserService.search('email').then(response => {
+      //   console.log('response', response);
+      // });
 
       this.Gr1dCreditCardsService.create(request).then(response => {
+        console.log('response', response);
         if (response.data) {
           this.hasCreditCardsEnabled = true;
         }

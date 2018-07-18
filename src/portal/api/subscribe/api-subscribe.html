@@ -149,7 +149,7 @@
         <div class="api-register-card__close" ng-click="$ctrl.closeFormCreditCard()" ng-if="$ctrl.showCloseFormCreditCard()" >
           <ng-md-icon icon="close"></ng-md-icon>
         </div>
-        <h1 translate="api.subscription.step3.registerCreditCard.titleRegister"></h1>
+        <h1 translate="api.subscription.step3.registerCreditCard.titleConfirmPersonal"></h1>
         <form name="$ctrl.registerCreditCard" ng-submit="$ctrl.registerCreditCard.$valid && $ctrl.sendCreditCard($ctrl.registerCreditCard)">
           <div layout="row">
             <div layout="row" flex="50" layout-padding>
@@ -189,6 +189,7 @@
               </div>
             </md-input-container>
           </div>
+          <h1 translate="api.subscription.step3.registerCreditCard.titleCreditCardInfo"></h1>
           <div layout="row">
             <div layout="row" flex="50" layout-padding>
               <md-input-container class="md-block">
