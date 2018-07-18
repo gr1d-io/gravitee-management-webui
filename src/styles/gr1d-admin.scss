@@ -39,7 +39,17 @@
     
 }
 
-.gr1d-admin-main-content {
+.gr1d-admin-container{
     background: $color-white-3;
-    padding: $global-gutter * 2;
+    width: 100%;
+    padding-top: $global-gutter;
+    position: relative;
+    display: inline-block;
+}
+
+.gr1d-admin-main-content {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding-right: $global-gutter;
+    padding-left: $global-gutter;
 }
