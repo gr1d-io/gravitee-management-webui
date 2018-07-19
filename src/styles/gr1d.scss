@@ -18,6 +18,7 @@ $color-brownish-grey: #616161;
 $color-white: #fff;
 
 $color-white-two: #f5f5f5;
+$color-white-three: #eeeeee;
 $color-pale-grey-two: #f5f5f8;
 $color-grey: #eee;
 $color-greyish-brown: #424242;
@@ -27,7 +28,7 @@ $color-violet-blue: #3d0dc7;
 $color-white-90: rgba(255, 255, 255, 0.9);
 $color-white-68: rgba(255, 255, 255, 0.68);
 $color-white-62: rgba(255, 255, 255, 0.62);
-$color-white-2: #fafafa;
+$color-white-2: #f5f5f5;
 $color-white-3: #eeeeee;
 $color-purpleish-blue: #784af7;
 
@@ -45,10 +46,9 @@ $color-very-light-pink: #fcede8;
 
 $global-gutter: 16px;
 $global-gutter-min: 8px;
-$topbar-height: 80px;
+$topbar-height: 84px;
 
 $global-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
-
 
 
 body, h1, h2, div, span, h1 span, p, button, input, .layout-align-center-center > *, md-content, .main-content, b, md-input-container .md-input, md-autocomplete input:not(.md-input) {
@@ -247,8 +247,8 @@ gv-submenu {
     }
 }
 
-.gravitee-sidenav, .gv-main-container {
-    padding-top: $topbar-height;
+.gv-main-container {
+    padding-top: $topbar-height !important;
 }
 
 .sidenav-footer {
@@ -262,6 +262,38 @@ gv-submenu {
     margin-right: 10px;
 }
 
+// Table
+
+table {
+    &.md-table td.md-cell {
+        border-top: 0;
+        border-bottom: 1px solid $color-white-three;
+    }
+
+    & tr.even, table tr.alt, & tr:nth-of-type(even) {
+        background: transparent;
+    }
+}
+
+
+%link-gr1d-uppercase {
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: $color-purple;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+%input-search {
+    padding: 25px 15px 25px 55px;
+    border: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12);
+    font-size: 18px;
+
+    background-image: url('/themes/assets/icon-search.svg');
+    background-repeat: no-repeat;
+    background-position: 19px 15px;
+}
 
 
 @import 'gr1d-buttons';
@@ -274,5 +306,7 @@ gv-submenu {
 @import 'gr1d-api-subscribe';
 @import 'gr1d-credit-card';
 @import 'gr1d-accordion';
-@import 'gr1d-admin';
-@import 'gr1d-admin-sidenav';
+@import 'gr1d-admin',
+        'gr1d-admin-sidenav',
+        'gr1d-admin-user',
+        'gr1d-admin-applications';

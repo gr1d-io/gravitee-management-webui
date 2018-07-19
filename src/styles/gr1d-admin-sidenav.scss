@@ -1,16 +1,24 @@
 .gr1d-admin-sidenav {
-    background: $color-white-2;
+    background: $color-white-two;
     &.md-sidenav-theme {
-        background: $color-white-2;
+        background: $color-white-two;
     }
+
     .sidenav-list {
+        height: calc(100vh - #{$topbar-height});
+
         a {
             color: $color-black;
             &:hover {
                 background: $color-pale-grey-two;
             }
             &.sidenav-active {
-                background-color: #dadada;
+                background-color: white;
+                color: $color-purple;
+
+                ng-md-icon {
+                    fill: $color-purple;
+                }
             }
         }
         ng-md-icon {

@@ -26,7 +26,7 @@ function routerConfig($stateProvider: ng.ui.IStateProvider, $urlRouterProvider: 
         abstract: true,
         template: "<div layout='row'>" +
         "<div ui-view='sidenav' class='gravitee-sidenav'></div>" +
-        "<md-content ui-view layout='column' flex style='height: 100vh'></md-content>" +
+        "<md-content ui-view layout='column' flex style='height: 100vh' class='gr1d-admin'></md-content>" +
         "</div>",
         resolve: {
           graviteeUser: (UserService: UserService) => UserService.current()
@@ -43,8 +43,8 @@ function routerConfig($stateProvider: ng.ui.IStateProvider, $urlRouterProvider: 
             component: 'gvSidenav'
           },
           '': {
-            template: '<div flex layout="row">' +
-            '<div class="gv-main-container" ui-view layout="column" flex></div>' +
+            template: '<div flex layout="row" class="gr1d-admin-container">' +
+            '<div class="gv-main-container gr1d-admin-main-content" ui-view layout="column" flex></div>' +
             '<gv-contextual-doc></gv-contextual-doc>' +
             '</div>'
           }
