@@ -1,0 +1,13 @@
+.gr1d-admin {
+  .search {
+    padding: 10px;
+  }
+
+  .apis-header-filter {
+    margin-bottom: 20px;
+
+    input {
+      @extend %input-search;
+    }
+  }
+}

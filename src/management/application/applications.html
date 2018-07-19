@@ -15,27 +15,26 @@
     limitations under the License.
 
 -->
-<md-card class="no-box-shadow" ng-if="!isLoading && $ctrl.applications.length > 0">
-  <md-card-header>
-    <md-card-header-text layout="row" layout-align="center">
-      <div class="input-group apis-header-filter" flex="60" flex-xs="100">
+<div ng-if="!isLoading && $ctrl.applications.length > 0">
+  <div layout="row" class="search">
+    <div class="input-group apis-header-filter" flex="100">
         <input class="form-control" type="text" ng-model="searchApplications" placeholder="Search applications ..."
-               ng-change="$ctrl.loadMore(query.order, searchApplications, false)" autofocus/>
-      </div>
-    </md-card-header-text>
-  </md-card-header>
-  <md-card-content id="applications-container" style="overflow-y: auto; height: calc(100vh - 200px);">
-    <div layout="row" layout-wrap class="inset" infinite-scroll="$ctrl.loadMore(query.order, searchApplications, true)"
-         infinite-scroll-distance="1" infinite-scroll-container="'#applications-container'">
+              ng-change="$ctrl.loadMore(query.order, searchApplications, false)" autofocus/>
+    </div>
+  </div>
+
+  <div id="applications-container" style="overflow-y: auto; height: calc(100vh - 200px);">
+    <div layout="row" flex="100" layout-wrap class="inset" infinite-scroll="$ctrl.loadMore(query.order, searchApplications, true)"
+    infinite-scroll-distance="1" infinite-scroll-container="'#applications-container'">
       <md-table-container style="width: 100%">
         <table md-table md-row-select="true" ng-model="$ctrl.selectedApplications" ng-init="query.order = 'name'">
           <thead md-head md-order="query.order">
-          <tr md-row>
-            <th md-column></th>
-            <th md-column md-order-by="name" ng-click="$ctrl.loadMore(query.order, searchApplications, false)"><span>Name</span></th>
-            <th md-column md-order-by="type" ng-click="$ctrl.loadMore(query.order, searchApplications, false)">Type</th>
-            <th md-column md-order-by="owner.displayName" ng-click="$ctrl.loadMore(query.order, searchApplications, false)">Owner</th>
-          </tr>
+            <tr md-row>
+              <th md-column></th>
+              <th md-column md-order-by="name" ng-click="$ctrl.loadMore(query.order, searchApplications, false)"><span>Name</span></th>
+              <th md-column md-order-by="type" ng-click="$ctrl.loadMore(query.order, searchApplications, false)">Type</th>
+              <th md-column md-order-by="owner.displayName" ng-click="$ctrl.loadMore(query.order, searchApplications, false)">Owner</th>
+            </tr>
           </thead>
           <tbody md-body>
           <tr md-row ui-sref="management.applications.application.general({applicationId: application.id})"
@@ -49,8 +48,8 @@
         </table>
       </md-table-container>
     </div>
-  </md-card-content>
-</md-card>
+  </div>
+</div>
 
 <gravitee-empty-state ng-if="$ctrl.applications.length == 0"
                       icon="list"
