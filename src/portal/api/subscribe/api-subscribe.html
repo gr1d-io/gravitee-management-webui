@@ -134,7 +134,7 @@
           <div layout="column" flex="50" layout-padding>
             <p>{{ $ctrl.creditCard.personal_info.full_name}}</p>
             <p class="api-credit-card__last-digits">**** ***** **** {{ $ctrl.creditCard.card_last_digits}}</p>
-            <p class="api-credit-card__message-error">
+            <p class="api-credit-card__message-error" ng-if="!$ctrl.creditCard.valid">
               <ng-md-icon icon="warning"></ng-md-icon>
               Your credit card is invalid, please change your card
             </p>
@@ -149,7 +149,7 @@
         <div class="api-register-card__close" ng-click="$ctrl.closeFormCreditCard()" ng-if="$ctrl.showCloseFormCreditCard()" >
           <ng-md-icon icon="close"></ng-md-icon>
         </div>
-        <h1 translate="api.subscription.step3.registerCreditCard.titleRegister"></h1>
+        <h1 translate="api.subscription.step3.registerCreditCard.titleConfirmPersonal"></h1>
         <form name="$ctrl.registerCreditCard" ng-submit="$ctrl.registerCreditCard.$valid && $ctrl.sendCreditCard($ctrl.registerCreditCard)">
           <div layout="row">
             <div layout="row" flex="50" layout-padding>
@@ -189,6 +189,7 @@
               </div>
             </md-input-container>
           </div>
+          <h1 translate="api.subscription.step3.registerCreditCard.titleCreditCardInfo"></h1>
           <div layout="row">
             <div layout="row" flex="50" layout-padding>
               <md-input-container class="md-block">

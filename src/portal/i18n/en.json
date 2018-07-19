@@ -100,6 +100,8 @@
         "registerCreditCard": {
           "title": "Validate your payment method",
           "titleRegister": "Register your credit card",
+          "titleConfirmPersonal": "Register your personal information",
+          "titleCreditCardInfo": "Credit card info",
           "form" : {
             "fullName": "Full name",
             "dateOfBirth": "Date of birth",
