@@ -91,6 +91,9 @@ input.form-control {
     p {
         padding-top: $global-gutter/2;
     }
+    a {
+        color: $color-white;
+    }
 }
 
 // Home
@@ -113,15 +116,19 @@ input.form-control {
 }
 .home-title {
     position: relative;
-    &::after {
-        width: 267px;
-        height: 8px;
-        background: $color-purple;
-        position: absolute;
-        content:"";
-        left: -38px;
-        top: 25px;
-    }
+    // &::after {
+    //     width: 267px;
+    //     height: 8px;
+    //     background: $color-purple;
+    //     position: absolute;
+    //     content:"";
+    //     left: -38px;
+    //     top: 25px;
+    // }
+}
+
+.api-box {
+    width: 272px;
 }
 
 .tall {
@@ -168,6 +175,9 @@ input.form-control {
 
 .gravitee-splash-screen {
     background: $color-violet-blue;
+    img {
+        display: none;
+    }
 }
 
 .gravitee-no-sidenav-container, md-sidenav.md-sidenav-theme, .api-nav {

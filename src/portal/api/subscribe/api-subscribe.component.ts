@@ -174,11 +174,10 @@ const ApiSubscribeComponent: ng.IComponentOptions = {
     }
 
     getCreditCards(id: string) {
-      id = '123213';
       this.Gr1dCreditCardsService.get(id).then(response => {
         console.log('responseCreditCards', response);
         this.creditCard = response.data as CreditCard;
-        if (this.creditCard) {
+        if (this.creditCard.card_first_digits && this.creditCard.card_holder_name) {
           console.log('this.creditCard', this.creditCard);
 
           this.hasCreditCardsEnabled = this.creditCard.valid;
