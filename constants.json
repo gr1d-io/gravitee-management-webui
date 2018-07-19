@@ -1,5 +1,5 @@
 {
-  "baseURL": "https://gateway.gr1d.io/management/",
+  "baseURL": "http://10.11.6.53:8005/management/",
   "theme": {
     "name": "gr1d",
     "logo": "themes/assets/gr1d_logo_900x900.png",
@@ -14,8 +14,8 @@
       "clientId": "gravitee",
       "name": "Keycloak",
       "color": "#0076b4",
-      "authorizationEndpoint": "https://keycloak.gr1d.io/auth/realms/master/protocol/openid-connect/auth",
-      "userLogoutEndpoint": "https://keycloak.gr1d.io/auth/realms/master/protocol/openid-connect/logout",
+      "authorizationEndpoint": "http://10.11.6.53:9090/auth/realms/master/protocol/openid-connect/auth",
+      "userLogoutEndpoint": "http://10.11.6.53:9090/auth/realms/master/protocol/openid-connect/logout",
       "scope": ["profile", "openid"]
     }
   }
