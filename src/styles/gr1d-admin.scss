@@ -1,4 +1,9 @@
 .gr1d-admin {
+
+    &, md-content, .main-content {
+        background: $color-white-3;
+    }
+
     button {
         margin: 0;
     }
@@ -35,12 +40,9 @@
         font-weight: bold;
         margin-bottom: $global-gutter;
     }
-
-    
 }
 
 .gr1d-admin-container{
-    background: $color-white-3;
     width: 100%;
     padding-top: $global-gutter;
     position: relative;
@@ -48,7 +50,7 @@
 }
 
 .gr1d-admin-main-content {
-    max-width: 1140px;
+    max-width: 1280px;
     margin: 0 auto;
     padding-right: $global-gutter;
     padding-left: $global-gutter;

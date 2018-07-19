@@ -4,6 +4,8 @@
         background: $color-white-2;
     }
     .sidenav-list {
+        height: calc(100vh - #{$topbar-height});
+
         a {
             color: $color-black;
             &:hover {
