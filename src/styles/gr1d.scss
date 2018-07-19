@@ -18,6 +18,7 @@ $color-brownish-grey: #616161;
 $color-white: #fff;
 
 $color-white-two: #f5f5f5;
+$color-white-three: #eeeeee;
 $color-pale-grey-two: #f5f5f8;
 $color-grey: #eee;
 $color-greyish-brown: #424242;
@@ -251,6 +252,13 @@ gv-submenu {
     margin-right: 10px;
 }
 
+%link-gr1d-uppercase {
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: $color-purple;
+    font-weight: 700;
+    font-size: 18px;
+}
 
 
 @import 'gr1d-buttons';
@@ -263,5 +271,6 @@ gv-submenu {
 @import 'gr1d-api-subscribe';
 @import 'gr1d-credit-card';
 @import 'gr1d-accordion';
-@import 'gr1d-admin';
-@import 'gr1d-admin-sidenav';
+@import 'gr1d-admin',
+        'gr1d-admin-sidenav',
+        'gr1d-admin-user';

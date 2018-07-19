@@ -1,0 +1,43 @@
+.gr1d-admin {
+
+  .gravitee-upload-image {
+    margin: 15px 25px 0 25px;
+    border-radius: 0;
+    background-color: $color-white-three;
+    min-height: 140px;
+    padding: 10px;
+  }
+
+  .gravitee-upload-image-button {
+    background-color: $color-white-two;
+    margin: 0 25px;
+
+    p {
+      padding: 10px;
+    }
+
+    a {
+      @extend %link-gr1d-uppercase;
+    }
+  }
+
+  form[name="formUser"] {
+    md-card {
+      min-height: 250px;
+    }
+  }
+
+  .gravitee-user-container {
+    md-card-title {
+      max-height: 130px;
+    }
+
+    md-card-content {
+      color: $color-greyish-brown;
+
+      .layout-row {
+        padding: 6px 0;
+      }
+    }
+  }
+}
