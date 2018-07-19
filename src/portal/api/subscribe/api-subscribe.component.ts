@@ -201,7 +201,7 @@ const ApiSubscribeComponent: ng.IComponentOptions = {
     sendCreditCard(registerCreditCard: RegisterCreditCard) {
       console.log('registerCreditCard', registerCreditCard);
       const document = registerCreditCard.document.replace(/\D/g,'');
-
+      const cvv = registerCreditCard.card_cvv + '';
       console.log('user', this.user);
 
       const request = {
@@ -215,7 +215,7 @@ const ApiSubscribeComponent: ng.IComponentOptions = {
         card_holder_name: registerCreditCard.card_holder_name,
         card_number: registerCreditCard.card_number.replace(/\D/g,''),
         card_expiration_date: this.getExpirationDate(registerCreditCard.card_expiration_date),
-        card_cvv: registerCreditCard.card_cvv.replace(/\D/g,'')
+        card_cvv: cvv.replace(/\D/g,'')
       };
 
       console.log('request', request);

@@ -6,6 +6,9 @@
     border: 2px solid $color-purple;
     background: $color-pale-lavender;
     width: 300px;
+    p {
+        margin-bottom: 0px;
+    }
     .gr1d-credit-card__title-number, .gr1d-credit-card__title-validate {
         font-weight: bold;
         font-size: 10px;

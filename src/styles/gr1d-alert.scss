@@ -1,0 +1,24 @@
+.gr1d-alert {
+    background: $color-greyish-brown;
+    display: flex;
+    padding: 0px;   
+    &.gr1d-alert-error {
+        .gr1d-alert__icon {
+            background: $color-red-pink;
+        }
+    }
+
+    .gr1d-alert__icon {
+        padding: $global-gutter / 2;
+
+        ng-md-icon {
+            fill: $color-white;
+        }
+    }
+
+    .gr1d-alert__message {
+        padding: $global-gutter;
+        color: $color-white;
+        font-size: 16px;
+    }
+}

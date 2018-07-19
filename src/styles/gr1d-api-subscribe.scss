@@ -98,17 +98,21 @@
   h1 {
     margin-bottom: $global-gutter*2;
   }
+
+  .gr1d-credit-card {
+      margin-bottom: $global-gutter;
+  }
 }
 
-.api-credit-card {
-    padding: $global-gutter;
-    border: 1px solid $color-grey;
-    border-radius: 5px;
-    .api-credit-card__last-digits {
-        font-size: 24px;
-        font-weight: bold;
-    }
-}
+// .api-credit-card {
+//     padding: $global-gutter;
+//     border: 1px solid $color-grey;
+//     border-radius: 5px;
+//     .api-credit-card__last-digits {
+//         font-size: 24px;
+//         font-weight: bold;
+//     }
+// }
 
 .api-credit-card__message-error {
     border: 1px solid $color-tomato;
