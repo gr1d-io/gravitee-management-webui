@@ -21,11 +21,11 @@
 %gr1d-btn-md-actions {
 
     .md-actions {
-        
+
         .md-button.md-raised:not([disabled]) {
             box-shadow: none;
         }
-        
+
         .md-button:not([disabled]):not(.md-primary):not(.md-warn) {
             border: 2px solid transparent;
             color: white;
@@ -61,6 +61,11 @@
     img {
         margin-right: $global-gutter / 2;
     }
+    &.button-outline {
+      background: $color-white;
+      color: $color-purple;
+      border: 2px solid $color-purple;
+  }
 }
 
 .md-primary {

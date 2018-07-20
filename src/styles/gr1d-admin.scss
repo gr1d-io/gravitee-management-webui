@@ -1,7 +1,7 @@
 .gr1d-admin {
 
-    @extend %gr1d-input, 
-            %gr1d-md-input-container, 
+    @extend %gr1d-input,
+            %gr1d-md-input-container,
             %gr1d-select,
             %gr1d-btn-md-actions;
 
@@ -53,7 +53,7 @@
         padding: $global-gutter;
         margin-bottom: $global-gutter * 3;
     }
-    
+
     .gr1d-header {
         margin-bottom: $global-gutter;
     }
@@ -96,6 +96,11 @@
 
     md-card .md-actions, md-card md-card-actions {
         margin: 15px 2px 30px 2px;
+    }
+
+    .gravitee-analytics-timeframe-active {
+      color: $color-white;
+      background: $color-lighter-purple;
     }
 }
 
