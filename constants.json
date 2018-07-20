@@ -1,5 +1,5 @@
 {
-  "baseURL": "http://10.11.6.53:8005/management/",
+  "baseURL": "https://gateway-api.gr1d.io/management/",
   "portalTitle": "GR1D | Developers Portal",
   "portal": {
     "title": "GR1D | Developers Portal"
@@ -12,16 +12,6 @@
     "css": "themes/assets/gravitee.css",
     "icons": {
       "signUp": "themes/assets/icon-sign-up.svg"
-    }
-  },
-  "authentication": {
-    "oauth2": {
-      "clientId": "gravitee",
-      "name": "Keycloak",
-      "color": "#0076b4",
-      "authorizationEndpoint": "http://10.11.6.53:9090/auth/realms/master/protocol/openid-connect/auth",
-      "userLogoutEndpoint": "http://10.11.6.53:9090/auth/realms/master/protocol/openid-connect/logout",
-      "scope": ["profile", "openid"]
     }
   }
 }
