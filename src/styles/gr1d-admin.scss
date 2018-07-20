@@ -1,9 +1,13 @@
 .gr1d-admin {
 
+    @extend %gr1d-input, 
+            %gr1d-md-input-container, 
+            %gr1d-select,
+            %gr1d-btn-md-actions;
+
     &, md-content, .main-content {
         background: $color-white-3;
     }
-
     button {
         margin: 0;
     }
@@ -63,6 +67,36 @@
         font-weight: 700;
         color: $color-dark-grey;
       }
+
+    .md-subheader {
+        &.md-primary {
+            background-color: transparent !important;
+        }
+
+        .md-subheader-inner {
+            border: 0;
+            margin: 5px 0 15px 3px;
+            font-weight: 700;
+            font-size: 22px;
+            padding: 15px 0;
+        }
+    }
+
+    .md-subheader-content {
+        color: black;
+    }
+
+    .widget-card > md-card-title {
+        padding-top: 0 !important;
+    }
+
+    .md-title {
+        font-size: 22px !important;
+    }
+
+    md-card .md-actions, md-card md-card-actions {
+        margin: 15px 2px 30px 2px;
+    }
 }
 
 .gr1d-admin-container{

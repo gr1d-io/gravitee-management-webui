@@ -10,4 +10,32 @@
       @extend %input-search;
     }
   }
+
+  .gravitee-api-header-content {
+    
+    h4 {
+      color: $color-greyish-brown;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 16px;
+    }
+
+    .gravitee-api-header-details > span {
+      margin: 10px;
+      color: $color-greyish-brown;
+
+      svg {
+        fill: $color-greyish-brown;
+      }
+    }
+
+    .gravitee-api-header-read-more {
+      color: $color-greyish-brown;
+      font-size: 16px;
+    }
+  }
+
 }
