@@ -16,39 +16,49 @@
 
 -->
 <div>
-  <span class="md-headline" style="padding: 24px 16px 16px;">Subscriptions</span>
+
 
   <md-card flex>
+
+    <md-card-content>
+      <div layout="row" layout-align="start" flex>
+          <md-subheader class="md-primary" style="background-color: #fafafa">Subscriptions</md-subheader>
+      </div>
+    </md-card-content>
+
     <div class="widget-card logs-filters-container" flex>
       <md-card-title>
         <md-card-title-text>
-          <span class="md-title"><strong>Filters</strong></span>
+          <span class="md-title">Filters</span>
         </md-card-title-text>
       </md-card-title>
       <md-card-content>
+
         <form ng-submit="$ctrl.doSearch()" name="$ctrl.subscriptionsFiltersForm">
           <div layout-gt-sm="row">
-            <md-input-container class="md-block" flex-gt-sm flex="30">
+            <md-input-container class="md-block" flex-gt-sm flex="50">
               <label>Api</label>
               <md-select ng-model="$ctrl.query.apis" placeholder="Apis" multiple>
                 <md-option ng-value="subscriber.id" ng-repeat="subscriber in $ctrl.subscribers track by subscriber.id">{{ subscriber.name }} () </md-option>
               </md-select>
             </md-input-container>
-            <md-input-container class="md-block" flex-gt-sm flex="20">
+            <md-input-container class="md-block" flex-gt-sm flex="50">
               <label>Status</label>
               <md-select ng-model="$ctrl.query.status" placeholder="Status" multiple>
                 <md-option ng-value="key" ng-repeat="(key, value) in $ctrl.status">{{ value }}</md-option>
               </md-select>
             </md-input-container>
-            <div>
-              <md-button type="button" class="md-raised" ng-click="$ctrl.clearFilters()" ng-disabled="$ctrl.subscriptionsFiltersForm.$pristine">
-                Clear
-              </md-button>
-              <md-button type="submit" class="md-raised md-primary">
-                Search
-              </md-button>
-            </div>
           </div>
+
+          <div class="md-actions gravitee-api-save-button" layout="row">
+            <md-button type="button" class="md-raised" ng-click="$ctrl.clearFilters()" ng-disabled="$ctrl.subscriptionsFiltersForm.$pristine">
+              Clear
+            </md-button>
+            <md-button type="submit" class="md-raised md-primary">
+              Search
+            </md-button>
+          </div>
+
         </form>
       </md-card-content>
     </div>

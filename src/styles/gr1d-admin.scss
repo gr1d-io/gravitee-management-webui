@@ -85,6 +85,18 @@
     .md-subheader-content {
         color: black;
     }
+
+    .widget-card > md-card-title {
+        padding-top: 0 !important;
+    }
+
+    .md-title {
+        font-size: 22px !important;
+    }
+
+    md-card .md-actions, md-card md-card-actions {
+        margin: 15px 2px 30px 2px;
+    }
 }
 
 .gr1d-admin-container{
