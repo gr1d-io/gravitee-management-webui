@@ -1,5 +1,5 @@
 {
-    "baseSandboxURL": "http://localhost:8005/management/",
+    "baseSandboxURL": "https://gateway-api.gr1d/management/",
     "basePortalBackendURL": "http://portal-backend-staging.appspot.com/api/",
     "theme": {
       "logoSmall": "themes/assets/gr1d_logo_white_small.png",
@@ -15,4 +15,3 @@
       }
     }
   }
-  
