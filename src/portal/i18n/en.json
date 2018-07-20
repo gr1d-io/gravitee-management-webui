@@ -120,7 +120,7 @@
       "planInformation": "with a quota of {{quotaLimit}} requests per {{quotaPeriodTime}} {{quotaPeriodTimeUnit}}"
     },
     "plan": {
-      "title": "Plans",
+      "title": "API Plans",
       "subscribe": "Subscribe",
       "activateApi": "Activate API",
       "sandboxTest" : "Sandbox Test",
