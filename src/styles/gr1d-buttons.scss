@@ -42,6 +42,11 @@
             &:hover {
                 background-color: rgba(90, 37, 240, 0.15);
             }
+
+            ng-md-icon {
+                fill: $color-purple !important;
+                top: 5px;
+            }
         }
         .md-warn {
             background-color: transparent !important;

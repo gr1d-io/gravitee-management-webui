@@ -69,7 +69,7 @@
       }
 
     .md-subheader {
-        &.md-primary {
+        &, &.md-primary {
             background-color: transparent !important;
         }
 
