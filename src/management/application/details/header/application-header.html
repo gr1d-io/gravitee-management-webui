@@ -28,15 +28,15 @@
         </md-content>
       </div>
 
-      <div flex="30" style="text-align: right">
-        <p style="padding: 0; margin: 0;">
-          <span>{{$ctrl.application.owner.displayName}}<md-tooltip md-direction="left">Owner</md-tooltip></span>
+      <div flex="30" style="text-align: right" class="gravitee-api-header-details">
+        <span>
           <span><ng-md-icon icon="person"></ng-md-icon></span>
-        </p>
-        <p style="padding: 0; margin: 0;">
-          <span>{{$ctrl.application.created_at | humanDateFilter}}<md-tooltip md-direction="left">Created at</md-tooltip></span>
+          <span>{{$ctrl.application.owner.displayName}}<md-tooltip md-direction="left">Owner</md-tooltip></span>
+        </span>
+        <span>
           <span><ng-md-icon icon="timer"></ng-md-icon></span>
-        </p>
+          <span>{{$ctrl.application.created_at | humanDateFilter}}<md-tooltip md-direction="left">Created at</md-tooltip></span>
+        </span>
       </div>
     </div>
   </div>

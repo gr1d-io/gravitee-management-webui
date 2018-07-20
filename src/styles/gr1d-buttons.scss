@@ -1,4 +1,4 @@
-.button-primary {
+%gr1d-btn-primary {
     background: $color-purple;
     color: $color-white;
     padding: $global-gutter / 2 $global-gutter-min*3;
@@ -16,6 +16,40 @@
         color: $color-purple;
         border: 2px solid $color-purple;
     }
+}
+
+%gr1d-btn-md-actions {
+
+    .md-actions {
+        
+        .md-button.md-raised:not([disabled]) {
+            box-shadow: none;
+        }
+        
+        .md-button:not([disabled]):not(.md-primary):not(.md-warn) {
+            border: 2px solid transparent;
+            color: white;
+            background-color: $color-purple;
+            border-radius: 0;
+        }
+
+        .md-primary:not([disabled]) {
+            border-radius: 0;
+            background-color: white;
+            color: $color-purple;
+            border: 2px solid $color-purple;
+        }
+        .md-warn {
+            background-color: transparent !important;
+            color: $color-purple !important;
+            text-decoration: underline !important;
+        }
+    }
+
+}
+
+.button-primary {
+    @extend %gr1d-btn-primary;
 }
 
 .md-button {
