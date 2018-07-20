@@ -19,9 +19,27 @@
     }
     table {
         width: 100%;
-        margin-bottom: 0px;
+        margin-bottom: 0;
+        border: 0;
+
         thead tr th, tbody tr td {
             padding: $global-gutter;
+        }
+
+        .api-box-icon.default {
+            background-size: auto 75%;
+        }
+
+        &.md-table th.md-column {
+            font-size: 18px;
+        }
+
+        &.md-table td.md-cell {
+            font-size: 16px;
+        }
+
+        &.md-table tbody.md-body > tr.md-row, &.md-table tfoot.md-foot > tr.md-row {
+            height: 60px;
         }
     }
 

@@ -28,7 +28,7 @@ $color-violet-blue: #3d0dc7;
 $color-white-90: rgba(255, 255, 255, 0.9);
 $color-white-68: rgba(255, 255, 255, 0.68);
 $color-white-62: rgba(255, 255, 255, 0.62);
-$color-white-2: #fafafa;
+$color-white-2: #f5f5f5;
 $color-white-3: #eeeeee;
 $color-purpleish-blue: #784af7;
 
@@ -43,6 +43,8 @@ $color-off-white: #fcf7e5;
 
 $color-tomato: #e14e1a; // DELETE
 $color-very-light-pink: #fcede8;
+
+$color-red-pink: #ee414b;
 
 $global-gutter: 16px;
 $global-gutter-min: 8px;
@@ -91,6 +93,9 @@ input.form-control {
     p {
         padding-top: $global-gutter/2;
     }
+    a {
+        color: $color-white;
+    }
 }
 
 // Home
@@ -113,15 +118,19 @@ input.form-control {
 }
 .home-title {
     position: relative;
-    &::after {
-        width: 267px;
-        height: 8px;
-        background: $color-purple;
-        position: absolute;
-        content:"";
-        left: -38px;
-        top: 25px;
-    }
+    // &::after {
+    //     width: 267px;
+    //     height: 8px;
+    //     background: $color-purple;
+    //     position: absolute;
+    //     content:"";
+    //     left: -38px;
+    //     top: 25px;
+    // }
+}
+
+.api-box {
+    width: 272px;
 }
 
 .tall {
@@ -168,6 +177,9 @@ input.form-control {
 
 .gravitee-splash-screen {
     background: $color-violet-blue;
+    img {
+        display: none;
+    }
 }
 
 .gravitee-no-sidenav-container, md-sidenav.md-sidenav-theme, .api-nav {
@@ -252,12 +264,37 @@ gv-submenu {
     margin-right: 10px;
 }
 
+// Table
+
+table {
+    &.md-table td.md-cell {
+        border-top: 0;
+        border-bottom: 1px solid $color-white-three;
+    }
+
+    & tr.even, table tr.alt, & tr:nth-of-type(even) {
+        background: transparent;
+    }
+}
+
+
 %link-gr1d-uppercase {
     text-transform: uppercase;
     text-decoration: underline;
     color: $color-purple;
     font-weight: 700;
     font-size: 18px;
+}
+
+%input-search {
+    padding: 25px 15px 25px 55px;
+    border: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12);
+    font-size: 18px;
+
+    background-image: url('/themes/assets/icon-search.svg');
+    background-repeat: no-repeat;
+    background-position: 19px 15px;
 }
 
 
@@ -271,6 +308,8 @@ gv-submenu {
 @import 'gr1d-api-subscribe';
 @import 'gr1d-credit-card';
 @import 'gr1d-accordion';
+@import 'gr1d-alert';
 @import 'gr1d-admin',
         'gr1d-admin-sidenav',
-        'gr1d-admin-user';
+        'gr1d-admin-user',
+        'gr1d-admin-applications';

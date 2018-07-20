@@ -1,4 +1,4 @@
-.gr1d-admin {
+.gr1d-admin form[name="formUser"] {
 
   .gravitee-upload-image {
     margin: 15px 25px 0 25px;
@@ -21,10 +21,8 @@
     }
   }
 
-  form[name="formUser"] {
-    md-card {
-      min-height: 250px;
-    }
+  md-card {
+    min-height: 250px;
   }
 
   .gravitee-user-container {

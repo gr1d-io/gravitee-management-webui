@@ -31,7 +31,8 @@
     "apis": {
       "search": "Search for APIs...",
       "top": "Top APIs",
-      "all": "See all APIs"
+      "latest": "Latest APIs",
+      "all": "See all"
     }
   },
   "menu": {

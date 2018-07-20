@@ -1,5 +1,10 @@
 {
   "baseURL": "http://10.11.6.53:8005/management/",
+  "portalTitle": "GR1D | Developers Portal",
+  "portal": {
+    "title": "GR1D | Developers Portal"
+  },
+  "managementTitle": "GR1D Management",
   "theme": {
     "name": "gr1d",
     "logo": "themes/assets/gr1d_logo_900x900.png",

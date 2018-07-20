@@ -130,14 +130,32 @@
 
       <div class="api-subscribe-instructions gr1d-form api-register-card" layout="column" flex style="color: #424E5A;" ng-if="!$ctrl.showFormCreditCard()">
         <h1 translate="api.subscription.step3.registerCreditCard.title"></h1>
-        <div class="api-credit-card" layout="row">
+        <div layout="row">
           <div layout="column" flex="50" layout-padding>
-            <p>{{ $ctrl.creditCard.personal_info.full_name}}</p>
-            <p class="api-credit-card__last-digits">**** ***** **** {{ $ctrl.creditCard.card_last_digits}}</p>
-            <p class="api-credit-card__message-error" ng-if="!$ctrl.creditCard.valid">
-              <ng-md-icon icon="warning"></ng-md-icon>
-              Your credit card is invalid, please change your card
-            </p>
+            <div class="gr1d-credit-card">
+              <p class="gr1d-credit-card__holder-name">{{ $ctrl.creditCard.personal_info.full_name}}</p>
+              <p class="gr1d-credit-card__title-number">NUMBER</p>
+              <p class="gr1d-credit-card__number">**** **** **** {{ $ctrl.creditCard.card_last_digits}}</p>
+              <div layout="row" layout-align="end center">
+                <div class="hide" layout="column">
+                  <p class="gr1d-credit-card__title-validate">VALIDADE</p>
+                  <p class="gr1d-credit-card__validate">12/18</p>
+                </div>
+                <div layout="column">
+                  <div class="gr1d-credit-card__flag"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="gr1d-alert gr1d-alert-error" ng-if="!$ctrl.creditCard.valid">
+              <div class="gr1d-alert__icon">
+                  <ng-md-icon icon="warning"></ng-md-icon>
+              </div>
+              <div class="gr1d-alert__message">
+                  Your credit card is invalid, please change your card
+              </div>
+            </div>
+
           </div>
           <div layout="row" flex="50" layout-padding>
             <button class="md-button button-primary" ng-click="$ctrl.changeCard()">CHANGE</button>
@@ -146,7 +164,7 @@
       </div>
 
       <div class="api-subscribe-instructions gr1d-form api-register-card" layout="column" flex style="color: #424E5A;" ng-if="$ctrl.showFormCreditCard()">
-        <div class="api-register-card__close" ng-click="$ctrl.closeFormCreditCard()" ng-if="$ctrl.showCloseFormCreditCard()" >
+        <div class="api-register-card__close" ng-click="$ctrl.closeFormCreditCard()" ng-if="$ctrl.showCloseFormCreditCard()">
           <ng-md-icon icon="close"></ng-md-icon>
         </div>
         <h1 translate="api.subscription.step3.registerCreditCard.titleConfirmPersonal"></h1>
@@ -214,7 +232,7 @@
             <div layout="row" flex="30" layout-padding>
               <md-input-container class="md-block">
                 <label>{{'api.subscription.step3.registerCreditCard.form.cardCvv' | translate}}</label>
-                <input type="number" ng-model="$ctrl.registerCreditCard.card_cvv" mask="999" required></input>
+                <input type="number" ng-model="$ctrl.registerCreditCard.card_cvv" maxlength="3" max="999" min="1" required></input>
               </md-input-container>
             </div>
             <div layout="row" flex="30" layout-padding>
