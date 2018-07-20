@@ -298,6 +298,13 @@ table {
     background-color: white;
 }
 
+.button-api-display {
+  min-width: 48px;
+  max-width: 48px;
+  border-radius: 0px;
+}
+
+
 
 @import 'gr1d-buttons';
 @import 'gr1d-form';

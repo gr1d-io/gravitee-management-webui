@@ -13,15 +13,5 @@
     "icons": {
       "signUp": "themes/assets/icon-sign-up.svg"
     }
-  },
-  "authentication": {
-    "oauth2": {
-      "clientId": "gravitee",
-      "name": "Keycloak",
-      "color": "#0076b4",
-      "authorizationEndpoint": "https://keycloak.gr1d.io/auth/realms/master/protocol/openid-connect/auth",
-      "userLogoutEndpoint": "https://keycloak.gr1d.io/auth/realms/master/protocol/openid-connect/logout",
-      "scope": ["profile", "openid"]
-    }
   }
 }
