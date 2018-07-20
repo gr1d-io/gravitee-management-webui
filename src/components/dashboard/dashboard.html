@@ -19,9 +19,11 @@
   <md-card flex>
     <gv-dashboard-timeframe on-timeframe-change="$ctrl.timeframeChange(timeframe)"></gv-dashboard-timeframe>
     <gv-dashboard-filter on-filter-change="$ctrl.queryFilterChange(query)"></gv-dashboard-filter>
-    <div layout="row" layout-padding flex="100" layout-align="end center" ng-if="$ctrl.accessLogs">
-      <md-button md-no-ink class="md-primary" ng-click="$ctrl.viewLogs()">View logs</md-button>
-    </div>
+    <md-card-content>
+      <div layout="row" layout-padding flex="100" layout-align="start center" ng-if="$ctrl.accessLogs">
+        <md-button md-no-ink class="md-primary" ng-click="$ctrl.viewLogs()">View logs</md-button>
+      </div>
+    </md-card-content>
   </md-card>
 
   <div gridster="$ctrl.dashboardOptions">

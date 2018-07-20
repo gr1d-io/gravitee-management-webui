@@ -1,13 +1,17 @@
 .gr1d-admin {
 
-    @extend %gr1d-input,
-            %gr1d-md-input-container,
+    @extend %gr1d-md-input-container,
             %gr1d-select,
             %gr1d-btn-md-actions;
 
     &, md-content, .main-content {
         background: $color-white-3;
     }
+
+    md-input-container {
+        @extend %gr1d-input;
+    }
+
     button {
         margin: 0;
     }
@@ -92,6 +96,13 @@
 
     .md-title {
         font-size: 22px !important;
+        margin-top: 15px;
+    }
+
+    .md-subhead {
+        font-size: 16px !important;
+        padding-left: 1px;
+        color: $color-greyish-brown;
     }
 
     md-card .md-actions, md-card md-card-actions {

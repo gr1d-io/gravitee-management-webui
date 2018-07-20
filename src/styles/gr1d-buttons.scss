@@ -1,8 +1,17 @@
+%gr1d-btn-outline {
+    background: $color-white;
+    color: $color-purple;
+    border: 2px solid $color-purple;
+    box-shadow: none !important;
+    margin-left: 10px;
+}
+
 %gr1d-btn-primary {
     background: $color-purple;
     color: $color-white;
     padding: $global-gutter / 2 $global-gutter-min*3;
     max-height: 52px;
+
     &.md-button.md-raised {
         background: $color-purple;
         color: $color-white;
@@ -12,9 +21,7 @@
         color: $color-white;
     }
     &.button-outline {
-        background: $color-white;
-        color: $color-purple;
-        border: 2px solid $color-purple;
+        @extend %gr1d-btn-outline;
     }
 }
 
@@ -67,9 +74,7 @@
         margin-right: $global-gutter / 2;
     }
     &.button-outline {
-      background: $color-white;
-      color: $color-purple;
-      border: 2px solid $color-purple;
+        @extend %gr1d-btn-outline;
   }
 }
 

@@ -67,7 +67,7 @@
 
 .gr1d-form {
 
-  @extend %gr1d-input, %gr1d-md-input-container, %gr1d-select;
+  @extend %gr1d-md-input-container, %gr1d-select;
 
   .md-primary {
     display: flex;
