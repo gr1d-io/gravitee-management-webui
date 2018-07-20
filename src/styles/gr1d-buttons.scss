@@ -38,6 +38,10 @@
             background-color: white;
             color: $color-purple;
             border: 2px solid $color-purple;
+
+            &:hover {
+                background-color: rgba(90, 37, 240, 0.15);
+            }
         }
         .md-warn {
             background-color: transparent !important;
