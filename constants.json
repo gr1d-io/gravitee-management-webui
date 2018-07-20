@@ -1,8 +1,12 @@
 {
   "baseURL": "https://gateway-api.gr1d.io/management/",
   "portalTitle": "GR1D | Developers Portal",
+  "company" : {
+    "name" : "GR1D"
+  },
   "portal": {
-    "title": "GR1D | Developers Portal"
+    "title": "GR1D | Developers Portal",
+    "entrypoint" : "https://gateway-api.gr1d.io"
   },
   "managementTitle": "GR1D Management",
   "theme": {
