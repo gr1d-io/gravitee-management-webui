@@ -1,0 +1,21 @@
+.gr1d-emptysate {
+  box-shadow: 0 4px 8px 0 #fafafa;
+
+  h2, h5 {
+    color: $color-brownish-grey;
+  }
+
+  h2 {
+    font-size: 22px;
+    margin-top: 10px;
+  }
+
+  h5 {
+    font-size: 18px;
+    margin-top: -2px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    min-width: 800px;
+  }
+}

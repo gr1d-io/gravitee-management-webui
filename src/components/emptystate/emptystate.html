@@ -16,9 +16,14 @@
 
 -->
 <div layout="column" flex layout-align="center center" style="color: #424E5A;">
-  <ng-md-icon icon="{{icon}}" ng-style="{'fill':fill?fill:'#cdcccc'}" size="120"></ng-md-icon>
-  <h2>{{message}}</h2>
-  <div>
-    <h5>{{subMessage}}</h5>
-  </div>
+
+  <md-card class="no-box-shadow gr1d-emptysate text-center">
+      <md-card-content>
+        <h2>{{message}}</h2>
+        <div>
+          <h5>{{subMessage}}</h5>
+        </div>
+    </md-card-content>
+  </md-card>
+
 </div>
