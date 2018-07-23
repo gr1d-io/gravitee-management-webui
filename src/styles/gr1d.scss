@@ -106,7 +106,7 @@ input.form-control {
 // Home
 .home {
     #header {
-        padding: $global-gutter * 4 0;
+        padding: $global-gutter * 5 0;
     }
     .autocomplete {
         position: relative;
@@ -122,16 +122,7 @@ input.form-control {
     }
 }
 .home-title {
-    position: relative;
-    // &::after {
-    //     width: 267px;
-    //     height: 8px;
-    //     background: $color-purple;
-    //     position: absolute;
-    //     content:"";
-    //     left: -38px;
-    //     top: 25px;
-    // }
+    display: none;
 }
 
 .api-box {
@@ -150,7 +141,7 @@ input.form-control {
 }
 
 .home--gr1d-logo {
-    margin: 0px auto;
+    margin: 10px auto 0 auto;
     text-align: center;
     img {
         max-width: 267px;

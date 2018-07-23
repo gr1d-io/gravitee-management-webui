@@ -55,7 +55,7 @@ export class HomeController {
   }
 
   getLogo() {
-    return this.ConstantsGr1d.theme.logoSmall;
+    return this.ConstantsGr1d.theme.logoDevPortal;
   }
 
   goToApi(api) {

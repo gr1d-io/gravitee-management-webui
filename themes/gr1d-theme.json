@@ -24,7 +24,7 @@
       },
       "footer": {
         "content": {
-          "background-color": "#000",
+          "background-color": "#212121",
           "color": "#e1e2e1"
         },
         "links": {
@@ -33,7 +33,7 @@
       },
       "home": {
         "header": {
-          "background-color": "#000",
+          "background-color": "#212121",
           "color": "#fff"
         },
         "homepage": {
