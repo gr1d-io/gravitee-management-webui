@@ -15,6 +15,7 @@
     "submit": "Submit",
     "answer": "Answer",
     "ratings.none": "No rating",
+    "and": "and",
     "paging": {
       "first": "First",
       "previous": "Previous",
@@ -33,6 +34,11 @@
       "top": "Top APIs",
       "latest": "Latest APIs",
       "all": "See all"
+    },
+    "footer" : {
+      "allRightsReserved" : "All rights reserved",
+      "termsOfService" : "Terms of Service",
+      "privacy" : "Privacy"
     }
   },
   "menu": {
@@ -56,6 +62,7 @@
     "endpoint": "Endpoint",
     "owner": "Owner",
     "publishedAt": "Published",
+    "overview": "Overview",
     "subscription": {
       "step1": {
         "title": "Select an API Plan",
@@ -217,5 +224,25 @@
       "ratings": "Ratings"
     },
     "moreApis": "More APIs ..."
+  },
+  "login": {
+    "title": "Log in to your account",
+    "form": {
+      "email" : "E-mail address",
+      "password" : "Password",
+      "login": "Log in"
+    },
+    "doYouHaveAnAccount" : "Don't have an account yet?",
+    "signUp" : "Sign Up"
+  },
+  "signUp" : {
+    "title" : "Sign Up",
+    "form" : {
+      "firstName" : "First Name",
+      "lastName" : "Last Name",
+      "email" : "Email",
+      "createAccount" : "Create Account"
+    },
+    "hint" : "By clicking above and creating your account you accept our"
   }
 }

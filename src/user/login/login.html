@@ -24,34 +24,34 @@
       <div class="form">
 
         <div class="gravitee-no-sidenav-header" layout="column">
-          <h1>Log in to your account</h1>
+          <h1>{{'login.title' | translate }}</h1>
         </div>
 
         <form class="gr1d-form" name="formUser" ng-submit="$ctrl.login()" layout="column" ng-if="!$ctrl.localLoginDisabled">
 
           <div layout="row">
             <md-input-container class="md-icon-float md-block" flex>
-              <label>Email address</label>
+              <label>{{'login.form.email' | translate }}</label>
               <input ng-model="$ctrl.user.username" type="text" required autofocus>
             </md-input-container>
           </div>
 
           <div layout="row">
             <md-input-container class="md-icon-float md-block" flex>
-              <label>Password</label>
+              <label>{{'login.form.password' | translate }}</label>
               <input ng-model="$ctrl.user.password" type="password" required>
             </md-input-container>
           </div>
 
           <md-button type="submit" class="md-raised md-primary" ng-disabled="formUser.$invalid || formUser.$pristine">
                      <i class="material-icons">person_outline</i>
-                     <span>Log in</span>
+                     <span>{{'login.form.login' | translate }}</span>
           </md-button>
 
           <h4 class="text-center login-page--forgot-pass-link hide"><a href="#">Forgot your password?</a></h4>
 
           <p class="text-muted" ng-if="$ctrl.userCreationEnabled" >
-            <h3 class="text-center">Don't have an account yet? <a ui-sref="registration">SIGN UP</a></h3>
+            <h3 class="text-center">{{'login.doYouHaveAnAccount' | translate }} <a ui-sref="registration">{{'login.signUp' | translate }}</a></h3>
           </p>
 
           <div ng-if="$ctrl.providers.length > 0">
@@ -69,8 +69,8 @@
     </div>
 
     <div class="login-page--footer text-center">
-        <p class="login-page--terms-link"><a href="/#!/pages/97a44b14-1f7f-4331-a44b-141f7f733158">Terms of Service</a> • <a href="/#!/pages/2b3186b0-d0dd-463a-b186-b0d0dd163a71">Privacy</a></p>
-        <p class="login-page--copyright">© GR1D, Inc 2018. All rights reserved.</p>
+        <p class="login-page--terms-link"><a href="/#!/pages/97a44b14-1f7f-4331-a44b-141f7f733158">{{'home.footer.termsOfService' | translate }}</a> • <a href="/#!/pages/2b3186b0-d0dd-463a-b186-b0d0dd163a71">{{'home.footer.privacy' | translate }}</a></p>
+        <p class="login-page--copyright">© GR1D, Inc 2018. {{'home.footer.allRightsReserved' | translate }}.</p>
     </div>
 
 </md-content>

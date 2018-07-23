@@ -15,6 +15,7 @@
       "submit": "Enviar",
       "answer": "Resposta",
       "ratings.none": "Sem avaliação",
+      "and": "e",
       "paging": {
         "first": "Primeiro",
         "previous": "Anterior",
@@ -31,13 +32,19 @@
       "apis": {
         "search": "Buscar APIs...",
         "top": "Top APIs",
+        "latest": "APIs recentes",
         "all": "Ver todas as APIs"
+      },
+      "footer" : {
+        "allRightsReserved" : "Todos os direitos reservados",
+        "termsOfService" : "Termos de uso",
+        "privacy" : "Privacidade"
       }
     },
     "menu": {
-      "login": "Login",
-      "gallery": "Galeria de APIs",
-      "documentation": "Documentação",
+      "login": "Entrar",
+      "gallery": "APIs",
+      "documentation": "Tutorial",
       "profile": "Minha conta",
       "management": "Administração",
       "applications": "Aplicações",
@@ -51,9 +58,10 @@
     },
     "api": {
       "version": "Versão",
-      "endpoint": "Endpoint",
+      "endpoint": "Rota",
       "owner": "Dono",
       "publishedAt": "Publicado",
+      "overview": "Visão Geral",
       "subscription": {
         "step1": {
           "title": "Seleciona um Plano de API",
@@ -98,6 +106,7 @@
       "plan": {
         "title": "Planos",
         "subscribe": "Assinar",
+        "activateApi": "Ativar API",
         "manual": "Assinatura sujeita a validação",
         "empty": {
           "title": "Nenhum plano para esta API",
@@ -179,6 +188,26 @@
           "message": "Você não pode enviar um ticket porque você não tem um email configurado na sua conta"
         }
       }
+    },
+    "login": {
+      "title": "Entre em sua conta",
+      "form": {
+        "email" : "E-mail",
+        "password" : "Senha",
+        "login": "Entrar"
+      },
+      "doYouHaveAnAccount" : "Você ainda não tem conta?",
+      "signUp" : "Cadastre-se"
+    },
+    "signUp" : {
+      "title" : "Cadastro",
+      "form" : {
+        "firstName" : "Primeiro nome",
+        "lastName" : "Último nome",
+        "email" : "E-mail",
+        "createAccount" : "Criar conta"
+      },
+      "hint" : "Ao clicar acima e criar sua conta, você aceita nossa"
     }
   }
   
