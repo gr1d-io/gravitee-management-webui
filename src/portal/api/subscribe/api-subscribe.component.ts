@@ -225,16 +225,16 @@ const ApiSubscribeComponent: ng.IComponentOptions = {
       //   console.log('response', response);
       // });
 
-      // this.creditCard = {
-      //   card_first_digits: '',
-      //   card_last_digits: request.card_number.slice(-4),
-      //   card_holder_name: request.card_holder_name,
-      //   valid: true,
-      //   personal_info: {
-      //     full_name: request.full_name,
-      //     email: request.email
-      //   }
-      // };
+      this.creditCard = {
+        card_first_digits: '',
+        card_last_digits: request.card_number.slice(-4),
+        card_holder_name: request.card_holder_name,
+        valid: true,
+        personal_info: {
+          full_name: request.full_name,
+          email: request.email
+        }
+      };
 
       this.Gr1dCreditCardsService.create(request).then(response => {
         console.log('response', response);

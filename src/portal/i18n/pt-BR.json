@@ -33,7 +33,8 @@
         "search": "Buscar APIs...",
         "top": "Top APIs",
         "latest": "APIs recentes",
-        "all": "Ver todas as APIs"
+        "highlight" : "APIs em destaque",
+        "all": "Ver todas"
       },
       "footer" : {
         "allRightsReserved" : "Todos os direitos reservados",
@@ -64,18 +65,19 @@
       "overview": "Visão Geral",
       "subscription": {
         "step1": {
-          "title": "Seleciona um Plano de API",
-          "subtitle": "O plano de API corresponde ao contrato de serviço entre você e a API.",
+          "title": "Selecione um plano da API",
+          "subtitle": "O plano corresponde ao contrato de serviço entre você e a API.",
           "keyless": "Este plano não utiliza chave de API e não necessita de assinatura."
         },
         "step2": {
-          "title": "Seleciona uma aplicação",
-          "subtitle": "Aplicação é um link entre você, o consumidor e a assinatura de um plano de API.",
+          "title": "Selecione uma aplicação",
+          "subtitle": "Aplicação é um link entre você, o consumidor e a assinatura de um plano.",
           "application": {
-            "placeholder": "Seleciona uma aplicação..."
+            "placeholder": "Selecione uma aplicação..."
           },
           "clientIdRequired": "É necessário um clientId para assinar este plano. Favor verificar a configuração da sua aplicação.",
-          "action": "Assinar"
+          "action": "Assinar",
+          "optionalMessage" : "Mensagem opcional para o proprietário da API"
         },
         "step3": {
           "apikey": {
@@ -98,7 +100,25 @@
           "accepted": {
             "title": "Vamos começar a usar \"{{apiName}}\" com \"{{applicationName}}\"!"
           },
-          "successful": "Pedido de Assinatura foi enviado."
+          "successful": "Pedido de Assinatura foi enviado.",
+          "registerCreditCard": {
+            "title": "Valide seu método de pagamento",
+            "titleRegister": "Registre seu cartão de crédito",
+            "titleConfirmPersonal": "Registre suas informações pessoais",
+            "titleCreditCardInfo": "Informações do cartão de crédito",
+            "form" : {
+              "fullName": "Nome completo",
+              "dateOfBirth": "Data de nascimento",
+              "email": "E-mail",
+              "phone": "Telefone",
+              "cpfCnpj" : "CPF ou CNPJ",
+              "cardName" : "Nome no cartão",
+              "cardNumber" : "Número do cartão",
+              "cardExpirationDate" : "Data de expiração",
+              "cardCvv" : "CVV",
+              "send": "Enviar"
+            }
+          }
         },
   
         "planInformation": "com uma cota de {{quotaLimit}} requests por {{quotaPeriodTime}} {{quotaPeriodTimeUnit}}"
@@ -208,6 +228,15 @@
         "createAccount" : "Criar conta"
       },
       "hint" : "Ao clicar acima e criar sua conta, você aceita nossa"
-    }
+    },
+    "creditCard" : {
+      "number" : "Número",
+      "validate" : "Validade",
+      "alert": {
+        "error" : "Seu cartão de crédito, por favor troque seu cartão"
+      }
+    },
+    "change" : "Trocar"
+
   }
   

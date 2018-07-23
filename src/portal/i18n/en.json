@@ -33,6 +33,7 @@
       "search": "Search for APIs...",
       "top": "Top APIs",
       "latest": "Latest APIs",
+      "highlight" : "Highlight APIs",
       "all": "See all"
     },
     "footer" : {
@@ -76,7 +77,8 @@
           "placeholder": "Select an application..."
         },
         "clientIdRequired": "A clientId is required to subscribe to this plan. Please check your application's configuration.",
-        "action": "Subscribe"
+        "action": "Subscribe",
+        "optionalMessage" : "Optional message to the API Owner"
       },
       "step2CreateApplication" : {
         "title" : "Create an application",
@@ -119,7 +121,8 @@
             "cardName" : "Card name",
             "cardNumber" : "Card number",
             "cardExpirationDate" : "Expiration date",
-            "cardCvv" : "CVV"
+            "cardCvv" : "CVV",
+            "send": "Enviar"
           }
         }
       },
@@ -244,5 +247,13 @@
       "createAccount" : "Create Account"
     },
     "hint" : "By clicking above and creating your account you accept our"
+  },
+  "creditCard" : {
+    "number" : "Number",
+    "validate" : "Validate",
+    "alert": {
+      "error" : "Your credit card is invalid, please change your card"
+    },
+    "change" : "Change"
   }
 }

@@ -83,7 +83,7 @@
             <md-not-found translate="application.notFound" translate-values="{applicationName: filterApp}"></md-not-found>
           </md-autocomplete>
           <md-input-container class="md-block">
-            <label>Optional message to the API Owner</label>
+            <label>{{ 'api.subscription.step2.optionalMessage' | translate }}</label>
             <textarea ng-model="$ctrl.requestMessage" md-maxlength="150" rows="2"></textarea>
           </md-input-container>
           <md-button class="md-raised" ng-click="$ctrl.subscribe($ctrl.selectedApp)" aria-label="subscribe-api-plan" ng-disabled="!$ctrl.canApplicationSubscribe()"
@@ -134,11 +134,13 @@
           <div layout="column" flex="50" layout-padding>
             <div class="gr1d-credit-card">
               <p class="gr1d-credit-card__holder-name">{{ $ctrl.creditCard.personal_info.full_name}}</p>
-              <p class="gr1d-credit-card__title-number">NUMBER</p>
+              <p class="gr1d-credit-card__title-number">{{'creditCard.number' | translate}}
+                </p>
               <p class="gr1d-credit-card__number">**** **** **** {{ $ctrl.creditCard.card_last_digits}}</p>
               <div layout="row" layout-align="end center">
                 <div class="hide" layout="column">
-                  <p class="gr1d-credit-card__title-validate">VALIDADE</p>
+                  <p class="gr1d-credit-card__title-validate">{{'creditCard.validate' | translate}}
+                    </p>
                   <p class="gr1d-credit-card__validate">12/18</p>
                 </div>
                 <div layout="column">
@@ -152,7 +154,7 @@
                   <ng-md-icon icon="warning"></ng-md-icon>
               </div>
               <div class="gr1d-alert__message">
-                  Your credit card is invalid, please change your card
+                  {{'creditCard.alert.error' | translate}}
               </div>
             </div>
 
@@ -236,7 +238,7 @@
               </md-input-container>
             </div>
             <div layout="row" flex="30" layout-padding>
-              <button class="md-button button-primary" type="submit">Send</button>
+              <button class="md-button button-primary" type="submit">{{'api.subscription.step3.registerCreditCard.form.send' | translate}}</button>
             </div>
           </div>
         </form>
