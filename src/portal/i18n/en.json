@@ -45,7 +45,8 @@
   "menu": {
     "login": "Login",
     "gallery": "APIs",
-    "documentation": "Tutorial",
+    "documentation": "Documentation",
+    "faq": "FAQ",
     "profile": "My account",
     "management": "Administration",
     "applications": "Applications",
