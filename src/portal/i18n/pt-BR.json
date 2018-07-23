@@ -103,9 +103,9 @@
           "successful": "Pedido de Assinatura foi enviado.",
           "registerCreditCard": {
             "title": "Valide seu método de pagamento",
-            "titleRegister": "Registre seu cartão de crédito",
-            "titleConfirmPersonal": "Registre suas informações pessoais",
-            "titleCreditCardInfo": "Informações do cartão de crédito",
+            "titleRegister": "Cadastre seu cartão de crédito",
+            "titleConfirmPersonal": "Cadastre suas informações pessoais",
+            "titleCreditCardInfo": "Cadastre suas informações do cartão de crédito",
             "form" : {
               "fullName": "Nome completo",
               "dateOfBirth": "Data de nascimento",
@@ -234,9 +234,8 @@
       "validate" : "Validade",
       "alert": {
         "error" : "Seu cartão de crédito, por favor troque seu cartão"
-      }
-    },
-    "change" : "Trocar"
-
+      },
+      "change" : "Alterar cartão"
+    }
   }
   

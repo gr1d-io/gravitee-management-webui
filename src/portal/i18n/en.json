@@ -254,6 +254,6 @@
     "alert": {
       "error" : "Your credit card is invalid, please change your card"
     },
-    "change" : "Change"
+    "change" : "Change card"
   }
 }
