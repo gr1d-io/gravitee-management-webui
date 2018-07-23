@@ -53,7 +53,8 @@
       "apis": "APIs",
       "tasks": "Tarefas",
       "logout": "Sair",
-      "support": "Suporte"
+      "support": "Suporte",
+      "tutorial": "Tutorial"
     },
     "apis": {
       "filter": "Filtrar APIs..."
@@ -79,6 +80,11 @@
           "clientIdRequired": "É necessário um clientId para assinar este plano. Favor verificar a configuração da sua aplicação.",
           "action": "Assinar",
           "optionalMessage" : "Mensagem opcional para o proprietário da API"
+        },
+        "step2CreateApplication" : {
+          "title" : "Criar uma aplicação",
+          "subtitle": "A aplicação é a ligação entre você, o consumidor e a ativação de um plano de API. Crie sua primeira aplicação e recarregue esta página.",
+          "action": "Gerenciar aplicações"
         },
         "step3": {
           "apikey": {
@@ -128,6 +134,7 @@
         "title": "Planos",
         "subscribe": "Assinar",
         "activateApi": "Ativar API",
+        "sandboxTest" : "Teste de Sandbox",
         "manual": "Assinatura sujeita a validação",
         "empty": {
           "title": "Nenhum plano para esta API",
@@ -164,6 +171,7 @@
           "5": "Essa API é perfeita"
         },
         "successCreation": "Sua avaliação foi enviada com sucesso",
+        "successCreationMessage": "Your rating has been taken into account, you can now add a comment to complete your rating",
         "successUpdate": "Sua avaliação foi atualizada com sucesso",
         "successDeletion": "Essa avaliação foi excuída com sucesso",
         "deletion": "Tem certeza que deseja excluir essa avaliação?",
@@ -209,6 +217,17 @@
           "message": "Você não pode enviar um ticket porque você não tem um email configurado na sua conta"
         }
       }
+    },
+    "views": {
+      "filter": "Filtrar visualizações..."
+    },
+    "view": {
+      "defaultDescription":  "Buscar APIs da categoria {{viewName}}",
+      "api": {
+        "documentation": "Documentatação",
+        "ratings": "Avaliações"
+      },
+      "moreApis": "Mais APIs ..."
     },
     "login": {
       "title": "Entre em sua conta",
