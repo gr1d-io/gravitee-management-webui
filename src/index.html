@@ -95,11 +95,43 @@
 </head>
 
 <body layout="column">
+  <div id="google_translate_element" style="display: none;"></div>
   <p id="BrowserNotSupportedBanner" class="browsehappy" style="display: none">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 
   <div id="loader" ng-show="displayLoader" class="gravitee-splash-screen animate-show-hide"></div>
 
   <gravitee-navbar></gravitee-navbar>
   <div flex ui-view></div>
+    <ul class="language-chooser">
+      <li style="display: inline;"><a onclick="setIdiomaPt(event);"><img src="/assets/blank.gif" alt="Português" class="flag flag-br"></a></li>
+      <li style="display: inline; margin: auto 8px;">|</li>
+      <li style="display: inline;"><a onclick="setIdiomaEn(event);"><img src="/assets/blank.gif" alt="Inglês" class="flag flag-us"></a></li>
+    </ul>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en', autoDisplay: false, includedLanguages: "pt"}, 'google_translate_element');
+    }
+    function setCookieIdioma(idioma) {
+      var expires = "";
+      var date = new Date();
+      var days = 365;
+      var name = "googtrans";
+      var value = "/en/"+idioma;
+      date.setTime(date.getTime() + (days*24*60*60*1000));
+      expires = "; expires=" + date.toUTCString();
+      document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+    }
+    function setIdiomaPt(event){
+      event.preventDefault();
+      setCookieIdioma("pt");
+      location.reload();
+    }
+    function setIdiomaEn(event){
+      event.preventDefault();
+      setCookieIdioma("en");
+      location.reload();
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
