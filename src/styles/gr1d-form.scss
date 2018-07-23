@@ -1,12 +1,3 @@
-%gr1d-input {
-  input {
-    background-color: $color-white-two;
-    height: 60px;
-    padding: 15px 0 0 15px;
-    font-size: 20px;
-  }
-}
-
 %gr1d-select {
   md-input-container > md-select {
     background-color: $color-white-two;
@@ -63,7 +54,17 @@
     border-color: $color-purple;
   }
 
+  md-input-container {
+    input.md-input {
+      background-color: $color-white-two;
+      height: 60px;
+      padding: 15px 0 0 15px;
+      font-size: 20px;
+    }
+  }
+
 }
+
 
 .gr1d-form {
 
