@@ -5,13 +5,17 @@
       "logoSmall": "themes/assets/gr1d_logo_white_small.png",
       "logoBlack": "themes/assets/gr1d_logo_black.svg",
       "icons": {
-        "api": "themes/assets/icon-api.svg",
-        "login": "themes/assets/icon-login.svg",
-        "search": "themes/assets/icon-search.svg",
-        "signUp": "themes/assets/icon-sign-up.svg",
-        "tutorial": "themes/assets/icon-tutorial.svg",
-        "userLogged": "themes/assets/icon-user-logged.svg",
-        "externalLink": "themes/assets/icon-external-link.svg"
+        "api":          "themes/assets/icon-api.svg",
+        "login":        "themes/assets/icon-login.svg",
+        "search":       "themes/assets/icon-search.svg",
+        "signUp":       "themes/assets/icon-sign-up.svg",
+        "tutorial":     "themes/assets/icon-tutorial.svg",
+        "userLogged":   "themes/assets/icon-user-logged.svg",
+        "externalLink": "themes/assets/icon-external-link.svg",
+        "logOut":       "themes/assets/icon-logout.svg",
+        "profile" :     "themes/assets/icon-profile.svg",
+        "apps" :        "themes/assets/icon-apps.svg",
+        "tasks" :        "themes/assets/icon-tasks.svg"
       }
     }
   }
