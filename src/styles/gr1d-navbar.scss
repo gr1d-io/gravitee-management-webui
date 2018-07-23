@@ -47,6 +47,33 @@ md-toolbar.topnavbar {
     border-bottom: 4px solid $color-purple !important;
     border-radius: 0 !important;
   }
+
+}
+
+md-menu-content.gv-menu-content {
+  .gr1d-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 0;
+    margin-right: 10px;
+  }
+
+  .gv-menu-content-main .gv-menu-content-links a {
+    padding: 5px 12px 5px 10px;
+    border-radius: 0;
+    font-size: 18px;
+    font-weight: 700;
+
+    &:hover {
+      background-color: rgba(90, 37, 240, 0.5);
+      color: black;
+    }
+  }
+
+  md-divider {
+    width: 100%;
+  }
+
 }
 
 .gravitee-sidenav {
