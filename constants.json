@@ -8,7 +8,6 @@
     "entrypoint" : "https://gateway.gr1d.io",
     "apikeyHeader" : "x-api-key"
   },
-  "managementTitle": "GR1D Management",
   "theme": {
     "name": "gr1d",
     "logo": "themes/assets/gr1d_logo_900x900.png",
