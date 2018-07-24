@@ -22,7 +22,7 @@
   }
 
   md-card {
-    min-height: 250px;
+    min-height: 280px;
   }
 
   .gravitee-user-container {
@@ -33,9 +33,18 @@
     md-card-content {
       color: $color-greyish-brown;
 
+      label {
+        font-weight: 500;
+        font-size: 16px;
+      }
+
       .layout-row {
-        padding: 6px 0;
+        padding: 8px 0;
       }
     }
+  }
+
+  .gr1d-icon {
+    margin-right: 20px;
   }
 }

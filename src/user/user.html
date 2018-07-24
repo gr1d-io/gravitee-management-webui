@@ -15,7 +15,7 @@
     limitations under the License.
 
 -->
-<form name="formUser" ng-submit="$ctrl.save()" novalidate class="HOLA">
+<form name="formUser" ng-submit="$ctrl.save()" novalidate>
 
   <div layout="row" layout-xs="column">
 
@@ -43,19 +43,15 @@
         </md-card-title>
         <md-card-content>
           <div layout="row">
-            <ng-md-icon flex="10" icon="person"></ng-md-icon>
+            <img ng-src="{{$ctrl.icons.profile}}" class="gr1d-icon">
             <label>{{$ctrl.user.lastname || '-'}} {{$ctrl.user.firstname || '-'}}</label>
           </div>
           <div layout="row">
-            <ng-md-icon flex="10" icon="contact_mail"></ng-md-icon>
+            <img ng-src="{{$ctrl.icons.atSign}}" class="gr1d-icon">
             <label>{{$ctrl.user.email || '-'}}</label>
           </div>
           <div layout="row">
-            <ng-md-icon flex="10" icon="lock">
-              <md-tooltip>
-                <span ng-repeat="auth in $ctrl.user.authorities">{{auth.authority}}{{$last ? '' : ',&nbsp'}}</span>
-              </md-tooltip>
-            </ng-md-icon>
+            <img ng-src="{{$ctrl.icons.lock}}" class="gr1d-icon">
             <label ng-repeat="role in $ctrl.user.roles">{{"[" + role.scope + "]&nbsp;" + role.name}}{{$last ? '' : '&nbsp;-&nbsp;'}}</label>
           </div>
         </md-card-content>

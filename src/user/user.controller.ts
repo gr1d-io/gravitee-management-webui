@@ -25,14 +25,18 @@ interface IUserScope extends ng.IScope {
 class UserController {
   private originalPicture: any;
   private user: User;
+  public icons: any;
 
   constructor(
     private UserService: UserService,
     private NotificationService: NotificationService,
     private $state: ng.ui.IStateService,
     private $scope: IUserScope,
-    private $rootScope: IScope) {
+    private $rootScope: IScope,
+    private ConstantsGr1d,
+  ) {
     'ngInject';
+    this.icons = ConstantsGr1d.theme.icons;
   }
 
   $onInit() {

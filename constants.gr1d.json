@@ -14,9 +14,11 @@
         "userLogged":   "themes/assets/icon-user-logged.svg",
         "externalLink": "themes/assets/icon-external-link.svg",
         "logOut":       "themes/assets/icon-logout.svg",
-        "profile" :     "themes/assets/icon-profile.svg",
-        "apps" :        "themes/assets/icon-apps.svg",
-        "tasks" :        "themes/assets/icon-tasks.svg"
+        "profile":      "themes/assets/icon-profile.svg",
+        "apps":         "themes/assets/icon-apps.svg",
+        "tasks":        "themes/assets/icon-tasks.svg",
+        "lock":         "themes/assets/icon-lock.svg",
+        "atSign":       "themes/assets/icon-at-sign.svg"
       }
     }
   }

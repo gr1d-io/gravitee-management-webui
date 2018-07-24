@@ -78,7 +78,6 @@ const ApiSubscribeComponent: ng.IComponentOptions = {
       'ngInject';
 
       this.icons = ConstantsGr1d.theme.icons;
-      console.log(Constants.authentication);
 
       this.getUserCurrent();
 
