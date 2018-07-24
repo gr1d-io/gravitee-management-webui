@@ -14,9 +14,6 @@
     "name": "gr1d",
     "logo": "themes/assets/gr1d_logo_900x900.png",
     "loader": "assets/gravitee_logo_anim.gif",
-    "css": "themes/assets/gravitee.css",
-    "icons": {
-      "signUp": "themes/assets/icon-sign-up.svg"
-    }
+    "css": "themes/assets/gravitee.css"
   }
 }
