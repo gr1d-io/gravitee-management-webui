@@ -6,7 +6,8 @@
   },
   "portal": {
     "title": "GR1D | Developers Portal",
-    "entrypoint" : "https://gateway-api.gr1d.io"
+    "entrypoint" : "https://gateway.gr1d.io",
+    "apikeyHeader" : "x-api-key"
   },
   "managementTitle": "GR1D Management",
   "theme": {
