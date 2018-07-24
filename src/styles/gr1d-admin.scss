@@ -53,6 +53,10 @@
         box-shadow: $global-shadow;
         padding: $global-gutter;
         margin-bottom: $global-gutter * 3;
+
+        .md-button {
+            margin: 20px 0 0 0;
+        }
     }
 
     .gr1d-header {
