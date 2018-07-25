@@ -21,7 +21,7 @@
   <h4>{{$ctrl.sidenavService.getCurrentResource()}}</h4>
 </md-list-item>
 
-<md-list-item ng-repeat="menuItem in $ctrl.submenuItems track by menuItem.name">
+<md-list-item ng-repeat="menuItem in $ctrl.submenuItems track by menuItem.name" class="grid-submenu-item">
   <md-tooltip md-delay="400">{{menuItem.data.menu.label}}</md-tooltip>
   <a ui-sref="{{ :: menuItem.name }}" title="{{ :: menuItem.data.menu.label }}"
     ng-class="{'sidenav-active': $ctrl.isActive(menuItem)}">

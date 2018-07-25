@@ -25,4 +25,14 @@
             fill: $color-black;
         }
     }
+
+    .grid-submenu-item a.sidenav-active {
+        background-color: $color-lighter-purple;
+        color: white;
+        font-weight: 500;
+
+        svg {
+            fill: white;
+        }
+    }
 }
