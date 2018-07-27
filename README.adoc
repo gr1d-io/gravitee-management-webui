@@ -72,3 +72,21 @@ Node: 8.11.3v
 ```bash
 yarn run deploy
 ```
+
+## Update tags
+
+```bash
+# Repo: someuser/myframework
+# Fork: superteam/myframework
+
+# Track:
+git clone https://github.com/superteam/myframework.git
+cd myframework
+git remote add upstream https://github.com/someuser/myframework.git
+
+# Update:
+git fetch upstream
+git rebase upstream/master
+git push
+git push --tags
+```
