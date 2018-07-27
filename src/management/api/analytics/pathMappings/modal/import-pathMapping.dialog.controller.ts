@@ -13,17 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-function config ($logProvider, $urlRouterProvider: ng.ui.IUrlRouterProvider, $permissionProvider, $qProvider) {
+function DialogImportPathMappingController($scope, $mdDialog, docs) {
   'ngInject';
-  // Enable log
-  $logProvider.debugEnabled(false);
+  $scope.docs = docs;
 
-  // Prevent router from automatic state resolving
-  $urlRouterProvider.deferIntercept();
+  this.hide = function () {
+    $mdDialog.hide();
+  };
 
-  $permissionProvider.suppressUndefinedPermissionWarning(true);
-
-  $qProvider.errorOnUnhandledRejections(false);
+  this.save = function () {
+    $mdDialog.hide($scope.selectedDoc);
+  };
 }
 
-export default config;
+export default DialogImportPathMappingController;
