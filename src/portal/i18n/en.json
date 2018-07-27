@@ -79,7 +79,9 @@
         },
         "clientIdRequired": "A clientId is required to subscribe to this plan. Please check your application's configuration.",
         "action": "Subscribe",
-        "optionalMessage" : "Optional message to the API Owner"
+        "optionalMessage" : "Optional message to the API Owner",
+        "hintAcceptTerms": "By enabling the API key you accept the",
+        "ofThisApi": "of this API"
       },
       "step2CreateApplication" : {
         "title" : "Create an application",

@@ -79,7 +79,9 @@
           },
           "clientIdRequired": "É necessário um clientId para assinar este plano. Favor verificar a configuração da sua aplicação.",
           "action": "Assinar",
-          "optionalMessage" : "Mensagem opcional para o proprietário da API"
+          "optionalMessage" : "Mensagem opcional para o proprietário da API",
+          "hintAcceptTerms": "Ao ativar a chave de API, você aceita o",
+          "ofThisApi": "desta API"
         },
         "step2CreateApplication" : {
           "title" : "Criar uma aplicação",
@@ -127,7 +129,7 @@
             }
           }
         },
-  
+
         "planInformation": "com uma cota de {{quotaLimit}} requests por {{quotaPeriodTime}} {{quotaPeriodTimeUnit}}"
       },
       "plan": {
@@ -258,4 +260,3 @@
       "change" : "Alterar cartão"
     }
   }
-  

@@ -89,6 +89,8 @@
           <md-button class="md-raised" ng-click="$ctrl.subscribe($ctrl.selectedApp)" aria-label="subscribe-api-plan" ng-disabled="!$ctrl.canApplicationSubscribe()"
             translate="api.subscription.step2.action" translate-values="{applicationName: $ctrl.selectedApp.name}">
           </md-button>
+          <p>*{{ 'api.subscription.step2.hintAcceptTerms' | translate }} <a href="#">{{'home.footer.termsOfService' | translate }}</a> {{'common.and' | translate }}
+            <a href="#">{{'home.footer.privacy' | translate }}</a> {{ 'api.subscription.step2.ofThisApi' | translate }}</p>
         </div>
 
         <h5 ng-if="!$ctrl.canApplicationSubscribe() && $ctrl.selectedApp && !$ctrl.subscription && ($ctrl.selectedPlan.security === 'oauth2' || $ctrl.selectedPlan.security === 'jwt')"
