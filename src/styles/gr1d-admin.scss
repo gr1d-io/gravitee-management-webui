@@ -2,7 +2,8 @@
 
     @extend %gr1d-md-input-container,
             %gr1d-select,
-            %gr1d-btn-md-actions;
+            %gr1d-btn-md-actions,
+            %gr1d-md-subheader;
 
     &, md-content, .main-content {
         background: $color-white-3;
