@@ -1,17 +1,26 @@
 {
-  "baseURL": "https://gateway-api.gr1d.io/management/",
+  "baseURL": "http://localhost:8005/management/",
   "company" : {
     "name" : "GR1D"
   },
   "portal": {
     "title": "GR1D | Developers Portal",
-    "entrypoint" : "https://gateway.gr1d.io",
-    "apikeyHeader" : "x-api-key"
+    "entrypoint" : "http://localhost:3000"
   },
   "theme": {
     "name": "gr1d",
     "logo": "themes/assets/gr1d_logo_900x900.png",
     "loader": "assets/gravitee_logo_anim.gif",
     "css": "themes/assets/gravitee.css"
+  },
+  "authentication": {
+    "oauth2": {
+      "clientId": "gravitee",
+      "name": "GR1D Login",
+      "color": "#0076b4",
+      "authorizationEndpoint": "https://is.gr1d.io/auth/realms/master/protocol/openid-connect/auth",
+      "userLogoutEndpoint": "http://is.gr1d.io/auth/realms/master/protocol/openid-connect/logout",
+      "scope": ["profile", "openid"]
+    }
   }
 }

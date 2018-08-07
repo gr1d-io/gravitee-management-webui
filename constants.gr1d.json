@@ -1,5 +1,4 @@
 {
-    "baseSandboxURL": "https://gateway-api.gr1d/management/",
     "basePortalBackendURL": "https://portal-backend-staging.appspot.com/api/",
     "theme": {
       "logoSmall":      "themes/assets/gr1d_logo_white_small.png",
