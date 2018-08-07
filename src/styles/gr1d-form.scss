@@ -19,8 +19,9 @@
 
 %gr1d-md-input-container {
   md-input-container {
-    margin: 0 0 10px 0;
+    margin: 0 0 25px 0;
     width: 100%;
+
     &:not(.md-input-invalid):not(.md-input-has-value) {
       label {
         color: $color-grey-dark;
@@ -28,7 +29,19 @@
     }
 
     .hint {
-      bottom: 9px;
+      bottom: -15px !important;
+      white-space: nowrap;
+    }
+
+    .md-errors-spacer {
+      position: absolute;
+      bottom: -20px;
+      right: 0;
+    }
+
+    textarea {
+      margin: 20px 0 0 13px;
+      font-size: 14px;
     }
   }
 
@@ -57,7 +70,7 @@
   }
 
   md-input-container {
-    input.md-input {
+    input.md-input:not([type="search"]) {
       background-color: $color-white-two;
       height: 60px;
       padding: 15px 0 0 15px;
@@ -65,6 +78,13 @@
     }
   }
 
+}
+
+%gr1d-md-subheader {
+  .md-subheader .md-subheader-inner .hints {
+    bottom: -15px;
+    position: relative;
+  }
 }
 
 

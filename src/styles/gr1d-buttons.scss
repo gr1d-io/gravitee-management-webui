@@ -12,6 +12,10 @@
     padding: $global-gutter / 2 $global-gutter-min*3;
     max-height: 52px;
 
+    svg {
+        fill: white;
+    }
+
     &.md-button.md-raised {
         background: $color-purple;
         color: $color-white;
@@ -38,6 +42,10 @@
             color: white;
             background-color: $color-purple;
             border-radius: 0;
+
+            svg {
+                fill: white;
+            }
         }
 
         .md-primary:not([disabled]) {
