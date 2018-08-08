@@ -80,6 +80,7 @@
           "clientIdRequired": "É necessário um clientId para assinar este plano. Favor verificar a configuração da sua aplicação.",
           "action": "Assinar",
           "optionalMessage" : "Mensagem opcional para o proprietário da API",
+          "describeUseApi": "Descreva seu caso de uso com esta API",
           "hintAcceptTerms": "Ao ativar a chave de API, você aceita o",
           "ofThisApi": "desta API"
         },
@@ -104,7 +105,8 @@
           },
           "pending": {
             "title": "Assinatura está aguardando validação",
-            "subtitle": "Sua assinatura está no status pendente, você receberá uma notificação assim que for processada."
+            "subtitle": "Sua assinatura está no status pendente, você receberá uma notificação assim que for processada.",
+            "contactValidationProcess": "Sua solicitação foi enviada, entraremos em contato para informar sobre o processo de validação. Fique atento ao seu e-mail."
           },
           "accepted": {
             "title": "Vamos começar a usar \"{{apiName}}\" com \"{{applicationName}}\"!"

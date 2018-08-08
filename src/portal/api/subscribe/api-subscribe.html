@@ -15,6 +15,12 @@
     limitations under the License.
 
 -->
+
+<div class="gravitee-api-banner" ng-show="$ctrl.showMessagePending()" aria-hidden="false">
+  <div class="gravitee-api-banner-content">
+    {{'api.subscription.step3.pending.contactValidationProcess' | translate }}
+  </div>
+</div>
 <div layout="row" layout-padding layout-align="center start" flex class="subscription-content">
 
   <div layout="column" flex="60" layout-margin>
@@ -83,8 +89,8 @@
             <md-not-found translate="application.notFound" translate-values="{applicationName: filterApp}"></md-not-found>
           </md-autocomplete>
           <md-input-container class="md-block">
-            <label>{{ 'api.subscription.step2.optionalMessage' | translate }}</label>
-            <textarea ng-model="$ctrl.requestMessage" md-maxlength="150" rows="2"></textarea>
+            <label>{{ 'api.subscription.step2.describeUseApi' | translate }}</label>
+            <textarea ng-model="$ctrl.requestMessage" md-maxlength="150" rows="2" required></textarea>
           </md-input-container>
           <md-button class="md-raised" ng-click="$ctrl.subscribe($ctrl.selectedApp)" aria-label="subscribe-api-plan" ng-disabled="!$ctrl.canApplicationSubscribe()"
             translate="api.subscription.step2.action" translate-values="{applicationName: $ctrl.selectedApp.name}">

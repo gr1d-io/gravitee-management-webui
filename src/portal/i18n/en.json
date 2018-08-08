@@ -80,6 +80,7 @@
         "clientIdRequired": "A clientId is required to subscribe to this plan. Please check your application's configuration.",
         "action": "Subscribe",
         "optionalMessage" : "Optional message to the API Owner",
+        "describeUseApi": "Describe your use case with this API",
         "hintAcceptTerms": "By enabling the API key you accept the",
         "ofThisApi": "of this API"
       },
@@ -104,7 +105,8 @@
         },
         "pending": {
           "title": "Subscription is waiting for validation",
-          "subtitle": "Your subscription is still in pending state, you will receive a notification once processed."
+          "subtitle": "Your subscription is still in pending state, you will receive a notification once processed.",
+          "contactValidationProcess": "Your request has been sent, we will contact you to inform about the validation process. Stay tuned to your email."
         },
         "accepted": {
           "title": "Let's start to use \"{{apiName}}\" with \"{{applicationName}}\"!"
