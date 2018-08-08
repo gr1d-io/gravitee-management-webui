@@ -18,8 +18,8 @@
       "clientId": "gravitee",
       "name": "GR1D Login",
       "color": "#0076b4",
-      "authorizationEndpoint": "https://is.gr1d.io/auth/realms/master/protocol/openid-connect/auth",
-      "userLogoutEndpoint": "http://is.gr1d.io/auth/realms/master/protocol/openid-connect/logout",
+      "authorizationEndpoint": "http://localhost:9090/auth/realms/master/protocol/openid-connect/auth",
+      "userLogoutEndpoint": "http://localhost:9090/auth/realms/master/protocol/openid-connect/logout",
       "scope": ["profile", "openid"]
     }
   }
