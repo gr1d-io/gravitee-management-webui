@@ -22,34 +22,37 @@ function interceptorConfig(
 ) {
   'ngInject';
   $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
   $httpProvider.defaults.withCredentials = true;
 
-  var sessionExpired;
+  let sessionExpired;
 
-  var interceptorUnauthorized = ($q: angular.IQService, $injector: angular.auto.IInjectorService): angular.IHttpInterceptor => ({
+  const interceptorUnauthorized = ($q: angular.IQService, $injector: angular.auto.IInjectorService, $state): angular.IHttpInterceptor => ({
     responseError: function (error) {
       if (error.config && !error.config.tryItMode) {
-        var unauthorizedError = !error || error.status === 401;
-        var errorMessage = '';
+        const unauthorizedError = !error || error.status === 401;
+        let errorMessage = '';
 
-        var notificationService = ($injector.get('NotificationService') as NotificationService);
+        const notificationService = ($injector.get('NotificationService') as NotificationService);
         if (unauthorizedError) {
           if (error.config.headers.Authorization) {
             sessionExpired = false;
             errorMessage = 'Wrong user or password';
           } else {
-            if (!sessionExpired && !error.config.silentCall) {
+            const $timeout = $injector.get('$timeout');
+            if (error.config.forceSessionExpired || (!sessionExpired && !error.config.silentCall)) {
               sessionExpired = true;
               // session expired
               notificationService.showError(error, 'Session expired, redirecting to home...');
-              $injector.get('$timeout')(function () {
+              $timeout(function () {
                 $injector.get('$rootScope').$broadcast('graviteeLogout');
               }, 2000);
             } else {
-              let state = ($injector.get('$state') as ng.ui.IStateService);
-              if (!state.current.name || !_.startsWith('portal.', state.current.name)) {
-                state.go('portal.home');
-              }
+              $timeout(function () {
+                if (!_.startsWith($state.current.name, 'portal.')) {
+                  $state.go('portal.home');
+                }
+              }, 100);
             }
           }
         } else {

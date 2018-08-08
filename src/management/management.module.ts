@@ -141,6 +141,7 @@ import ApiEndpointController from '../management/api/proxy/backend/endpoint/endp
 import ApiEndpointGroupController from '../management/api/proxy/backend/endpoint/group.controller';
 import AddPoliciesPathController from '../management/api/design/policies/addPoliciesPath.controller';
 import ApiResourcesController from '../management/api/design/resources/resources.controller';
+import ApiPathMappingsController from '../management/api/analytics/pathMappings/pathMappings.controller';
 import NewApiController from '../management/api/creation/newApi.controller';
 import ApiPropertiesController from '../management/api/design/properties/properties.controller';
 import ApiEventsController from '../management/api/audit/events/apiEvents.controller';
@@ -402,6 +403,8 @@ import AddTopApiDialogController from '../management/configuration/top-apis/dial
 import DeleteTopApiDialogController from '../management/configuration/top-apis/dialog/delete.top-api.dialog.controller';
 import ApiProxyController from "./api/proxy/apiProxy.controller";
 import PortalSettingsComponent from "./configuration/portal/portal.component";
+import DialogAddPathMappingController from "./api/analytics/pathMappings/modal/add-pathMapping.dialog.controller";
+import DialogImportPathMappingController from "./api/analytics/pathMappings/modal/import-pathMapping.dialog.controller";
 
 // GR1D
 import Gr1dCreditCardsService from '../services/gr1d.creditCards.service';
@@ -474,6 +477,9 @@ angular.module('gravitee-management', [uiRouter, permission, uiPermission, 'ngMa
   .controller('ApiEventsController', ApiEventsController)
   .controller('ApiHistoryController', ApiHistoryController)
   .controller('ApiResourcesController', ApiResourcesController)
+  .controller('ApiPathMappingsController', ApiPathMappingsController)
+  .controller('DialogAddPathMappingController', DialogAddPathMappingController)
+  .controller('DialogImportPathMappingController', DialogImportPathMappingController)
   .controller('NewApiController', NewApiController)
   .controller('DialogAddPropertyController', DialogAddPropertyController)
   .controller('DialogAddMemberApiController', DialogAddMemberApiController)
