@@ -313,6 +313,17 @@ table {
     text-shadow: none;
 }
 
+.api-nav {
+            background: #fafafa !important;
+        }
+#header.api-overview {
+    background-color: #fafafa !important;
+}
+#description.api-overview {
+    background: #fff;
+}
+
+
 @import 'gr1d-buttons';
 @import 'gr1d-form';
 @import 'gr1d-api-overview';
