@@ -17,7 +17,7 @@
 -->
 
         <h1>Credit card</h1>
-        <div class="gr1d-card" layout="column" flex="30">
+        <div class="gr1d-card" layout="column" flex="30" ng-show="gr1dBillingCtrl.creditCard">
             <div flex>
                 <div class="gr1d-credit-card">
                     <p class="gr1d-credit-card__holder-name">{{ gr1dBillingCtrl.creditCard.personal_info.full_name}}</p>
@@ -38,8 +38,11 @@
                 <button class="md-button button-primary button-outline">CHANGE CREDIT CARD</button>
             </div>
         </div>
+        <div class="gr1d-card"  ng-show="!gr1dBillingCtrl.creditCard">
+                <p>You dont have a credit card</p>
+            </div>
         <h1>Invoice</h1>
-        <div class="gr1d-card">
+        <div class="gr1d-card"  ng-show="gr1dBillingCtrl.invoices">
             <div class="gr1d-header">
                 <div layout="row" layout-align="space-between">
                     <div layout="column" layout-padding>
@@ -103,6 +106,9 @@
                 </tbody>
             </table>
         </div>
+        <div class="gr1d-card"  ng-show="!gr1dBillingCtrl.invoices">
+            <p>You dont have a invoice</p>
+        </div>
         <h1>Historic</h1>
         <!-- <div class="gr1d-card">
             <div class="gr1d-header">
@@ -131,7 +137,7 @@
                 </div>
             </div>
         </div> -->
-        <v-accordion class="vAccordion--default gr1d-card gr1d-accordion">
+        <v-accordion class="vAccordion--default gr1d-card gr1d-accordion" ng-show="gr1dBillingCtrl.invoices">
 
             <!-- add expanded attribute to open the section -->
             <v-pane expanded ng-repeat="invoice in gr1dBillingCtrl.invoices">
@@ -188,3 +194,6 @@
                 </v-pane-content>
             </v-pane>
         </v-accordion>
+        <div class="gr1d-card"  ng-show="!gr1dBillingCtrl.invoices">
+                <p>You dont have a invoice</p>
+            </div>

@@ -3,6 +3,7 @@ import { CreditCard } from "../../entities/creditCard";
 import UserService from "../../services/user.service";
 import { User } from "../../entities/user";
 import Gr1dInvoicesService from "../../services/gr1d.invoices.service";
+import * as _ from 'lodash';
 
 /*
  * Copyright (C) 2015 The Gravitee team (http://gravitee.io)
@@ -39,7 +40,7 @@ class Gr1dBillingController {
     getUserCurrent() {
       this.UserService.current().then(user => {
         this.user = user;
-        this.user.id = '9f4ffe83-ba3d-4836-8870-f73a165fb642';
+        // this.user.id = '9f4ffe83-ba3d-4836-8870-f73a165fb642';
         this.getCreditCards(user.id);
         this.getInvoices(user.id);
       });
@@ -49,7 +50,9 @@ class Gr1dBillingController {
     getCreditCards(id: string) {
       this.Gr1dCreditCardsService.get(id).then(response => {
         console.log('getCreditCards', response);
-        this.creditCard = response.data as CreditCard;
+        if (!_.isEmpty(response.data)) {
+          this.creditCard = response.data as CreditCard;
+        }
       }).catch(reason => {
         console.log('reason', reason);        
       });
@@ -58,7 +61,9 @@ class Gr1dBillingController {
     getInvoices(id: string) {
       this.Gr1dInvoicesService.getList(id).then(response => {
         console.log('getInvoices', response);
-        this.invoices = response.data.content;
+        if (!_.isEmpty(response.data.content)) {
+          this.invoices = response.data.content;
+        }
       }).catch(reason => {
         console.log('reason', reason);        
       });
