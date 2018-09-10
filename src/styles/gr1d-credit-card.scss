@@ -24,4 +24,19 @@
     width: 48px;
     height: 36px;
     background: $color-grey-dark;
+    border-radius: 5px;
 }
+
+.gr1d-credit-card__flag.mastercard {
+    background: orange;
+}
+
+.gr1d-credit-card__flag.visa {
+    background: blue;
+}
+
+.gr1d-credit-card__flag.amex {
+    background: green;
+}
+
+

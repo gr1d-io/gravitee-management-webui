@@ -40,7 +40,7 @@ class Gr1dBillingController {
     getUserCurrent() {
       this.UserService.current().then(user => {
         this.user = user;
-        // this.user.id = '9f4ffe83-ba3d-4836-8870-f73a165fb642';
+        this.user.id = '9f4ffe83-ba3d-4836-8870-f73a165fb642';
         this.getCreditCards(user.id);
         this.getInvoices(user.id);
       });

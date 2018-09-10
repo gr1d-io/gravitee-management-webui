@@ -16,101 +16,101 @@
 
 -->
 
-        <h1>Credit card</h1>
-        <div class="gr1d-card" layout="column" flex="30" ng-show="gr1dBillingCtrl.creditCard">
-            <div flex>
-                <div class="gr1d-credit-card">
-                    <p class="gr1d-credit-card__holder-name">{{ gr1dBillingCtrl.creditCard.personal_info.full_name}}</p>
-                    <p class="gr1d-credit-card__title-number">{{'creditCard.number' | translate}}</p>
-                    <p class="gr1d-credit-card__number">**** **** **** {{ gr1dBillingCtrl.creditCard.card_last_digits}}</p>
-                    <div layout="row" layout-align="end center">
-                        <div class="hide" layout="column">
-                            <p class="gr1d-credit-card__title-validate">VALIDADE</p>
-                            <p class="gr1d-credit-card__validate">12/18</p>
-                        </div>
-                        <div layout="column">
-                            <div class="gr1d-credit-card__flag"></div>
-                        </div>
-                    </div>
+<h1>Credit card</h1>
+<div class="gr1d-card" layout="column" flex="30" ng-show="gr1dBillingCtrl.creditCard">
+    <div flex>
+        <div class="gr1d-credit-card">
+            <p class="gr1d-credit-card__holder-name">{{ gr1dBillingCtrl.creditCard.personal_info.full_name}}</p>
+            <p class="gr1d-credit-card__title-number">{{'creditCard.number' | translate}}</p>
+            <p class="gr1d-credit-card__number">**** **** **** {{ gr1dBillingCtrl.creditCard.card_last_digits}}</p>
+            <div layout="row" layout-align="end center">
+                <div class="hide" layout="column">
+                    <p class="gr1d-credit-card__title-validate">VALIDADE</p>
+                    <p class="gr1d-credit-card__validate">12/18</p>
                 </div>
-            </div>
-            <div flex>
-                <button class="md-button button-primary button-outline">CHANGE CREDIT CARD</button>
+                <div layout="column">
+                    <div class="gr1d-credit-card__flag {{ gr1dBillingCtrl.creditCard.brand | lowercase }}"></div>
+                </div>
             </div>
         </div>
-        <div class="gr1d-card"  ng-show="!gr1dBillingCtrl.creditCard">
-                <p>You dont have a credit card</p>
+    </div>
+    <div flex>
+        <button class="md-button button-primary button-outline">CHANGE CREDIT CARD</button>
+    </div>
+</div>
+<div class="gr1d-card" ng-show="!gr1dBillingCtrl.creditCard">
+    <p>You dont have a credit card</p>
+</div>
+<h1>Invoice</h1>
+<div class="gr1d-card" ng-show="gr1dBillingCtrl.invoices">
+    <div class="gr1d-header">
+        <div layout="row" layout-align="space-between">
+            <div layout="column" layout-padding>
+                <p class="gr1d-header__title">Period</p>
+                <p class="gr1d-header__subtitle">Jul-01 to Jul-31</p>
             </div>
-        <h1>Invoice</h1>
-        <div class="gr1d-card"  ng-show="gr1dBillingCtrl.invoices">
-            <div class="gr1d-header">
-                <div layout="row" layout-align="space-between">
-                    <div layout="column" layout-padding>
-                        <p class="gr1d-header__title">Period</p>
-                        <p class="gr1d-header__subtitle">Jul-01 to Jul-31</p>
-                    </div>
-                    <div layout="column" layout-padding>
-                        <p class="gr1d-header__title">Expiring date</p>
-                        <p class="gr1d-header__subtitle">Fatura aberta</p>
-                    </div>
-                    <div layout="column" layout-padding>
-                        <p class="gr1d-header__title">Amount</p>
-                        <p class="gr1d-header__subtitle">R$ 12,00</p>
-                    </div>
-                    <div layout="column" layout-padding>
-                        <p class="gr1d-header__title">Status</p>
-                        <p class="gr1d-header__subtitle">Houve um erro no pagamento. Em breve entraremos em contato</p>
-                    </div>
-                </div>
+            <div layout="column" layout-padding>
+                <p class="gr1d-header__title">Expiring date</p>
+                <p class="gr1d-header__subtitle">Fatura aberta</p>
             </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>API</th>
-                        <th>Plan</th>
-                        <th>Amount</th>
-                        <th>Hits</th>
-                        <th>Total amount</th>
-                    </tr>
+            <div layout="column" layout-padding>
+                <p class="gr1d-header__title">Amount</p>
+                <p class="gr1d-header__subtitle">R$ 12,00</p>
+            </div>
+            <div layout="column" layout-padding>
+                <p class="gr1d-header__title">Status</p>
+                <p class="gr1d-header__subtitle">Houve um erro no pagamento. Em breve entraremos em contato</p>
+            </div>
+        </div>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>API</th>
+                <th>Plan</th>
+                <th>Amount</th>
+                <th>Hits</th>
+                <th>Total amount</th>
+            </tr>
 
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Jill</td>
-                        <td>Smith</td>
-                        <td>50</td>
-                        <td>50</td>
-                        <td>50</td>
-                    </tr>
-                    <tr>
-                        <td>Jill</td>
-                        <td>Smith</td>
-                        <td>50</td>
-                        <td>50</td>
-                        <td>50</td>
-                    </tr>
-                    <tr>
-                        <td>Jill</td>
-                        <td>Smith</td>
-                        <td>50</td>
-                        <td>50</td>
-                        <td>50</td>
-                    </tr>
-                    <tr>
-                        <td>Jill</td>
-                        <td>Smith</td>
-                        <td>50</td>
-                        <td>50</td>
-                        <td>50</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="gr1d-card"  ng-show="!gr1dBillingCtrl.invoices">
-            <p>You dont have a invoice</p>
-        </div>
-        <h1>Historic</h1>
-        <!-- <div class="gr1d-card">
+        </thead>
+        <tbody>
+            <tr>
+                <td>Jill</td>
+                <td>Smith</td>
+                <td>50</td>
+                <td>50</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>Jill</td>
+                <td>Smith</td>
+                <td>50</td>
+                <td>50</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>Jill</td>
+                <td>Smith</td>
+                <td>50</td>
+                <td>50</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>Jill</td>
+                <td>Smith</td>
+                <td>50</td>
+                <td>50</td>
+                <td>50</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="gr1d-card" ng-show="!gr1dBillingCtrl.invoices">
+    <p>You dont have a invoice</p>
+</div>
+<h1>Historic</h1>
+<!-- <div class="gr1d-card">
             <div class="gr1d-header">
                 <div layout="row" layout-align="space-between">
                     <div layout="column" layout-padding>
@@ -137,63 +137,64 @@
                 </div>
             </div>
         </div> -->
-        <v-accordion class="vAccordion--default gr1d-card gr1d-accordion" ng-show="gr1dBillingCtrl.invoices">
+<v-accordion class="vAccordion--default gr1d-card gr1d-accordion" ng-show="gr1dBillingCtrl.invoices">
 
-            <!-- add expanded attribute to open the section -->
-            <v-pane expanded ng-repeat="invoice in gr1dBillingCtrl.invoices">
-                <v-pane-header>
-                    <div class="gr1d-header">
-                        <div layout="row" layout-align="space-between">
-                            <div layout="column" layout-padding>
-                                <p class="gr1d-header__title">Period</p>
-                                <p class="gr1d-header__subtitle">{{invoice.created_at | date }}</p>
-                            </div>
-                            <div layout="column" layout-padding>
-                                <p class="gr1d-header__title">Expiring date</p>
-                                <p class="gr1d-header__subtitle">-</p>
-                            </div>
-                            <div layout="column" layout-padding>
-                                <p class="gr1d-header__title">Amount</p>
-                                <p class="gr1d-header__subtitle">{{ gr1dBillingCtrl.transformMoney(invoice.value) | currency : 'R$' }}</p>
-                            </div>
-                            <div layout="column" layout-padding>
-                                <p class="gr1d-header__title">Status</p>
-                                <p class="gr1d-header__subtitle">{{invoice.payment_status}}</p>
-                            </div>
-                            <div layout="column" layout-padding>
-                                <button class="md-button">
-                                    <ng-md-icon icon="keyboard_arrow_down"></ng-md-icon>
-                                </button>
-                            </div>
-                        </div>
+    <!-- add expanded attribute to open the section -->
+    <v-pane expanded ng-repeat="invoice in gr1dBillingCtrl.invoices">
+        <v-pane-header>
+            <div class="gr1d-header">
+                <div layout="row" layout-align="space-between">
+                    <div layout="column" layout-padding>
+                        <p class="gr1d-header__title">Period</p>
+                        <p class="gr1d-header__subtitle">{{invoice.created_at | date }}</p>
                     </div>
-                </v-pane-header>
-
-                <v-pane-content>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>API</th>
-                                <th>Plan</th>
-                                <th>Amount</th>
-                                <th>Hits</th>
-                                <th>Total amount</th>
-                            </tr>
-
-                        </thead>
-                        <tbody>
-                            <tr ng-repeat="item in invoice.items">
-                                <td>{{ item.external_id }}</td>
-                                <td>{{ item.description }}</td>
-                                <td>{{ gr1dBillingCtrl.transformMoney(item.unit_value) | currency : 'R$'  }}</td>
-                                <td>{{ item.quantity }}</td>
-                                <td>{{ gr1dBillingCtrl.transformMoney(item.value) | currency : 'R$'  }}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </v-pane-content>
-            </v-pane>
-        </v-accordion>
-        <div class="gr1d-card"  ng-show="!gr1dBillingCtrl.invoices">
-                <p>You dont have a invoice</p>
+                    <div layout="column" layout-padding>
+                        <p class="gr1d-header__title">Expiring date</p>
+                        <p class="gr1d-header__subtitle">{{invoice.expiration_date | date }}</p>
+                    </div>
+                    <div layout="column" layout-padding>
+                        <p class="gr1d-header__title">Amount</p>
+                        <p class="gr1d-header__subtitle">{{ gr1dBillingCtrl.transformMoney(invoice.value) | currency :
+                            'R$' }}</p>
+                    </div>
+                    <div layout="column" layout-padding>
+                        <p class="gr1d-header__title">Status</p>
+                        <p class="gr1d-header__subtitle">{{invoice.payment_status}}</p>
+                    </div>
+                    <div layout="column" layout-padding>
+                        <button class="md-button">
+                            <ng-md-icon icon="keyboard_arrow_down"></ng-md-icon>
+                        </button>
+                    </div>
+                </div>
             </div>
+        </v-pane-header>
+
+        <v-pane-content>
+            <table>
+                <thead>
+                    <tr>
+                        <th>API</th>
+                        <th>Plan</th>
+                        <th>Amount</th>
+                        <th>Hits</th>
+                        <th>Total amount</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in invoice.items">
+                        <td>{{ item.external_id }}</td>
+                        <td>{{ item.description }}</td>
+                        <td>{{ gr1dBillingCtrl.transformMoney(item.unit_value) | currency : 'R$' }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>{{ gr1dBillingCtrl.transformMoney(item.value) | currency : 'R$' }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </v-pane-content>
+    </v-pane>
+</v-accordion>
+<div class="gr1d-card" ng-show="!gr1dBillingCtrl.invoices">
+    <p>You dont have a invoice</p>
+</div>
