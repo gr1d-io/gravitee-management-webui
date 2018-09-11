@@ -408,6 +408,7 @@ import DialogImportPathMappingController from "./api/analytics/pathMappings/moda
 
 // GR1D
 import Gr1dCreditCardsService from '../services/gr1d.creditCards.service';
+import Gr1dInvoicesService from '../services/gr1d.invoices.service';
 
 import Gr1dBillingController from '../management/gr1d-billing/gr1d-billing.controller';
 
@@ -562,6 +563,7 @@ angular.module('gravitee-management', [uiRouter, permission, uiPermission, 'ngMa
   .service('ChartService', ChartService)
   .service('TopApiService', TopApiService)
   .service('Gr1dCreditCardsService', Gr1dCreditCardsService)
+  .service('Gr1dInvoicesService', Gr1dInvoicesService)
   .directive('filecontent', () => DocumentationDirective)
   .directive('noDirtyCheck', () => new FormDirective())
   .directive('autofocus', () => new AutofocusDirective())

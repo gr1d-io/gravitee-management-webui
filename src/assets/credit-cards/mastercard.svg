@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="36px" viewBox="0 0 48 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Mastercard</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="gr1d_devportal_gravitee" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="components" transform="translate(-2146.000000, -1006.000000)">
+            <g id="bandeiras-copy" transform="translate(2078.000000, 1006.000000)">
+                <g id="Mastercard" transform="translate(68.000000, 0.000000)">
+                    <polygon id="Shape" fill="#FAFAFA" points="0 9.55902024e-14 48 2.66453526e-14 48 36 0 36"></polygon>
+                    <g id="icon" transform="translate(11.000000, 10.000000)" fill-rule="nonzero">
+                        <circle id="Oval" fill="#EB001B" cx="8" cy="8" r="8"></circle>
+                        <circle id="Oval-Copy" fill="#F79E1B" cx="18" cy="8" r="8"></circle>
+                        <path d="M13,1.75462905 C14.828925,3.22075007 16,5.47361542 16,8 C16,10.5263846 14.828925,12.7792499 13,14.245371 C11.171075,12.7792499 10,10.5263846 10,8 C10,5.47361542 11.171075,3.22075007 13,1.75462905 Z" id="Combined-Shape" fill="#FF5F00"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

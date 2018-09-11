@@ -48,6 +48,8 @@ $color-very-light-pink: #fcede8;
 $color-red-pink: #ee414b;
 $color-lighter-purple: #9657ff;
 
+$color-marigold: #ffc800;
+
 $global-gutter: 16px;
 $global-gutter-min: 8px;
 $topbar-height: 84px;
@@ -296,6 +298,35 @@ table {
   max-width: 48px;
   border-radius: 0px;
 }
+
+.gravitee-api-banner {
+    display: contents;
+    font-family: $font-family-1;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.gravitee-api-banner-content {
+    background: $color-marigold;
+    padding: $global-gutter/2;
+    color: #000;
+    text-shadow: none;
+}
+
+.api-nav {
+            background: #fafafa !important;
+        }
+#header.api-overview {
+    background-color: #fafafa !important;
+}
+#description.api-overview {
+    background: #fff;
+}
+
+.vAccordion--default v-pane-header::after, .vAccordion--default v-pane-header::before {
+    display: none;
+}
+
 
 @import 'gr1d-buttons';
 @import 'gr1d-form';

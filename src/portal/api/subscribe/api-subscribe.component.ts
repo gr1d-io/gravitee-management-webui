@@ -117,7 +117,13 @@ const ApiSubscribeComponent: ng.IComponentOptions = {
         this.subscription = subscription.data;
         this.NotificationService.show('api.subscription.step3.successful', null, {planName: this.selectedPlan.name});
         this.fetchApiKey(this.subscription.id);
+
+        
       });
+    }
+
+    showMessagePending() {
+      return this.subscription && this.subscription.status === 'pending' && this.hasCreditCards()
     }
 
     isPlanSubscribable() {

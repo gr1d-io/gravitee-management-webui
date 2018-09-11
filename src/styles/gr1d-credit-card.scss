@@ -24,4 +24,39 @@
     width: 48px;
     height: 36px;
     background: $color-grey-dark;
+    border-radius: 5px;
 }
+
+.gr1d-credit-card__flag.amex {
+    background: url('/assets/credit-cards/amex.svg') no-repeat center center;
+}
+
+.gr1d-credit-card__flag.diners {
+    background: url('/assets/credit-cards/diners-club.svg') no-repeat center center;
+}
+
+.gr1d-credit-card__flag.discover {
+    background: url('/assets/credit-cards/discover.svg') no-repeat center center;
+}
+
+.gr1d-credit-card__flag.elo {
+    background: url('/assets/credit-cards/elo.svg') no-repeat center center;
+}
+
+.gr1d-credit-card__flag.hiper {
+    background: url('/assets/credit-cards/hiper.svg') no-repeat center center;
+}
+
+.gr1d-credit-card__flag.jcb {
+    background: url('/assets/credit-cards/jcb.svg') no-repeat center center;
+}
+
+.gr1d-credit-card__flag.mastercard {
+    background: url('/assets/credit-cards/mastercard.svg') no-repeat center center;
+}
+
+.gr1d-credit-card__flag.visa {
+    background: url('/assets/credit-cards/visa.svg') no-repeat center center;
+}
+
+
