@@ -1,11 +1,11 @@
 {
-  "baseURL": "http://localhost:8005/management/",
+  "baseURL": "http://gravitee.dev.gr1d.io:8005/management/",
   "company" : {
     "name" : "GR1D"
   },
   "portal": {
     "title": "GR1D | Developers Portal",
-    "entrypoint" : "http://localhost:3000"
+    "entrypoint" : "http://gravitee.dev.gr1d.io:3000"
   },
   "theme": {
     "name": "gr1d",
@@ -18,8 +18,8 @@
       "clientId": "gravitee",
       "name": "GR1D Login",
       "color": "#0076b4",
-      "authorizationEndpoint": "http://localhost:9090/auth/realms/master/protocol/openid-connect/auth",
-      "userLogoutEndpoint": "http://localhost:9090/auth/realms/master/protocol/openid-connect/logout",
+      "authorizationEndpoint": "http://gravitee.dev.gr1d.io:9080/auth/realms/master/protocol/openid-connect/auth",
+      "userLogoutEndpoint": "http://gravitee.dev.gr1d.io:9080/auth/realms/master/protocol/openid-connect/logout",
       "scope": ["profile", "openid"]
     }
   }
