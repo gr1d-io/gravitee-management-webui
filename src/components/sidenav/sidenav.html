@@ -23,7 +23,7 @@
   style="overflow: inherit;">
 
   <md-list class="sidenav-list">
-    <md-list-item ng-repeat="menuItem in $ctrl.menuItems|orderBy:'data.menu.order' track by menuItem.name">
+    <md-list-item ng-repeat="menuItem in $ctrl.menuItems|orderBy:'data.menu.order' track by menuItem.name" ng-if="$ctrl.isSettingVisible(menuItem, $ctrl.graviteeUser)">
       <md-tooltip md-delay="400">{{menuItem.data.menu.label}}</md-tooltip>
       <a ui-sref="{{ :: menuItem.name}}" title="{{ :: menuItem.data.menu.label}}"
          ng-class="{'sidenav-active': $ctrl.isActive(menuItem)}">
