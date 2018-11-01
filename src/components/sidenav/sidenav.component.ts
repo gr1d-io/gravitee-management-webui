@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 import {IScope, IWindowService} from "angular";
+import {User} from './../../entities/user';
 
 export const SidenavComponent: ng.IComponentOptions = {
   template: require('./sidenav.html'),
@@ -43,6 +44,14 @@ export const SidenavComponent: ng.IComponentOptions = {
       $window.localStorage.setItem(reduceModeKey, this.reducedMode);
       $rootScope.$broadcast('onWidgetResize');
     };
+
+    this.isSettingVisible = function (menuItem, user: User) {
+       if(menuItem.name.split('.')[1] == "settings") {
+        return user.isAdmin();
+       } else {
+        return true;
+       }
+    }
 
     this.isActive = function (menuItem) {
       let menuItemSplitted = menuItem.name.split('.');

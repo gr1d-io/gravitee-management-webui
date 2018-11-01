@@ -50,13 +50,13 @@
                 alt="user-picture" gv-theme-element="portal.navbar.user.img"/>
             <img ng-if="$ctrl.hasAlert()" ng-src="{{$ctrl.getUserPicture()}}"
                 alt="user-picture" gv-theme-element="portal.navbar.user.img.alert"/>
-            <span ng-if="$ctrl.hasAlert()" flex class="gv-menu-badge-alert" gv-theme-element="portal.navbar.user.notification"></span>
+            <span ng-if="$ctrl.isUserManagement() && $ctrl.hasAlert()" flex class="gv-menu-badge-alert" gv-theme-element="portal.navbar.user.notification"></span>
           </md-button>
           <md-menu-content class="gv-menu-content" ng-mouseleave="$mdMenu.close()">
             <div layout="column" class="gv-menu-content-main">
               <div layout="column" layout-align="end start" class="gv-menu-content-links">
                   <a ui-sref="user"><img ng-src="{{$ctrl.getIcons().profile}}" class="gr1d-icon"> {{'menu.profile' | translate}}</a>
-                  <a ui-sref="management.tasks"><img ng-src="{{$ctrl.getIcons().tasks}}" class="gr1d-icon"> {{'menu.tasks' | translate}}<span ng-if="$ctrl.getUserTaskCount() > 0" flex class="badge gv-menu-badge">{{$ctrl.getUserTaskCount()}}</span></a>
+                  <a ui-sref="management.tasks" ng-if="$ctrl.isUserManagement()"><img ng-src="{{$ctrl.getIcons().tasks}}" class="gr1d-icon"> {{'menu.tasks' | translate}}<span ng-if="$ctrl.isUserManagement() & $ctrl.getUserTaskCount() > 0" flex class="badge gv-menu-badge">{{$ctrl.getUserTaskCount()}}</span></a>
                   <a ui-sref="management.applications.list"><img ng-src="{{$ctrl.getIcons().apps}}" class="gr1d-icon">{{'menu.applications' | translate}}</a>
                   <a ui-sref="management.apis.list" ng-if="!$ctrl.isUserManagement()"><img ng-src="{{$ctrl.getIcons().api}}" class="gr1d-icon"> {{'menu.apis' | translate}}</a>
                   <a ui-sref="management.apis.list" ng-if="$ctrl.isUserManagement()"><img ng-src="{{$ctrl.getIcons().api}}" class="gr1d-icon"> {{'menu.management' | translate}}</a>
